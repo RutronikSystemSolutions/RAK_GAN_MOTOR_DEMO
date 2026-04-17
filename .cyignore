@@ -1,6 +1,9 @@
 # Documentation
 images
 
+# Templates folder - only used as reference for BSP Assistant, bsps/ is used for building
+templates
+
 # Exports, Project settings
 .mtbLaunchConfigs
 .settings
