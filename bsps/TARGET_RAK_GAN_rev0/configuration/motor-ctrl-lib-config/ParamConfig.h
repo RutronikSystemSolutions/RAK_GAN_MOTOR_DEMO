@@ -268,6 +268,6 @@
 /*******Mechanical Load*******/
 #define MECH_INERTIA                              (1.1E-5f)                    /*[kg.m^2],  Inertia*/
 #define MECH_VISCOUS                              (1.2E-5f)                    /*[kg.m^2/sec], Viscous Damping*/
-#define MECH_FRICTION                             (6.0E-3f)                    /*[kg.m^2/sec^2], Frittion*/
+#define MECH_FRICTION                             (6.0E-3f)                    /*[kg.m^2/sec^2], Friction*/
 
 

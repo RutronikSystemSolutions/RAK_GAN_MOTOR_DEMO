@@ -19,7 +19,7 @@
 		"isHidden": true,
 		"projectName": "GUI_MOTOR_DEMO_3_1_DB42S03",
 		"isUsingCustomFirmware": true,
-		"elfPath": "c:\\Projects\\VS_PSC3_RAK_GAN\\RAK_GAN_MOTOR_DEMO\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.elf",
+		"elfPath": "C:\\Projects\\RAK_GAN_RSS_GITHUB\\RAK_GAN_MOTOR_DEMO\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf",
 		"hexPath": "c:\\Projects\\VS_PSC3_RAK_GAN\\RAK_GAN_MOTOR_DEMO\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.hex"
 	},
 	"config": {
@@ -69,7 +69,7 @@
 							},
 							{
 								"id": "params.sys.analog.shunt.current_sense_polarity",
-								"value": "LS_Current_Sense"
+								"value": "HS_Current_Sense"
 							},
 							{
 								"id": "params.sys.analog.shunt.type",
@@ -207,7 +207,7 @@
 						"parameters": [
 							{
 								"id": "params.obs.w_thresh.elec",
-								"value": 800.0000586897035
+								"value": 399.99999291717614
 							},
 							{
 								"id": "params.obs.lock_time",
@@ -258,11 +258,11 @@
 							},
 							{
 								"id": "params.ctrl.speed.kp",
-								"value": 0.00575958751142025
+								"value": 0.002400000113993883
 							},
 							{
 								"id": "params.ctrl.speed.ki",
-								"value": 0.06283186376094818
+								"value": 0.03400000184774399
 							},
 							{
 								"id": "params.ctrl.speed.ki_multiple",
@@ -285,42 +285,42 @@
 							},
 							{
 								"id": "params.ctrl.curr.i_cmd_thresh",
-								"value": 0.17900000512599945
+								"value": 0.2680000066757202
 							},
 							{
 								"id": "params.ctrl.curr.kp.q",
-								"value": 6.597344398498535
+								"value": 3.1600000858306885
 							},
 							{
 								"id": "params.ctrl.curr.kp.d",
-								"value": 6.597344398498535
+								"value": 3.1600000858306885
 							},
 							{
 								"id": "params.ctrl.curr.ki.q",
-								"value": 4712.38916015625
+								"value": 2828.080078125
 							},
 							{
 								"id": "params.ctrl.curr.ki.d",
-								"value": 4712.38916015625
+								"value": 2828.080078125
 							},
 							{
 								"id": "params.ctrl.curr.i_cmd_ol",
-								"value": 0.03579999879002571
+								"value": 0.75
 							},
 							{
 								"id": "separator"
 							},
 							{
 								"id": "params.ctrl.volt.w_thresh.elec",
-								"value": 200.00001467242586
+								"value": 99.99999822929404
 							},
 							{
 								"id": "params.ctrl.volt.v_min",
-								"value": 0.1599999964237213
+								"value": 0.15000000596046448
 							},
 							{
 								"id": "params.ctrl.volt.v_to_f_ratio",
-								"value": 0.006400090176612139
+								"value": 0.007499999832361937
 							},
 							{
 								"id": "params.ctrl.volt.mod_method",
@@ -358,7 +358,7 @@
 							},
 							{
 								"id": "params.ctrl.flux_weaken.ki",
-								"value": 0.0016194639028981328
+								"value": 0.001094757579267025
 							},
 							{
 								"id": "separator"
@@ -474,11 +474,11 @@
 					},
 					{
 						"id": "params.motor.lam",
-						"value": 0.004999999888241291
+						"value": 0.003379999892786145
 					},
 					{
 						"id": "params.motor.r",
-						"value": 0.75
+						"value": 1.100000023841858
 					},
 					{
 						"id": "params.motor.t_max",
