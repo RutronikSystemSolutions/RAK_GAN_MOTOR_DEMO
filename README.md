@@ -2,9 +2,8 @@
 
 <img src="images\RAK_GAN_rev0.jpg" style="zoom:50%;" />
 
-This code example demonstrates the sensorless and sensored solutions using the Infineon's MCUs. Code example includes the following solutions.
+This code example demonstrates the sensorless and sensored solutions using the Infineon's PSOC Control C3 MCU and Rutronik´s RAK-GaN Board.
 - Sensorless PMSM FOC with 3-shunt
-- Sensorless PMSM FOC with 1-shunt *TODO
 - Hall sensor-based PMSM FOC
 - Encoder-based PMSM FOC *needs to be testet
 - Hall sensor-based Trapezoidal Block Commutation (TBC) *needs to be testet
@@ -44,13 +43,7 @@ SW Libs: (Library Manager)
    - motor_ctrl_lib 3.1 or later
    - emeeprom 2.7.0 or later
 
-## Using the code example
 
-All Motor and Board relatet Configuration are located in [ParamConfig.h]
-
-<img src="images\Folder_Structure.png" style="zoom:50%;" />
-
-*****TODO: 
 
 ### Create the project
 
@@ -289,22 +282,20 @@ Follow the instructions in your preferred IDE.
 
 </details>
 
+## Using the code example
 
-## Design and implementation
+All Motor and Board relatet Configuration are located in [ParamConfig.h]
 
-This code example is created using the XMC7200D/TRAVEO&trade; T2G CYT4BF MCU resources and Infineon motor control library (middleware asset).
+<img src="images\Folder_Structure.png" style="zoom:50%;" />
 
-There are three major control types that are supported, namely:
-- Rotor Field Oriented (RFO) control
-- Stator Field Oriented (SFO) control
-- Trapezoidal Block Commutation (TBC) control
+*****TODO: 
+## Known Issuis
 
-These control types are selectable as build configurations in ModusToolbox&trade;, IAR, and Visual Studio.
+<img src="images\MaxFcnCtn.jpg" style="zoom:50%;" />
 
-By choosing a specific build configuration, only the code pertaining to that build configuration is compiled and included.
-There are also common code blocks among all build configurations that are always included.
+Workaround: edit in General.h line 156 
 
-After selecting the control type through build configurations, choose the *controlled entity*, *feedback type*, and *startup method* by assigning the corresponding parameters either in the code before compilation or at runtime through the GUI:
+<img src="images\Workaround.jpg" style="zoom:50%;" />
 
 **Figure 7. Control methods**
 
@@ -314,21 +305,6 @@ There are 23 different permutations of control type, control entity, feedback ty
 Additionally, both three-shunt and single-shunt configurations are supported, which result in more flexibility in supporting various applications.
 Note that you can either include or bypass the current loop when using *TBC in TC* mode. Bypassing the current loop can address low-cost BLDC applications with no shunts or ADCs.
 
-
-## Related resources
-
-Resources  | Links
------------|----------------------------------
-Application notes  | [AN234334 - Getting started with XMC7200 MCU on ModusToolbox&trade;](https://www.infineon.com/dgdl/Infineon-Getting_started_with_XMC7000_MCU_on_ModusToolbox_software-ApplicationNotes-v06_00-EN.pdf?fileId=8ac78c8c850f4bee0185a53e84147437) <br> [AN240575 - PMSM FOC using XMC7200 MCU](https://www.infineon.com/dgdl/Infineon-AN240575_PMSM_FOC_using_XMC7200_MCU-ApplicationNotes-v01_00-EN.pdf?fileId=8ac78c8c92bcf0b001930d9d205504e1) <br> [AN238329 - Getting started with PSOC Control C3 MCU on ModusToolbox&trade; software](https://www.infineon.com/dgdl/Infineon-AN238329_Getting_started_PSOC_Control_C3_ModusToolbox-ApplicationNotes-v02_00-EN.pdf?fileId=8ac78c8c92bcf0b0019393f072d813b5) <br> [AN239646 - PMSM FOC using PSOC Control C3 MCU](https://www.infineon.com/dgdl/Infineon-AN239646_PMSM_FOC_PSOC_Control_C3_MCU-ApplicationNotes-v02_00-EN.pdf?fileId=8ac78c8c93956f5001939d61c8af4b9a) <br> [AN235305 - Getting started with TRAVEO&trade; T2G family MCUs in ModusToolbox&trade;](https://www.infineon.com/assets/row/public/documents/10/42/infineon-an235305-getting-started-with-traveo-t2g-family-mcus-in-modustoolbox-applicationnotes-en.pdf?fileId=8ac78c8c8b6555fe018c1fddd8a72801)  <br> [AN241827 - PMSM FOC using TRAVEO&trade; T2G CYT4BF MCU](https://www.infineon.com/assets/row/public/documents/10/42/infineon-an241827-pmsm-foc-using-traveo-tmt2g-cyt4bf-mcu-applicationnotes-en.pdf)
-Code examples  | [Using ModusToolbox&trade;](https://github.com/Infineon/Code-Examples-for-ModusToolbox-Software) on GitHub
-Device documentation | [XMC7200 MCU datasheets](https://www.infineon.com/sec/login?ret=https%3A%2F%2Fwww.infineon.com%2Fcms%2Fen%2Fproduct%2Fmicrocontroller%2F32-bit-industrial-microcontroller-based-on-arm-cortex-m%2F32-bit-xmc7000-industrial-microcontroller-arm-cortex-m7%2F%23!documents%2Fdocument-group-myInfineon-49) <br> [XMC7200 MCU reference manuals](https://www.infineon.com/sec/login?ret=https%3A%2F%2Fwww.infineon.com%2Fcms%2Fen%2Fproduct%2Fmicrocontroller%2F32-bit-industrial-microcontroller-based-on-arm-cortex-m%2F32-bit-xmc7000-industrial-microcontroller-arm-cortex-m7%2F%23!documents%2Fdocument-group-myInfineon-44) <br> [PSOC&trade; Control C3 MCU datasheets](https://www.infineon.com/sec/login?ret=https%3A%2F%2Fwww.infineon.com%2Fcms%2Fen%2Fproduct%2Fmicrocontroller%2F32-bit-psoc-arm-cortex-microcontroller%2F32-bit-psoc-control-arm-cortex-m33-mcu%2F%23!documents%2Fdocument-group-myInfineon-49) <br> [PSOC&trade; Control C3 MCU reference manuals](https://www.infineon.com/sec/login?ret=https%3A%2F%2Fwww.infineon.com%2Fcms%2Fen%2Fproduct%2Fmicrocontroller%2F32-bit-psoc-arm-cortex-microcontroller%2F32-bit-psoc-control-arm-cortex-m33-mcu%2F%23!documents%2Fdocument-group-myInfineon-57) <br> [TRAVEO&trade; T2G CYT4BF series datasheets](https://www.infineon.com/assets/row/public/documents/10/49/infineon-traveo-t2g-automotive-microcontroller-cyt4bf-32-bit-arm-cortex-m7-datasheet-en.pdf?fileId=5546d46275b79adb0175dc8387f93228) <br> [TRAVEO&trade; T2G MCU Body family architecture and registers reference manuals](https://www.infineon.com/cms/en/product/microcontroller/32-bit-traveo-t2g-arm-cortex-microcontroller/32-bit-traveo-t2g-arm-cortex-for-body/#!documents)
-Development kits | Select your kits from the [Evaluation board finder](https://www.infineon.com/cms/en/design-support/finder-selection-tools/product-finder/evaluation-board).
-Libraries on GitHub  | [mtb-pdl-cat1](https://github.com/Infineon/mtb-pdl-cat1) – Peripheral Driver Library (PDL) <br> [mtb-hal-cat1](https://github.com/Infineon/mtb-hal-cat1) – Hardware Abstraction Layer (HAL) library (XMC7200/TRAVEO&trade; T2G CYT4BF only) <br> [retarget-io](https://github.com/Infineon/retarget-io) – Utility library to retarget STDIO messages to a UART port
-Tools  | [ModusToolbox&trade;](https://www.infineon.com/modustoolbox) – ModusToolbox&trade; software is a collection of easy-to-use libraries and tools enabling rapid development with Infineon MCUs for applications ranging from wireless and cloud-connected systems, edge AI/ML, embedded sense and control, to wired USB connectivity using PSOC&trade; Industrial/IoT MCUs, AIROC&trade; Wi-Fi and Bluetooth&reg; connectivity devices, XMC&trade; Industrial MCUs, and EZ-USB&trade;/EZ-PD&trade; wired connectivity controllers. ModusToolbox&trade; incorporates a comprehensive set of BSPs, HAL, libraries, configuration tools, and provides support for industry-standard IDEs to fast-track your embedded application development.
-
-<br>
-
-
 ## Other resources
 
 Infineon provides a wealth of data at [www.infineon.com](https://www.infineon.com) to help you select the right device, and quickly and effectively integrate it into your design.
@@ -336,27 +312,13 @@ Infineon provides a wealth of data at [www.infineon.com](https://www.infineon.co
 
 ## Document history
 
-Document title: *CE240614* – *Motor control demo*
+Document title: *"***tbd***"* – *Motor control demo - RAK-GaN_rev0*
 
  Version | Description of change
  ------- | ---------------------
- 1.0.0   | New code example supported XMC7200D MCU
- 1.0.1   | Added support to PSOC&trade; Control C3 MCU
- 1.0.2   | Added support to PSOC&trade; Control C3 Compact Kit
- 1.0.3   | Added support to TRAVEO&trade; T2G CYT4BF MCU
- 2.0.0   | Updated as per motor control library 3.1.0
+ 1.0.0   | Code Example based on Motor_ctrl_lib 3.1 and MotorSuite 2.8.1
+ 
 <br>
 
 
-All referenced product or service names and trademarks are the property of their respective owners.
 
-The Bluetooth&reg; word mark and logos are registered trademarks owned by Bluetooth SIG, Inc., and any use of such marks by Infineon is under license.
-
-
----------------------------------------------------------
-
-© Cypress Semiconductor Corporation, 2024. This document is the property of Cypress Semiconductor Corporation, an Infineon Technologies company, and its affiliates ("Cypress").  This document, including any software or firmware included or referenced in this document ("Software"), is owned by Cypress under the intellectual property laws and treaties of the United States and other countries worldwide.  Cypress reserves all rights under such laws and treaties and does not, except as specifically stated in this paragraph, grant any license under its patents, copyrights, trademarks, or other intellectual property rights.  If the Software is not accompanied by a license agreement and you do not otherwise have a written agreement with Cypress governing the use of the Software, then Cypress hereby grants you a personal, non-exclusive, nontransferable license (without the right to sublicense) (1) under its copyright rights in the Software (a) for Software provided in source code form, to modify and reproduce the Software solely for use with Cypress hardware products, only internally within your organization, and (b) to distribute the Software in binary code form externally to end users (either directly or indirectly through resellers and distributors), solely for use on Cypress hardware product units, and (2) under those claims of Cypress's patents that are infringed by the Software (as provided by Cypress, unmodified) to make, use, distribute, and import the Software solely for use with Cypress hardware products.  Any other use, reproduction, modification, translation, or compilation of the Software is prohibited.
-<br>
-TO THE EXTENT PERMITTED BY APPLICABLE LAW, CYPRESS MAKES NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, WITH REGARD TO THIS DOCUMENT OR ANY SOFTWARE OR ACCOMPANYING HARDWARE, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  No computing device can be absolutely secure.  Therefore, despite security measures implemented in Cypress hardware or software products, Cypress shall have no liability arising out of any security breach, such as unauthorized access to or use of a Cypress product. CYPRESS DOES NOT REPRESENT, WARRANT, OR GUARANTEE THAT CYPRESS PRODUCTS, OR SYSTEMS CREATED USING CYPRESS PRODUCTS, WILL BE FREE FROM CORRUPTION, ATTACK, VIRUSES, INTERFERENCE, HACKING, DATA LOSS OR THEFT, OR OTHER SECURITY INTRUSION (collectively, "Security Breach").  Cypress disclaims any liability relating to any Security Breach, and you shall and hereby do release Cypress from any claim, damage, or other liability arising from any Security Breach.  In addition, the products described in these materials may contain design defects or errors known as errata which may cause the product to deviate from published specifications. To the extent permitted by applicable law, Cypress reserves the right to make changes to this document without further notice. Cypress does not assume any liability arising out of the application or use of any product or circuit described in this document. Any information provided in this document, including any sample design information or programming code, is provided only for reference purposes.  It is the responsibility of the user of this document to properly design, program, and test the functionality and safety of any application made of this information and any resulting product.  "High-Risk Device" means any device or system whose failure could cause personal injury, death, or property damage.  Examples of High-Risk Devices are weapons, nuclear installations, surgical implants, and other medical devices.  "Critical Component" means any component of a High-Risk Device whose failure to perform can be reasonably expected to cause, directly or indirectly, the failure of the High-Risk Device, or to affect its safety or effectiveness.  Cypress is not liable, in whole or in part, and you shall and hereby do release Cypress from any claim, damage, or other liability arising from any use of a Cypress product as a Critical Component in a High-Risk Device. You shall indemnify and hold Cypress, including its affiliates, and its directors, officers, employees, agents, distributors, and assigns harmless from and against all claims, costs, damages, and expenses, arising out of any claim, including claims for product liability, personal injury or death, or property damage arising from any use of a Cypress product as a Critical Component in a High-Risk Device. Cypress products are not intended or authorized for use as a Critical Component in any High-Risk Device except to the limited extent that (i) Cypress's published data sheet for the product explicitly states Cypress has qualified the product for use in a specific High-Risk Device, or (ii) Cypress has given you advance written authorization to use the product as a Critical Component in the specific High-Risk Device and you have signed a separate indemnification agreement.
-<br>
-Cypress, the Cypress logo, and combinations thereof, ModusToolbox, PSOC, CAPSENSE, EZ-USB, F-RAM, and TRAVEO are trademarks or registered trademarks of Cypress or a subsidiary of Cypress in the United States or in other countries. For a more complete list of Cypress trademarks, visit www.infineon.com. Other names and brands may be claimed as property of their respective owners.
