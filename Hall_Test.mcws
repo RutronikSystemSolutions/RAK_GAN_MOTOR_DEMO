@@ -1,0 +1,325 @@
+{
+	"version": "2.8.1",
+	"components": [
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "M1_Hall_En_Pin",
+			"variable": [
+				{
+					"symbol": "M1_Hall_En_Pin",
+					"address": 872416159,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 1,
+			"rotateSwitcher": false,
+			"positiveValue": 1,
+			"negativeValue": 0,
+			"topLabel": "Off",
+			"bottomLabel": "On",
+			"componentType": "buttonSwitch",
+			"position": [
+				3,
+				4
+			],
+			"componentIndex": 1,
+			"lockedTo": -1,
+			"size": [
+				7,
+				10
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				6,
+				2
+			],
+			"maxSize": [
+				15,
+				10
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "Hall1_Pin_state",
+			"variable": [
+				{
+					"symbol": "Hall1_Pin_state",
+					"address": 872416066,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				},
+				{
+					"symbol": "Hall3_Pin_state",
+					"address": 872416064,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				},
+				{
+					"symbol": "Hall2_Pin_state",
+					"address": 872416065,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 4,
+			"maxSamples": 200,
+			"collectAndDraw": false,
+			"drawPerDataPoint": 10,
+			"lineColor": "#FF0000",
+			"lineMode": "lines",
+			"yName": "",
+			"yMin": -1,
+			"yMax": 2,
+			"componentType": "scatterChart",
+			"position": [
+				14,
+				18
+			],
+			"componentIndex": 3,
+			"lockedTo": -1,
+			"size": [
+				35,
+				50
+			],
+			"value": [
+				1,
+				0,
+				1
+			],
+			"minSize": [
+				6,
+				8
+			],
+			"maxSize": [
+				50,
+				50
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "Hall1_Pin_state",
+			"variable": [
+				{
+					"symbol": "Hall1_Pin_state",
+					"address": 872416066,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				17,
+				69
+			],
+			"componentIndex": 4,
+			"lockedTo": -1,
+			"size": [
+				5,
+				8
+			],
+			"value": [
+				1
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "Hall2_Pin_state",
+			"variable": [
+				{
+					"symbol": "Hall2_Pin_state",
+					"address": 872416065,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				22,
+				70
+			],
+			"componentIndex": 5,
+			"lockedTo": -1,
+			"size": [
+				5,
+				6
+			],
+			"value": [
+				1
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "Hall3_Pin_state",
+			"variable": [
+				{
+					"symbol": "Hall3_Pin_state",
+					"address": 872416064,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				27,
+				69
+			],
+			"componentIndex": 6,
+			"lockedTo": -1,
+			"size": [
+				5,
+				8
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "qDIR",
+			"variable": [
+				{
+					"symbol": "MotorDIR",
+					"address": 872416961,
+					"size": 1,
+					"type": "_Bool",
+					"baseType": "_Bool",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				6,
+				27
+			],
+			"componentIndex": 7,
+			"lockedTo": -1,
+			"size": [
+				4,
+				6
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "qCLK",
+			"variable": [
+				{
+					"symbol": "count_qclk",
+					"address": 872416956,
+					"size": 4,
+					"type": "uint32_t",
+					"baseType": "long unsigned int",
+					"parent": "<root>"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				6,
+				21
+			],
+			"componentIndex": 8,
+			"lockedTo": -1,
+			"size": [
+				5,
+				6
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		}
+	],
+	"definitions": [],
+	"tabs": [
+		"Workspace1"
+	],
+	"deviceName": "PSC3xxF",
+	"elfPath": "..\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf",
+	"oscilloscopeState": []
+}

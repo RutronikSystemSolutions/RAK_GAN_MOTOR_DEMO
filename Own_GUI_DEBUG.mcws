@@ -1,0 +1,311 @@
+{
+	"version": "2.8.1",
+	"components": [
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "mcu[0].dma_results[2]",
+			"variable": [
+				{
+					"symbol": "mcu[0].dma_results[2]",
+					"address": 872417456,
+					"type": "int32_t",
+					"baseType": "<array>",
+					"offset": 140,
+					"size": 4,
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "mcu[0].dma_results",
+					"note": "array element"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				5,
+				13
+			],
+			"componentIndex": 1,
+			"lockedTo": -1,
+			"size": [
+				5,
+				6
+			],
+			"value": [
+				20
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "params.ctrl.curr.i_cmd_ol",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.curr.i_cmd_ol",
+					"address": 872422072,
+					"offset": 40,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.curr"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0,
+			"upperLimit": 1,
+			"noTicks": 21,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Mouse release",
+			"componentType": "sliderComponent",
+			"position": [
+				16,
+				4
+			],
+			"componentIndex": 2,
+			"lockedTo": 3,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				0.03579999879002571
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"borderSize": 1,
+			"borderColor": "#EEEEEE",
+			"borderRadius": 8,
+			"backgroundColor": "#FFFFFF",
+			"componentType": "containerComponent",
+			"position": [
+				12,
+				4
+			],
+			"componentIndex": 3,
+			"lockedTo": -1,
+			"size": [
+				16,
+				41
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				2
+			],
+			"maxSize": [
+				100,
+				100
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "",
+			"content": "Curr_Mode_Adjustment",
+			"borderSize": 1,
+			"borderColor": "#FFFFFF",
+			"backgroundColor": "#FFFFFF",
+			"componentType": "textComponent",
+			"position": [
+				12,
+				19
+			],
+			"componentIndex": 4,
+			"lockedTo": 3,
+			"size": [
+				5,
+				14
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				50,
+				50
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "curr_ctrl_",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.curr.i_cmd_ol",
+					"address": 872422072,
+					"offset": 40,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.curr"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				22,
+				6
+			],
+			"componentIndex": 5,
+			"lockedTo": 3,
+			"size": [
+				5,
+				6
+			],
+			"value": [
+				0.03579999879002571
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "V/f ramp slope",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.volt.v_to_f_ratio",
+					"address": 872422220,
+					"offset": 12,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.volt"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0.001,
+			"upperLimit": 0.01,
+			"noTicks": 21,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Mouse release",
+			"componentType": "sliderComponent",
+			"position": [
+				34,
+				4
+			],
+			"componentIndex": 6,
+			"lockedTo": -1,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				0.007499999832361937
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		},
+		{
+			"tabName": "Workspace1",
+			"componentLabel": "V/F Ramp voltage offset",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.volt.v_min",
+					"address": 872422216,
+					"offset": 8,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.volt"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0,
+			"upperLimit": 0.2,
+			"noTicks": 21,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Mouse release",
+			"componentType": "sliderComponent",
+			"position": [
+				28,
+				4
+			],
+			"componentIndex": 7,
+			"lockedTo": -1,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				0.15000000596046448
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		}
+	],
+	"definitions": [],
+	"tabs": [
+		"Workspace1"
+	],
+	"deviceName": "PSC3xxF",
+	"elfPath": "..\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.elf"
+}

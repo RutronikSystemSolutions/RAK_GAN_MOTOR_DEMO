@@ -1,0 +1,738 @@
+{
+	"boardType": {
+		"projectId": 1060100,
+		"algorithmType": "Floating-point",
+		"boardType": "psoc-control-c3-rfo",
+		"version": "v2",
+		"numVersions": 2,
+		"isLatestVersion": true,
+		"deviceName": "PSC3xxF",
+		"bsps": [
+			{
+				"name": "KIT_PSC3M5_CC2",
+				"device": "PSC3M5FDS2AFQ1"
+			}
+		],
+		"gateDriverId": 0,
+		"firmwareName": "motor-ctrl-lib",
+		"mosfetId": "",
+		"isHidden": true,
+		"projectName": "GUI_MOTOR_DEMO_3_1",
+		"isUsingCustomFirmware": true,
+		"elfPath": "c:\\Projects\\VS_PSC3_RAK_GAN\\RAK_GAN_MOTOR_DEMO\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.elf",
+		"hexPath": "c:\\Projects\\VS_PSC3_RAK_GAN\\RAK_GAN_MOTOR_DEMO\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.hex"
+	},
+	"config": {
+		"components": [
+			{
+				"id": "mcu",
+				"name": "MCU",
+				"parameters": [
+					{
+						"id": "params.autocal_disable",
+						"value": 0
+					}
+				],
+				"blocks": [
+					{
+						"id": "mcu_system",
+						"name": "System",
+						"parameters": [
+							{
+								"id": "params.sys.boot_time",
+								"value": 0.25
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.samp.fpwm_fs0_ratio",
+								"value": 1
+							},
+							{
+								"id": "params.sys.samp.fs0",
+								"value": 20000
+							},
+							{
+								"id": "params.sys.samp.fs0_fs1_ratio",
+								"value": 5
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.analog.cs_meas_type",
+								"value": "Active_Sensor"
+							},
+							{
+								"id": "params.sys.analog.shunt.current_sense_polarity",
+								"value": "LS_Current_Sense"
+							},
+							{
+								"id": "params.sys.analog.shunt.type",
+								"value": "Three_Shunt"
+							},
+							{
+								"id": "params.sys.analog.shunt.res",
+								"value": 0.009999999776482582
+							},
+							{
+								"id": "params.sys.analog.shunt.current_sensitivity",
+								"value": 0.02199999988079071
+							},
+							{
+								"id": "params.sys.analog.shunt.opamp_gain",
+								"value": 1
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.analog.shunt.hyb_mod.adc_t_min",
+								"value": 4.999999987376214e-7
+							},
+							{
+								"id": "params.sys.analog.shunt.hyb_mod.ki",
+								"value": 0.5
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.rate_lim.w_cmd.elec",
+								"value": 1000.0000915759671
+							},
+							{
+								"id": "params.sys.rate_lim.i_cmd",
+								"value": 54
+							},
+							{
+								"id": "params.sys.rate_lim.w_ol_cmd.elec",
+								"value": 1000.0000915759671
+							},
+							{
+								"id": "params.sys.rate_lim.p_cmd",
+								"value": 180.00000500895632
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.faults.oc_thresh",
+								"value": 119.99999284744263
+							},
+							{
+								"id": "params.sys.faults.vdc_time",
+								"value": 0.30000001192092896
+							},
+							{
+								"id": "params.sys.faults.temp_ps_thresh",
+								"value": 90
+							},
+							{
+								"id": "params.sys.faults.short_method",
+								"value": "Alternate_Short"
+							},
+							{
+								"id": "params.sys.faults.max_clr_tries",
+								"value": 10
+							},
+							{
+								"id": "params.sys.faults.vdc_thresh.min",
+								"value": 16.799999237060547
+							},
+							{
+								"id": "params.sys.faults.vdc_thresh.max",
+								"value": 31.19999885559082
+							},
+							{
+								"id": "params.sys.faults.w_thresh.elec",
+								"value": 12000.001390333011
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.cmd.source",
+								"value": "External"
+							},
+							{
+								"id": "params.sys.cmd.w_max.mech",
+								"value": 4000.0003663038683
+							},
+							{
+								"id": "params.sys.cmd.i_max",
+								"value": 0.8949999809265137
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.fb.hall.th_r_offset.elec",
+								"value": 0
+							},
+							{
+								"id": "params.sys.fb.hall.block_comm_offset_comp",
+								"value": "Enable"
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.fb.encoder.track_loop.cpr",
+								"value": 16384
+							},
+							{
+								"id": "params.sys.fb.encoder.track_loop.tau_ratio",
+								"value": 1.5
+							},
+							{
+								"id": "params.sys.fb.encoder.w_zsd_thresh.elec",
+								"value": 32.00000316721084
+							}
+						],
+						"configurator": 32,
+						"testbench": 8,
+						"isValid": true
+					},
+					{
+						"id": "mcu_observer",
+						"name": "Observer",
+						"parameters": [
+							{
+								"id": "params.obs.w_thresh.elec",
+								"value": 800.0000586897035
+							},
+							{
+								"id": "params.obs.lock_time",
+								"value": 0.5
+							}
+						],
+						"configurator": 2,
+						"testbench": 2,
+						"isValid": true
+					},
+					{
+						"id": "mcu_filter",
+						"name": "Filter",
+						"parameters": [
+							{
+								"id": "params.filt.trq_w0",
+								"value": 1.000000027827535
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.filt.spd_ar_en",
+								"value": "Enable"
+							}
+						],
+						"configurator": 2,
+						"testbench": 0
+					},
+					{
+						"id": "mcu_control",
+						"name": "Control",
+						"parameters": [
+							{
+								"id": "params.ctrl.mode",
+								"value": "Curr_Mode_Open_Loop"
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.speed.bw",
+								"value": 5.000000215028665
+							},
+							{
+								"id": "params.ctrl.speed.ol_cl_tr_coeff",
+								"value": 100
+							},
+							{
+								"id": "params.ctrl.speed.kp",
+								"value": 0.002879793755710125
+							},
+							{
+								"id": "params.ctrl.speed.ki",
+								"value": 0.03141593188047409
+							},
+							{
+								"id": "params.ctrl.speed.ki_multiple",
+								"value": 10
+							},
+							{
+								"id": "params.ctrl.speed.ff_coef",
+								"value": 100
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.curr.bw",
+								"value": 500.0000190743548
+							},
+							{
+								"id": "params.ctrl.curr.ff_coef",
+								"value": 10.000000149011612
+							},
+							{
+								"id": "params.ctrl.curr.i_cmd_thresh",
+								"value": 0.2685000002384186
+							},
+							{
+								"id": "params.ctrl.curr.kp.q",
+								"value": 6.754424571990967
+							},
+							{
+								"id": "params.ctrl.curr.kp.d",
+								"value": 6.754424571990967
+							},
+							{
+								"id": "params.ctrl.curr.ki.q",
+								"value": 4712.38916015625
+							},
+							{
+								"id": "params.ctrl.curr.ki.d",
+								"value": 4712.38916015625
+							},
+							{
+								"id": "params.ctrl.curr.i_cmd_ol",
+								"value": 0.0010000000474974513
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.volt.w_thresh.elec",
+								"value": 200.00001467242586
+							},
+							{
+								"id": "params.ctrl.volt.v_min",
+								"value": 0.15000000596046448
+							},
+							{
+								"id": "params.ctrl.volt.v_to_f_ratio",
+								"value": 0.007499999832361937
+							},
+							{
+								"id": "params.ctrl.volt.mod_method",
+								"value": "Space_Vector_Modulation"
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.volt.five_seg.en",
+								"value": "Disable"
+							},
+							{
+								"id": "params.ctrl.volt.five_seg.active_mi",
+								"value": 9.999999403953552
+							},
+							{
+								"id": "params.ctrl.volt.five_seg.inactive_mi",
+								"value": 4.999999701976776
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.flux_weaken.en",
+								"value": "Enable"
+							},
+							{
+								"id": "params.ctrl.flux_weaken.vdc_coeff",
+								"value": 0.7999999856414146
+							},
+							{
+								"id": "params.ctrl.flux_weaken.bw",
+								"value": 3.000000007591614
+							},
+							{
+								"id": "params.ctrl.flux_weaken.ki",
+								"value": 0.0007909008418209851
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.align.time",
+								"value": 1
+							},
+							{
+								"id": "params.ctrl.align.voltage",
+								"value": 1.3424999713897705
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.six_pulse_inj.i_peak",
+								"value": 3.5
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.high_freq_inj.type",
+								"value": 0
+							},
+							{
+								"id": "params.ctrl.high_freq_inj.w_h",
+								"value": 1500.0000572230645
+							},
+							{
+								"id": "params.ctrl.high_freq_inj.sine.w_sep",
+								"value": 150
+							},
+							{
+								"id": "params.ctrl.high_freq_inj.i_peak",
+								"value": 1.75
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.ctrl.position.bw",
+								"value": 5.000000215028665
+							},
+							{
+								"id": "params.ctrl.position.pole_sep",
+								"value": 1.0010000467300415
+							},
+							{
+								"id": "params.ctrl.position.ff_coef",
+								"value": 100
+							},
+							{
+								"id": "params.ctrl.position.pi_output_limit",
+								"value": 1000.0000915759671
+							},
+							{
+								"id": "params.ctrl.high_freq_inj.w_sep",
+								"value": 150.00000766511582
+							},
+							{
+								"id": "params.ctrl.high_freq_inj.i_qd_r_peak.d",
+								"value": 1.75
+							}
+						],
+						"configurator": 38,
+						"testbench": 32,
+						"isValid": true
+					}
+				],
+				"configurator": 74,
+				"testbench": 42,
+				"isValid": true
+			},
+			{
+				"id": "dc_supply",
+				"name": "DC Supply",
+				"parameters": [
+					{
+						"id": "params.sys.vdc_nom",
+						"value": 24
+					}
+				],
+				"configurator": 1,
+				"testbench": 0,
+				"blocks": [],
+				"isValid": true
+			},
+			{
+				"id": "mosfet",
+				"name": "MOSFET",
+				"parameters": [],
+				"configurator": 0,
+				"testbench": 0,
+				"blocks": []
+			},
+			{
+				"id": "motor",
+				"name": "Motor",
+				"parameters": [
+					{
+						"id": "params.motor.p",
+						"value": 8
+					},
+					{
+						"id": "params.motor.lq",
+						"value": 0.00215000007301569
+					},
+					{
+						"id": "params.motor.ld",
+						"value": 0.00215000007301569
+					},
+					{
+						"id": "params.motor.lam",
+						"value": 0.004999999888241291
+					},
+					{
+						"id": "params.motor.r",
+						"value": 1.5
+					},
+					{
+						"id": "params.motor.t_max",
+						"value": 0.1899999976158142
+					},
+					{
+						"id": "params.motor.i_peak",
+						"value": 5.400000095367432
+					},
+					{
+						"id": "params.motor.i_cont",
+						"value": 1.7899999618530273
+					},
+					{
+						"id": "params.motor.id_max",
+						"value": 0.44749999046325684
+					},
+					{
+						"id": "params.motor.v_nom",
+						"value": 23.99999956924244
+					},
+					{
+						"id": "params.motor.w_nom.elec",
+						"value": 4000.0003663038683
+					},
+					{
+						"id": "params.motor.w_max.elec",
+						"value": 6000.0006951665055
+					}
+				],
+				"blocks": [
+					{
+						"id": "motor_protection",
+						"name": "I2T Protection",
+						"parameters": [
+							{
+								"id": "params.motor.i2t.therm_tau",
+								"value": 2.5
+							}
+						],
+						"configurator": 1,
+						"testbench": 0
+					},
+					{
+						"id": "motor_mtpa",
+						"name": "MTPA",
+						"parameters": [],
+						"configurator": 0,
+						"testbench": 0
+					},
+					{
+						"id": "motor_mtpv",
+						"name": "MTPV",
+						"parameters": [],
+						"configurator": 0,
+						"testbench": 0
+					},
+					{
+						"id": "motor_profiler",
+						"name": "Profiler",
+						"parameters": [
+							{
+								"id": "params.profiler.overwrite",
+								"value": "Disable"
+							},
+							{
+								"id": "params.profiler.cmd_thresh",
+								"value": 4.999999701976776
+							},
+							{
+								"id": "params.profiler.cmd_hyst",
+								"value": 2.499999850988388
+							},
+							{
+								"id": "params.profiler.i_cmd_dc",
+								"value": 0.8949999809265137
+							},
+							{
+								"id": "params.profiler.i_cmd_ac",
+								"value": 0.44749999046325684
+							},
+							{
+								"id": "params.profiler.w_cmd_elec.min",
+								"value": 1600.000117379407
+							},
+							{
+								"id": "params.profiler.w_cmd_elec.max",
+								"value": 3000.0003475832527
+							},
+							{
+								"id": "params.profiler.time_rot_lock",
+								"value": 1
+							},
+							{
+								"id": "params.profiler.time_spd",
+								"value": 1.5
+							}
+						],
+						"configurator": 9,
+						"testbench": 0
+					}
+				],
+				"configurator": 22,
+				"testbench": 0,
+				"isValid": true
+			},
+			{
+				"id": "mechanical",
+				"name": "Mechanical Load",
+				"parameters": [
+					{
+						"id": "params.mech.inertia",
+						"value": 0.000011000000085914508
+					},
+					{
+						"id": "params.mech.viscous",
+						"value": 0.000012000000424450263
+					},
+					{
+						"id": "params.mech.friction",
+						"value": 0.006000000052154064
+					}
+				],
+				"configurator": 3,
+				"testbench": 3,
+				"blocks": [],
+				"isValid": true
+			}
+		]
+	},
+	"oscilloscopeSettings": [
+		{
+			"symbol": "ProbeScope_Mode",
+			"value": 2
+		},
+		{
+			"symbol": "ProbeScope_TrigSlope",
+			"value": 1
+		},
+		{
+			"symbol": "ProbeScope_SamplingClkDiv",
+			"value": 1
+		},
+		{
+			"symbol": "ProbeScope_TrigHoldOff",
+			"value": 0
+		},
+		{
+			"symbol": "ProbeScope_TrigChSel",
+			"value": 1
+		},
+		{
+			"symbol": "ProbeScope_TrigDispPos",
+			"value": 1
+		},
+		{
+			"symbol": "vars[0].i_uvw_fb.u",
+			"value": 1,
+			"type": "Channel"
+		},
+		{
+			"symbol": "vars[0].i_uvw_fb.v",
+			"value": 2,
+			"type": "Channel"
+		},
+		{
+			"symbol": "vars[0].i_uvw_fb.w",
+			"value": 3,
+			"type": "Channel"
+		},
+		{
+			"symbol": "vars[0].th_r_final.elec",
+			"value": 4,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 5,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 6,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 7,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 8,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 9,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 10,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 11,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 12,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 13,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 14,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 15,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 16,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 17,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 18,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 19,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 20,
+			"type": "Channel"
+		}
+	]
+}
