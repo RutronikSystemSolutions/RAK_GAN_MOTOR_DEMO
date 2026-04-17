@@ -34,6 +34,7 @@ This code example demonstrates the sensorless and sensored solutions using the I
 
 RAK-GaN
    -[RAK-GaN - Hardware Documents](https://github.com/RutronikSystemSolutions/RAK_GAN_Hardware_Files)
+
 DB42S03
    -[DB42S03-Datasheet](https://www.nanotec.com/eu/de/produkte/636-db42s03)
 

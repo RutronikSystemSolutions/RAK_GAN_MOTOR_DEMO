@@ -61,6 +61,9 @@ uint8_t Em_Eeprom_Storage[srss_0_eeprom_0_PHYSICAL_SIZE] __attribute__ ((section
 void Motor_Control_POT_Control(void);
 #endif
 
+
+
+
 /*******************************************************************************
 * Function Name: main
 ********************************************************************************
@@ -84,7 +87,10 @@ int main(void)
     result = cybsp_init();                 /* Initialize the device and board peripherals */
     CY_ASSERT(result == CY_RSLT_SUCCESS);  /* Board init failed. Stop program execution   */
 
-    rak_gan_enable_power_input();           /* Enable power input and wait for stabilization */
+    
+    #if defined(RAK_GAN_BOARD)
+    rak_gan_enable_power_input();         /* Enable power input and wait for stabilization */
+    #endif
     // Initialize controller
     HW_IFACE_ConnectFcnPointers();         /* must be called before STATE_MACHINE_Init()  */
     STATE_MACHINE_Init();
