@@ -39,12 +39,6 @@ DB42S03
 
 ## Software setup
 
-SW Libs: (Library Manager)
-   - motor_ctrl_lib 3.1 or later
-   - emeeprom 2.7.0 or later
-
-
-
 ### Create the project
 
 The ModusToolbox&trade; tools package provides the Project Creator as both a GUI tool and a command line tool.
@@ -154,6 +148,11 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
 </details>
 
+## Library Manager update
+SW Libs: 
+   - motor_ctrl_lib 3.1 or later
+   - emeeprom 2.7.0 or later
+click update
 
 ## Operation
 
