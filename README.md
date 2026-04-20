@@ -148,7 +148,7 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
 </details>
 
-## Library Manager update
+### Library Manager update
 SW Libs: 
    - motor_ctrl_lib 3.1 or later
    - emeeprom 2.7.0 or later
@@ -196,7 +196,7 @@ click update
    - The user LED1 (yellow) shows the motor direction.
 
 
-## ModusToolbox&trade; Motor Suite
+## ModusToolbox&trade; Motor Suite 2.8.1 or later
 
 **Launch the GUI**
 
@@ -208,8 +208,8 @@ To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **
 
 **GUI - Getting started**
 
-1. Select the **XMC7200/PSOC&trade; Control C3/TRAVEO&trade; T2G CYT4BF** kit with **RFO** from the dropdown menu. 
-2. Select **New Project**, it will create a new GUI project for the selected device.
+1. Project --> Open --> navigate to your project --> "GUI_MOTOR_DEMO_3_1_DB42S03"
+2. or create a new One based on the Templates
 
 **Figure 3. Getting started**
 
@@ -218,7 +218,10 @@ To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **
 **GUI - Configurator**
 
 1. In the GUI configurator, verify the establishment of J-Link connection in the right bottom corner indicated by the green LED.
-2. Flash the *hex* and *elf* file by selecting the **Flash Firmware** option.
+2. if not done via the IDE --> Flash the *hex* file and open the corresponded *elf* file by selecting the 
+
+**Flash Firmware** option.
+
 3. Select the **Test Bench** icon on the left panel to open the **Test Bench** window.
 
 **Figure 4. GUI - Configurator**
