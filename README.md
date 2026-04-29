@@ -218,7 +218,7 @@ To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **
 **GUI - Configurator**
 
 1. In the GUI configurator, verify the establishment of J-Link connection in the right bottom corner indicated by the green LED.
-2. if not done via the IDE --> Flash the *hex* file and open the corresponded *elf* file by selecting the 
+2. if not done via the IDE --> Flash the *hex* file and open the corresponded *elf* file. 
 
 **Flash Firmware** option.
 

@@ -1689,3 +1689,7 @@
 3601	4116	7981290166620417	C:/Projects/RAK_GAN_RSS_GITHUB/RAK_GAN_MOTOR_DEMO/build/Debug/libraries_shared/syspm-callbacks-psc3/source/mtb_syspm_callbacks_tcpwm.o	b96e1d44b036e73d
 3057	4260	7981290161200944	C:/Projects/RAK_GAN_RSS_GITHUB/RAK_GAN_MOTOR_DEMO/build/Debug/libraries_shared/mtb-pdl-cat1/drivers/source/cy_sysclk_v2.o	cd9c7070d36a4b39
 4260	5883	7981290173216515	build/RAK_GAN_rev0/Debug/mtb-example-ce240614-motor-control-solutions.elf	a3af7df7c83bf1d3
+2126	2680	7987216818417274	C:/Projects/RAK_GAN_RSS_GITHUB/RAK_GAN_MOTOR_DEMO/build/Debug/local/RAK_GAN/rak_gan.o	ea02410e0e52a5ad
+2121	2691	7987216818360052	C:/Projects/RAK_GAN_RSS_GITHUB/RAK_GAN_MOTOR_DEMO/build/Debug/bsps/RAK_GAN_rev0/configuration/motor-ctrl-lib-config/ParamConfig.o	2cdd786d95ab0a2a
+2115	2765	7987216818279124	C:/Projects/RAK_GAN_RSS_GITHUB/RAK_GAN_MOTOR_DEMO/build/Debug/bsps/RAK_GAN_rev0/configuration/hw-Config/MCU.o	df9ded7c6f7e1dd4
+2765	5755	7987216824803663	build/RAK_GAN_rev0/Debug/mtb-example-ce240614-motor-control-solutions.elf	a3af7df7c83bf1d3

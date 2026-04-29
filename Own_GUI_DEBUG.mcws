@@ -1,8 +1,8 @@
 {
-	"version": "2.8.1",
+	"version": "2.9.0",
 	"components": [
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"componentLabel": "mcu[0].dma_results[2]",
 			"variable": [
 				{
@@ -32,8 +32,8 @@
 			"unit": "",
 			"componentType": "numericIndicator",
 			"position": [
-				5,
-				13
+				71,
+				2
 			],
 			"componentIndex": 1,
 			"lockedTo": -1,
@@ -42,7 +42,7 @@
 				6
 			],
 			"value": [
-				20
+				838
 			],
 			"minSize": [
 				4,
@@ -54,7 +54,7 @@
 			]
 		},
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"componentLabel": "params.ctrl.curr.i_cmd_ol",
 			"variable": [
 				{
@@ -72,14 +72,14 @@
 			"maxVariables": 1,
 			"orientation": "horizontal",
 			"lowerLimit": 0,
-			"upperLimit": 1,
+			"upperLimit": 2,
 			"noTicks": 21,
 			"isDisplayPercentage": false,
 			"triggerEvent": "Mouse release",
 			"componentType": "sliderComponent",
 			"position": [
-				16,
-				4
+				23,
+				2
 			],
 			"componentIndex": 2,
 			"lockedTo": 3,
@@ -88,7 +88,7 @@
 				40
 			],
 			"value": [
-				0.03579999879002571
+				1
 			],
 			"minSize": [
 				6,
@@ -100,21 +100,21 @@
 			]
 		},
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"borderSize": 1,
 			"borderColor": "#EEEEEE",
 			"borderRadius": 8,
 			"backgroundColor": "#FFFFFF",
 			"componentType": "containerComponent",
 			"position": [
-				12,
-				4
+				19,
+				1
 			],
 			"componentIndex": 3,
 			"lockedTo": -1,
 			"size": [
-				16,
-				41
+				46,
+				43
 			],
 			"value": [
 				0
@@ -129,16 +129,16 @@
 			]
 		},
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"componentLabel": "",
-			"content": "Curr_Mode_Adjustment",
+			"content": "Current Controller",
 			"borderSize": 1,
 			"borderColor": "#FFFFFF",
 			"backgroundColor": "#FFFFFF",
 			"componentType": "textComponent",
 			"position": [
-				12,
-				19
+				19,
+				2
 			],
 			"componentIndex": 4,
 			"lockedTo": 3,
@@ -159,7 +159,7 @@
 			]
 		},
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"componentLabel": "curr_ctrl_",
 			"variable": [
 				{
@@ -188,8 +188,8 @@
 			"unit": "",
 			"componentType": "numericIndicator",
 			"position": [
-				22,
-				6
+				20,
+				35
 			],
 			"componentIndex": 5,
 			"lockedTo": 3,
@@ -198,7 +198,7 @@
 				6
 			],
 			"value": [
-				0.03579999879002571
+				1
 			],
 			"minSize": [
 				4,
@@ -210,7 +210,7 @@
 			]
 		},
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"componentLabel": "V/f ramp slope",
 			"variable": [
 				{
@@ -234,17 +234,17 @@
 			"triggerEvent": "Mouse release",
 			"componentType": "sliderComponent",
 			"position": [
-				34,
-				4
+				12,
+				2
 			],
 			"componentIndex": 6,
-			"lockedTo": -1,
+			"lockedTo": 9,
 			"size": [
 				6,
 				40
 			],
 			"value": [
-				0.007499999832361937
+				0.001720090047456324
 			],
 			"minSize": [
 				6,
@@ -256,7 +256,7 @@
 			]
 		},
 		{
-			"tabName": "Workspace1",
+			"tabName": "Open Loop",
 			"componentLabel": "V/F Ramp voltage offset",
 			"variable": [
 				{
@@ -280,17 +280,260 @@
 			"triggerEvent": "Mouse release",
 			"componentType": "sliderComponent",
 			"position": [
-				28,
-				4
+				6,
+				2
 			],
 			"componentIndex": 7,
-			"lockedTo": -1,
+			"lockedTo": 9,
 			"size": [
 				6,
 				40
 			],
 			"value": [
-				0.15000000596046448
+				0.17800000309944153
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "Kp- Q axis Current",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.curr.kp.q",
+					"address": 872422036,
+					"offset": 0,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.curr.kp"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0,
+			"upperLimit": 1,
+			"noTicks": 21,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Change",
+			"componentType": "sliderComponent",
+			"position": [
+				31,
+				2
+			],
+			"componentIndex": 8,
+			"lockedTo": 3,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				1
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"borderSize": 1,
+			"borderColor": "#EEEEEE",
+			"borderRadius": 1,
+			"backgroundColor": "#FFFFFF",
+			"componentType": "containerComponent",
+			"position": [
+				2,
+				2
+			],
+			"componentIndex": 9,
+			"lockedTo": -1,
+			"size": [
+				16,
+				41
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				2
+			],
+			"maxSize": [
+				100,
+				100
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "V/f - Voltage Controller",
+			"content": "",
+			"borderSize": 1,
+			"borderColor": "#FFFFFF",
+			"backgroundColor": "#FFFFFF",
+			"componentType": "textComponent",
+			"position": [
+				2,
+				2
+			],
+			"componentIndex": 10,
+			"lockedTo": 9,
+			"size": [
+				4,
+				15
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				50,
+				50
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "Kp- D-axis Current",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.curr.kp.d",
+					"address": 872422040,
+					"offset": 4,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.curr.kp"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0,
+			"upperLimit": 1,
+			"noTicks": 21,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Change",
+			"componentType": "sliderComponent",
+			"position": [
+				37,
+				2
+			],
+			"componentIndex": 11,
+			"lockedTo": 3,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				1
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "Ki- Q axis Current",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.curr.ki.q",
+					"address": 872422044,
+					"offset": 0,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.curr.ki"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0,
+			"upperLimit": 30,
+			"noTicks": 31,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Change",
+			"componentType": "sliderComponent",
+			"position": [
+				44,
+				2
+			],
+			"componentIndex": 12,
+			"lockedTo": 3,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				21
+			],
+			"minSize": [
+				6,
+				4
+			],
+			"maxSize": [
+				6,
+				40
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "Ki- D axis Current",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.curr.ki.d",
+					"address": 872422048,
+					"offset": 4,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.curr.ki"
+				}
+			],
+			"maxVariables": 1,
+			"orientation": "horizontal",
+			"lowerLimit": 0,
+			"upperLimit": 30,
+			"noTicks": 31,
+			"isDisplayPercentage": false,
+			"triggerEvent": "Mouse release",
+			"componentType": "sliderComponent",
+			"position": [
+				51,
+				2
+			],
+			"componentIndex": 13,
+			"lockedTo": 3,
+			"size": [
+				6,
+				40
+			],
+			"value": [
+				21
 			],
 			"minSize": [
 				6,
@@ -304,8 +547,9 @@
 	],
 	"definitions": [],
 	"tabs": [
-		"Workspace1"
+		"Open Loop",
+		"Workspace2"
 	],
 	"deviceName": "PSC3xxF",
-	"elfPath": "..\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.elf"
+	"elfPath": "..\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf"
 }
