@@ -46,13 +46,24 @@ TEMP_SENS_LUT_t   Temp_Sens_LUT   =
     .val = {109.5f, 85.4f, 71.7f, 62.0f, 54.3f, 47.7f, 41.9f, 36.5f, 31.4f, 26.3f, 21.2f, 16.0f, 10.2f, 3.7f, -4.3f, -16.1f} // [degree C]
 };
 
+/*
+ * MUXA (Three_Shunt): Mapping aligned to currently configured channels in Device Configurator
+ * - Ch1  : ADC_SAMP_VBUS
+ * - Ch5  : ADC_PWR_I_IN (IDCLINKAVG)
+ * - Ch8  : ADC_SAMP_VPOT
+ * - Ch10 : ADC_SAMP_IU
+ * - Ch11 : ADC_SAMP_IV
+ * - Ch12 : ADC_SAMP_IW
+ * - Ch16 : ADC_SAMP_TEMP
+ */
+//RAK_GAN specific channel mapping, can be modified as needed when using the same template for other designs with different channel mapping
 static void* const ADC_Result_Regs_MUXA[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
-        {{ADC_RESULT_ADDR(0), ADC_RESULT_ADDR(2), ADC_RESULT_ADDR(8), ADC_RESULT_ADDR(10), ADC_RESULT_ADDR(12)},
-         {ADC_RESULT_ADDR(1), ADC_RESULT_ADDR(4), ADC_RESULT_ADDR(9), ADC_SAMP_UNUSED, ADC_RESULT_ADDR(20)}};
+    {{ADC_RESULT_ADDR(10), ADC_RESULT_ADDR(12), ADC_RESULT_ADDR(8),  ADC_SAMP_UNUSED,    ADC_SAMP_UNUSED}, /* SEQ0: IU, IW, VPOT, -, - */
+     {ADC_RESULT_ADDR(11), ADC_RESULT_ADDR(1),  ADC_RESULT_ADDR(5),  ADC_RESULT_ADDR(16), ADC_SAMP_UNUSED}};/* SEQ1: IV, VBUS, IDCLINKAVG, TEMP, - */
 
 static const uint8_t DMA_Result_Indices_MUXA[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
-        {{ADC_ISAMPA, ADC_ISAMPC, ADC_VU, ADC_VW,     ADC_VPOT},
-         {ADC_ISAMPB, ADC_VBUS,   ADC_VV, ADC_ISAMPD, ADC_TEMP}};
+    {{ADC_ISAMPA, ADC_ISAMPC, ADC_VPOT,   ADC_VU,     ADC_VW},  // SEQ0: IU, IW, VPOT, -, -
+     {ADC_ISAMPB, ADC_VBUS,   ADC_ISAMPD, ADC_TEMP,   ADC_VV}};  // SEQ1: IV, VBUS, IDCLINKAVG, TEMP, -
 
 static void* const ADC_Result_Regs_MUXB[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
         {{ADC_RESULT_ADDR(3), ADC_RESULT_ADDR(4), ADC_RESULT_ADDR(9),   ADC_SAMP_UNUSED,  ADC_RESULT_ADDR(12)},
