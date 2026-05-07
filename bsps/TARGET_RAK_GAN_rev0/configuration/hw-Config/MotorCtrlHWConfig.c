@@ -33,7 +33,7 @@
 
 #include "MotorCtrlHWConfig.h"
 
-/* MUXA : Configuration related to 3 leg shunt current measurement */
+/* MUXA : Configuration related to leg shunt current measurement */
 /* MUXB : Configuration related to single shunt current measurement */
 #define ADC_RESULT_ADDR(channel)    ((void*)CY_HPPASS_SAR_CHAN_RSLT_PTR(channel))
 #define ADC_SAMP_UNUSED             ((void*)&ADC_Result_dummy)
@@ -46,23 +46,13 @@ TEMP_SENS_LUT_t   Temp_Sens_LUT   =
     .val = {109.5f, 85.4f, 71.7f, 62.0f, 54.3f, 47.7f, 41.9f, 36.5f, 31.4f, 26.3f, 21.2f, 16.0f, 10.2f, 3.7f, -4.3f, -16.1f} // [degree C]
 };
 
-/*
- * MUXA (Three_Shunt): Mapping aligned to currently configured channels in Device Configurator
- * - Ch1  : ADC_SAMP_VBUS
- * - Ch5  : ADC_PWR_I_IN (IDCLINKAVG)
- * - Ch8  : ADC_SAMP_VPOT
- * - Ch10 : ADC_SAMP_IU
- * - Ch11 : ADC_SAMP_IV
- * - Ch12 : ADC_SAMP_IW
- * - Ch16 : ADC_SAMP_TEMP
- */
 static void* const ADC_Result_Regs_MUXA[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
-    {{ADC_RESULT_ADDR(10), ADC_RESULT_ADDR(12), ADC_RESULT_ADDR(8),  ADC_SAMP_UNUSED,    ADC_SAMP_UNUSED}, /* SEQ0: IU, IW, VPOT, -, - */
-     {ADC_RESULT_ADDR(11), ADC_RESULT_ADDR(1),  ADC_RESULT_ADDR(5),  ADC_RESULT_ADDR(16), ADC_SAMP_UNUSED}};/* SEQ1: IV, VBUS, IDCLINKAVG, TEMP, - */
+        {{ADC_RESULT_ADDR(0), ADC_RESULT_ADDR(2), ADC_RESULT_ADDR(8), ADC_RESULT_ADDR(10), ADC_RESULT_ADDR(12)},
+         {ADC_RESULT_ADDR(1), ADC_RESULT_ADDR(4), ADC_RESULT_ADDR(9), ADC_SAMP_UNUSED, ADC_RESULT_ADDR(20)}};
 
 static const uint8_t DMA_Result_Indices_MUXA[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
-    {{ADC_ISAMPA, ADC_ISAMPC, ADC_VPOT,   ADC_VU,     ADC_VW},
-     {ADC_ISAMPB, ADC_VBUS,   ADC_ISAMPD, ADC_TEMP,   ADC_VV}};
+        {{ADC_ISAMPA, ADC_ISAMPC, ADC_VU, ADC_VW,     ADC_VPOT},
+         {ADC_ISAMPB, ADC_VBUS,   ADC_VV, ADC_ISAMPD, ADC_TEMP}};
 
 static void* const ADC_Result_Regs_MUXB[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
         {{ADC_RESULT_ADDR(3), ADC_RESULT_ADDR(4), ADC_RESULT_ADDR(9),   ADC_SAMP_UNUSED,  ADC_RESULT_ADDR(12)},
@@ -83,12 +73,12 @@ const cy_stc_dma_descriptor_config_t* DMA_Descriptor_Configs[ADC_SEQ_MAX][ADC_SA
         {{&DMA_ADC_0_Descriptor_0_config, &DMA_ADC_0_Descriptor_1_config, &DMA_ADC_0_Descriptor_2_config, &DMA_ADC_0_Descriptor_3_config, &DMA_ADC_0_Descriptor_4_config},
          {&DMA_ADC_1_Descriptor_0_config, &DMA_ADC_1_Descriptor_1_config, &DMA_ADC_1_Descriptor_2_config, &DMA_ADC_1_Descriptor_3_config, &DMA_ADC_1_Descriptor_4_config}};
 
-void MCU_RoutingConfigMUXA() //three shunt current sense configuration
+void MCU_RoutingConfigMUXA()
 {
     const cy_stc_hppass_sar_grp_t ADC_SEQ0_Config =
     {
-        .dirSampMsk = 0x500U,  /* Direct samplers in SEQ0: Ch8 (VPOT), Ch10 (IU) */
-        .muxSampMsk = 0x1U,    /* MUX sampler in SEQ0: completes with IW (Ch12) */
+        .dirSampMsk = 0x505U,
+        .muxSampMsk = 0x1U,
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_0,
         .sampTime = CY_HPPASS_SAR_SAMP_TIME_0,
@@ -98,8 +88,8 @@ void MCU_RoutingConfigMUXA() //three shunt current sense configuration
     };
     const cy_stc_hppass_sar_grp_t ADC_SEQ1_Config =
     {
-        .dirSampMsk = 0x822U,  /* Direct samplers in SEQ1: Ch1 (VBUS), Ch5 (IDCLINKAVG), Ch11 (IV) */
-        .muxSampMsk = 0x2U,    /* MUX sampler in SEQ1: TEMP (Ch16) */
+        .dirSampMsk = 0x212U,
+        .muxSampMsk = 0x4U,
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_1,
         .sampTime = CY_HPPASS_SAR_SAMP_TIME_0,
@@ -122,7 +112,7 @@ void MCU_RoutingConfigMUXA() //three shunt current sense configuration
     }
 }
 
-void MCU_RoutingConfigMUXB() //single shunt current sense configuration
+void MCU_RoutingConfigMUXB()
 {
     const cy_stc_hppass_sar_grp_t ADC_SEQ0_Config =
     {

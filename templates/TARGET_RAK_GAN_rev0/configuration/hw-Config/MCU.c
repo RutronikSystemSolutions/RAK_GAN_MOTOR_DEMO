@@ -548,7 +548,7 @@ void MCU_RunISR1(void)
 
 #if defined (N_FAULT_HW_PORT)
 
-    #if defined(RAK_GAN_BOARD) // seperate leds for hw and sw faults
+    #if defined(RAK_GAN_BOARD) // 
     bool hw_fault = !Cy_GPIO_Read(N_FAULT_HW_PORT, N_FAULT_HW_NUM);
     hw_fault = hw_fault || rak_gan_is_ocd_fault_active();
     motor[0].sensor_iface_ptr->digital.fault = hw_fault;
