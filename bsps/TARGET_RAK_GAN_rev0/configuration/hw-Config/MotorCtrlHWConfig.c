@@ -77,7 +77,7 @@ void MCU_RoutingConfigMUXA()
 {
     const cy_stc_hppass_sar_grp_t ADC_SEQ0_Config =
     {
-        .dirSampMsk = 0x505U,
+        .dirSampMsk = 0x500U,  /* Direct samplers in SEQ0: Ch8 (VPOT), Ch10 (IU) */
         .muxSampMsk = 0x1U,
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_0,
@@ -88,8 +88,8 @@ void MCU_RoutingConfigMUXA()
     };
     const cy_stc_hppass_sar_grp_t ADC_SEQ1_Config =
     {
-        .dirSampMsk = 0x212U,
-        .muxSampMsk = 0x4U,
+        .dirSampMsk = 0x822U,  /* Direct samplers in SEQ1: Ch1 (VBUS), Ch5 (IDCLINKAVG), Ch11 (IV) */
+        .muxSampMsk = 0x2U,    /* MUX sampler in SEQ1: TEMP (Ch16) */
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_1,
         .sampTime = CY_HPPASS_SAR_SAMP_TIME_0,

@@ -190,8 +190,9 @@ float rak_gan_MCU_TempSensorCalc(void)
 }
 
 /* Prueft den OCD-Pin (Over-Current Detection) mit doppelter Bestaetigung
- * gegen kurze Glitches und liefert den aktuellen Fault-Zustand zurueck
- * (aktiv-Low: 0 = Fehler). */
+ * gegen kurze Glitches und liefert den aktuellen Fault-Zustand zurück
+ * (aktiv-Low: 0 = Fehler).
+ * return true = Fehler aktiv, false = kein Fehler */
 bool rak_gan_is_ocd_fault_active(void)
 {
     /* Ersten Messwert lesen (PWR_OCD ist aktiv-Low: 0 = Ueberstrom). */
