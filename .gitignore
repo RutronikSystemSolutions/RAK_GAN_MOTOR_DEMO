@@ -83,6 +83,7 @@ openocd.tcl
 
 # Log files
 *.log
+.ninja_log
 
 # IAR backup files
 Backup*
