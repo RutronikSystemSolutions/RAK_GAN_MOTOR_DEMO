@@ -14,8 +14,9 @@ This code example demonstrates the sensorless and sensored solutions using the I
 ## Requirements
 
 - ModusToolbox&trade;[Download](https://www.infineon.com/modustoolbox)  (ModusToolbox&trade; Setup)
-- open ModusToolbox&trade; Setup and install 
-   - Motor Suite GUI : 2.8.1 or later
+- open ModusToolbox&trade; Setup and install
+   - Motor_ctrl_lib : 3.2 or later
+   - Motor Suite GUI : 2.9.0 or later
    - ModusToolbox&trade; Tools Package v3.7 or later
 - [RAK-GaN_rev0](https://www.rutronik24.de/produkt/rutronik/rak/32343794.html)
 - [JLINK-SEGGER](https://www.segger.com/downloads/jlink/)
