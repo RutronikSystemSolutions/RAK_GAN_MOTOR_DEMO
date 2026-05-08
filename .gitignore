@@ -85,6 +85,7 @@ openocd.tcl
 *.log
 .ninja_log
 
+
 # IAR backup files
 Backup*
 
@@ -154,3 +155,4 @@ Thumbs.db:encryptable
 ehthumbs.db
 ehthumbs_vista.db
 [Dd]esktop.ini
+
