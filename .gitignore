@@ -17,6 +17,7 @@ libs/
 GeneratedSource/
 *.lock
 .mtbqueryapi
+.mtb-prefs.json
 
 # ModusToolbox BSP files. Any custom BSP file is shipped within the 'templates' folder
 #bsps/    
