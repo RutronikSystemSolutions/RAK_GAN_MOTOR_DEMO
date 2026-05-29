@@ -51,14 +51,14 @@ TEMP_SENS_LUT_t   Temp_Sens_LUT   =
  * - Ch1  : ADC_SAMP_VBUS
  * - Ch5  : ADC_PWR_I_IN (IDCLINKAVG)
  * - Ch8  : ADC_SAMP_VPOT
+ * - Ch9  : ADC_SAMP_IW
  * - Ch10 : ADC_SAMP_IU
  * - Ch11 : ADC_SAMP_IV
- * - Ch12 : ADC_SAMP_IW
  * - Ch16 : ADC_SAMP_TEMP
  */
 //RAK_GAN specific channel mapping, can be modified as needed when using the same template for other designs with different channel mapping
 static void* const ADC_Result_Regs_MUXA[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
-    {{ADC_RESULT_ADDR(10), ADC_RESULT_ADDR(12), ADC_RESULT_ADDR(8),  ADC_SAMP_UNUSED,    ADC_SAMP_UNUSED}, /* SEQ0: IU, IW, VPOT, -, - */
+    {{ADC_RESULT_ADDR(10), ADC_RESULT_ADDR(9), ADC_RESULT_ADDR(8),  ADC_SAMP_UNUSED,    ADC_SAMP_UNUSED}, /* SEQ0: IU, IW, VPOT, -, - */
      {ADC_RESULT_ADDR(11), ADC_RESULT_ADDR(1),  ADC_RESULT_ADDR(5),  ADC_RESULT_ADDR(16), ADC_SAMP_UNUSED}};/* SEQ1: IV, VBUS, IDCLINKAVG, TEMP, - */
 
 static const uint8_t DMA_Result_Indices_MUXA[ADC_SEQ_MAX][ADC_SAMP_PER_SEQ_MAX] = \
@@ -88,8 +88,8 @@ void MCU_RoutingConfigMUXA()
 {
     const cy_stc_hppass_sar_grp_t ADC_SEQ0_Config =
     {
-        .dirSampMsk = 0x500U,  /* Direct samplers in SEQ0: Ch8 (VPOT), Ch10 (IU) */
-        .muxSampMsk = 0x1U,
+        .dirSampMsk = ADC_CH_IU_BIT | ADC_CH_IW_BIT | ADC_CH_VPOT_BIT,  /* Direct: Ch10 (IU), Ch9 (IW), Ch8 (VPOT) */
+        .muxSampMsk = 0x0U,                                             /* No MUX samplers in SEQ0 */
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_0,
         .sampTime = CY_HPPASS_SAR_SAMP_TIME_0,
@@ -99,8 +99,8 @@ void MCU_RoutingConfigMUXA()
     };
     const cy_stc_hppass_sar_grp_t ADC_SEQ1_Config =
     {
-        .dirSampMsk = 0x822U,  /* Direct samplers in SEQ1: Ch1 (VBUS), Ch5 (IDCLINKAVG), Ch11 (IV) */
-        .muxSampMsk = 0x2U,    /* MUX sampler in SEQ1: TEMP (Ch16) */
+        .dirSampMsk = ADC_CH_IV_BIT | ADC_CH_VBUS_BIT | ADC_CH_IDCLINKAVG_BIT,  /* Direct: Ch11 (IV), Ch1 (VBUS), Ch5 (IDCLINKAVG) */
+        .muxSampMsk = ADC_CH_TEMP_MUX_BIT,                                        /* MUX: Ch16 (TEMP) */
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_1,
         .sampTime = CY_HPPASS_SAR_SAMP_TIME_0,

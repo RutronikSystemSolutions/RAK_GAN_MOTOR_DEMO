@@ -43,8 +43,22 @@
 #define TEMP_SENSOR_1D_MV  (10.0f)  //mV
 #define TEMP_SENSOR_0D_MV  (-250.0f) //mV
 #define TEMP_SENSOR_SCALE  ((TEMP_SENSOR_1D_MV * (1 << 12U))/(ADC_VREF_GAIN * CY_CFG_PWR_VDDA_MV))
-#define TEMP_SENSOR_OFFSET ((TEMP_SENSOR_SCALE/TEMP_SENSOR_1D_MV)*TEMP_SENSOR_0D_MV) 
+#define TEMP_SENSOR_OFFSET ((TEMP_SENSOR_SCALE/TEMP_SENSOR_1D_MV)*TEMP_SENSOR_0D_MV)
 #endif
+
+/* ADC channel bit position defines for clearer mask construction (dirSampMsk, muxSampMsk) */
+/* These link to auto-generated cycfg_peripherals.h defines, so they update when Device Configurator changes channel assignments */
+/* ADC Direct sampler masks */
+#define ADC_CH_VBUS_BIT             (1U << ADC_SAMP_VBUS_CHAN_IDX)           /* Direct: Ch1 (VBUS) */
+#define ADC_CH_IDCLINKAVG_BIT       (1U << ADC_SAMP_IDCLINKAVG_CHAN_IDX)     /* Direct: Ch5 (IDCLINKAVG) */
+#define ADC_CH_VPOT_BIT             (1U << ADC_SAMP_VPOT_CHAN_IDX)           /* Direct: Ch8 (VPOT) */
+#define ADC_CH_IW_BIT               (1U << ADC_SAMP_IW_CHAN_IDX)             /* Direct: Ch9 (IW) */
+#define ADC_CH_IU_BIT               (1U << ADC_SAMP_IU_CHAN_IDX)             /* Direct: Ch10 (IU) */
+#define ADC_CH_IV_BIT               (1U << ADC_SAMP_IV_CHAN_IDX)             /* Direct: Ch11 (IV) */
+
+/* ADC MUX sampler masks */
+#define ADC_CH_TEMP_MUX_BIT         (0x2U)                                   /* MUX: Ch16 (TEMP) */
+
 extern  TEMP_SENS_LUT_t     Temp_Sens_LUT;
 
 
