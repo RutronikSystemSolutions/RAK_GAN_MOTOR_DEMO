@@ -6,8 +6,8 @@ This document describes the complete integration of the **RAK_GaN custom board**
 
 **Key Facts:**
 - **Base MCU:** PSC3M5FDS2AFQ1 (PSoC Control C3M5 with Cortex-M33)
-- **BSP Target:** TARGET_RAK_GAN_rev0 (custom BSP)
-- **ModusToolbox Version:** 3.7
+- **BSP Target:** TARGET_RAK_GAN_rev1 (custom BSP)
+- **ModusToolbox Version:** 3.8
 - **Motor Control Library:** motor-ctrl-lib v3.2.0
 - **Board Features:** 3-shunt current measurement, NTC temperature sensor, RGB LED control, OCD (Over-Current Detection)
 - **Control Methods Supported:** Sensorless PMSM FOC, Hall-sensored FOC, Encoder-sensored FOC, TBC (Trapezoidal Block Commutation)
@@ -40,9 +40,9 @@ The project follows ModusToolbox v2.0 flow conventions with custom board support
 ```
 RAK_GAN_MOTOR_DEMO/
 ├── Makefile                              # Top-level build configuration
-│   └── TARGET=RAK_GAN_rev0              # Selects custom BSP
+│   └── TARGET=RAK_GAN_rev1              # Selects custom BSP
 │
-├── bsps/TARGET_RAK_GAN_rev0/            # Custom Board Support Package
+├── bsps/TARGET_RAK_GAN_rev1/            # Custom Board Support Package
 │   ├── bsp.mk                            # BSP build configuration
 │   ├── props.json                        # BSP metadata & dependencies
 │   ├── cybsp.c/h                         # Hardware initialization
@@ -70,7 +70,7 @@ RAK_GAN_MOTOR_DEMO/
 │   └── app.mk                           # App-specific makefile
 │
 └── build/                               # Build output
-    └── RAK_GAN_rev0/Release/
+    └── RAK_GAN_rev1/Release/
         ├── *.elf                        # Executable
         ├── *.bin                        # Binary for programming
         └── *.hex                        # Hex format
@@ -85,12 +85,12 @@ RAK_GAN_MOTOR_DEMO/
 **File: `Makefile` (line 43)**
 
 ```makefile
-TARGET=RAK_GAN_rev0
+TARGET=RAK_GAN_rev1
 ```
 
 This single variable:
-- Selects BSP from `bsps/TARGET_RAK_GAN_rev0/`
-- Triggers device-specific build rules from `bsps/TARGET_RAK_GAN_rev0/bsp.mk`
+- Selects BSP from `bsps/TARGET_RAK_GAN_rev1/`
+- Triggers device-specific build rules from `bsps/TARGET_RAK_GAN_rev1/bsp.mk`
 - Determines which linker script is used
 - Selects correct debugger interface (JLink)
 
@@ -98,7 +98,7 @@ This single variable:
 
 ```makefile
 MTB_TYPE=COMBINED              # Single application (vs. multi-app)
-TARGET=RAK_GAN_rev0            # Custom board target
+TARGET=RAK_GAN_rev1            # Custom board target
 APPNAME=mtb-example-...        # Output executable name
 TOOLCHAIN=GCC_ARM              # Compiler (GCC, ARM, IAR)
 CONFIG=Release                 # Release or Debug build
@@ -108,7 +108,7 @@ CTRL=CTRL_METHOD_RFO           # Motor control method (RFO = Field-Oriented)
 DEFINES+=MOTOR_CTRL_NO_OF_MOTOR=0x01              # 1 motor
 DEFINES+=MOTOR_CTRL_NO_OF_SCOPE_CHANNELS=0x4     # 4 debug channels
 DEFINES+=$(CTRL)                                  # Make CTRL available
-DEFINES+=$(TARGET)                                # Make RAK_GAN_rev0 available
+DEFINES+=$(TARGET)                                # Make RAK_GAN_rev1 available
 
 # Shared library paths
 CY_GETLIBS_SHARED_PATH=../              # mtb_shared one level up
@@ -135,7 +135,7 @@ The `../mtb_shared/` directory contains Infineon libraries shared across project
 
 ### BSP Directory Structure
 
-The `TARGET_RAK_GAN_rev0` directory is the Board Support Package. All board-specific files reside here.
+The `TARGET_RAK_GAN_rev1` directory is the Board Support Package. All board-specific files reside here.
 
 **Key files:**
 
@@ -152,7 +152,7 @@ The `TARGET_RAK_GAN_rev0` directory is the Board Support Package. All board-spec
 ### Device Selection (bsp.mk)
 
 ```makefile
-# Lines 71-78 of bsps/TARGET_RAK_GAN_rev0/bsp.mk
+# Lines 71-78 of bsps/TARGET_RAK_GAN_rev1/bsp.mk
 MPN_LIST:=PSC3M5FDS2AFQ1
 DEVICE:=PSC3M5FDS2AFQ1
 DEVICE_COMPONENTS:=CAT1 CAT1B PSC3
@@ -216,7 +216,7 @@ After linking, generates .bin file for programming.
 
 ### Clock Configuration
 
-From `bsps/TARGET_RAK_GAN_rev0/README.md` (lines 45-54):
+From `bsps/TARGET_RAK_GAN_rev1/README.md` (lines 45-54):
 
 | Clock | Source | Frequency | Purpose |
 |-------|--------|-----------|---------|
@@ -227,7 +227,7 @@ From `bsps/TARGET_RAK_GAN_rev0/README.md` (lines 45-54):
 | CLK_HF3 | CLK_PATH2 | 240 MHz | ADC/HPPASS |
 | CLK_HF4 | CLK_PATH0 | 100 MHz | Peripherals |
 
-**Generated in:** `bsps/TARGET_RAK_GAN_rev0/config/GeneratedSource/cycfg_clocks.h`
+**Generated in:** `bsps/TARGET_RAK_GAN_rev1/config/GeneratedSource/cycfg_clocks.h`
 
 ### Power Configuration
 
@@ -423,7 +423,7 @@ make getlibs
 
 # This reads:
 # 1. Makefile (TARGET, dependencies)
-# 2. bsps/TARGET_RAK_GAN_rev0/props.json (exact versions)
+# 2. bsps/TARGET_RAK_GAN_rev1/props.json (exact versions)
 # 3. Downloads all listed dependencies
 # 4. Generates libs/mtb.mk with SEARCH_* paths
 ```
@@ -438,6 +438,85 @@ make getlibs
 
 - `rak_gan.h` - Board API and calibration constants
 - `rak_gan.c` - Board implementation
+
+### ADC Multiplexer Routing Configuration
+
+The motor control library supports multiple ADC sampling schemes through routing configuration functions. Two primary configurations are available:
+
+#### MCU_RoutingConfigMUXA() - Three-Shunt Current Measurement
+
+**Purpose:** Configures the ADC hardware for three-shunt current sampling (phase U, V, W independent current measurements).
+
+**Configuration Details (rev0 & rev1):**
+- **SEQ0 (High Priority - Phase Currents):**
+  - `.dirSampMsk = 0x500U` → Direct samplers on Ch10 (IU) and Ch8 (VPOT)
+  - `.muxSampMsk = 0x1U` → One MUX sampler for Ch12 (IW)
+  
+- **SEQ1 (Low Priority - Bus Voltages & Temp):**
+  - `.dirSampMsk = 0x822U` → Direct samplers on Ch1 (VBUS), Ch5 (IDCLINKAVG), Ch11 (IV)
+  - `.muxSampMsk = 0x2U` → One MUX sampler for Ch16 (TEMP)
+
+**Result mapping:**
+```
+SEQ0 → dma_results[]: IU, IW, VPOT (phase currents + speed reference)
+SEQ1 → dma_results[]: IV, VBUS, IDCLINKAVG, TEMP (bus voltage, avg current, temperature)
+```
+
+#### MCU_RoutingConfigMUXB() - Single-Shunt Current Measurement
+
+**Purpose:** Configures the ADC hardware for single-shunt current sampling. This measurement technique uses only one current shunt and multiple ADC samples per PWM cycle to reconstruct phase currents.
+
+**Configuration Details:**
+- **SEQ0:**
+  - `.dirSampMsk = 0x218U` → Direct samplers for selected channels
+  - `.muxSampMsk = 0x1U` → One MUX sampler
+  
+- **SEQ1:**
+  - `.dirSampMsk = 0x508U` → Direct samplers for selected channels
+  - `.muxSampMsk = 0x4U` → One MUX sampler for TEMP (Ch16)
+
+#### Field Descriptions: dirSampMsk and muxSampMask
+
+**`.dirSampMsk` (Direct Sampler Mask):**
+- **Type:** Bitmask (16-bit value)
+- **Purpose:** Specifies which ADC channels use direct sampling (non-multiplexed path)
+- **Mechanism:** Each bit position corresponds to an ADC channel; bit=1 enables direct sampling for that channel
+- **Example:** `0x500U = 0b0101_0000_0000` → Channels 8 and 10 use direct sampling
+- **Timing:** Direct samplers all sample simultaneously, providing deterministic, low-latency measurements
+- **RAK_GaN MUXA:** Ch8 (VPOT) and Ch10 (IU) in SEQ0; Ch1 (VBUS), Ch5 (IDCLINKAVG), Ch11 (IV) in SEQ1
+- **Impact:** Direct path is preferred for time-critical signals (phase currents must be simultaneous for FOC accuracy)
+
+**`.muxSampMsk` (Multiplexer Sampler Mask):**
+- **Type:** Bitmask specifying MUX sampler groups (typically 0x1, 0x2, 0x4, etc.)
+- **Purpose:** Defines which ADC multiplexer inputs are active and when they sample relative to the sequence trigger
+- **Mechanism:** Bits indicate which sampler group slot in the MUX path is used; each bit can represent a different MUX input or timing phase
+- **Example:** `0x1U` means MUX group 0 is active; `0x2U` means MUX group 1 is active
+- **Timing:** MUX samplers share the same ADC engine but have separate timing/trigger control
+- **RAK_GaN MUXA:** `0x1U` in SEQ0 for Ch12 (IW); `0x2U` in SEQ1 for Ch16 (TEMP)
+- **Sequence Order:** Determines sampling sequence within each ADC group (SEQ0 vs SEQ1)
+
+#### Selection Logic in MCU_InitAnalogRouting()
+
+```c
+// Selects routing configuration based on motor control current measurement type
+MCU_RoutingConfigMUXWrap = 
+    (motor[0].params_ptr->sys.analog.shunt.type == Single_Shunt) 
+        ? MCU_RoutingConfigMUXB 
+        : MCU_RoutingConfigMUXA;
+MCU_RoutingConfigMUXWrap();  // Execute selected configuration
+```
+
+**RAK_GAN (rev0 & rev1):** Uses **Three-Shunt** → `MCU_RoutingConfigMUXA()` is called at startup
+
+#### Changes from rev0 to rev1
+
+**Summary:** The ADC routing configuration is **identical** between rev0 and rev1. Both versions use MUXA (Three-Shunt) with the same channel assignments and timing.
+
+**Files unchanged:**
+- `bsps/TARGET_RAK_GAN_rev0/configuration/hw-Config/MotorCtrlHWConfig.c` ≡ `bsps/TARGET_RAK_GAN_rev1/configuration/hw-Config/MotorCtrlHWConfig.c`
+- `bsps/TARGET_RAK_GAN_rev0/configuration/hw-Config/MCU.c` ≡ `bsps/TARGET_RAK_GAN_rev1/configuration/hw-Config/MCU.c`
+
+**No hardware changes needed:** Moving from rev0 to rev1 does not require reconfiguring the ADC multiplexer routing.
 
 ### Board API Functions
 
@@ -517,12 +596,12 @@ make build
 ```
 
 Steps:
-1. Parse `Makefile` → discovers TARGET=RAK_GAN_rev0
-2. Load `bsps/TARGET_RAK_GAN_rev0/bsp.mk`
+1. Parse `Makefile` → discovers TARGET=RAK_GAN_rev1
+2. Load `bsps/TARGET_RAK_GAN_rev1/bsp.mk`
 3. Load all library makefile rules from `libs/mtb.mk`
 4. Auto-discover source files:
    - `RAK_GAN/*.c`
-   - `bsps/TARGET_RAK_GAN_rev0/*.c`
+   - `bsps/TARGET_RAK_GAN_rev1/*.c`
    - `config/GeneratedSource/cycfg*.c`
    - Motor library files matching CTRL_METHOD_RFO
 5. Compile with GCC_ARM
@@ -544,7 +623,7 @@ make motor-suite-gui        # Launch Motor Suite
 ### Build Directory Structure
 
 ```
-build/RAK_GAN_rev0/Release/
+build/RAK_GAN_rev1/Release/
 ├── mtb-example-*.elf       # Executable (debug symbols)
 ├── mtb-example-*.bin       # Binary for programming
 ├── mtb-example-*.hex       # Hex format
@@ -598,7 +677,7 @@ Motor control timing critical; priority inversion causes jitter.
 
 ```bash
 # 1. Backup current configuration
-cp bsps/TARGET_RAK_GAN_rev0/config/design.modus design.modus.backup
+cp bsps/TARGET_RAK_GAN_rev1/config/design.modus design.modus.backup
 git commit -m "Backup before Device Configurator"
 
 # 2. Make changes in Device Configurator
@@ -607,7 +686,7 @@ make device-configurator
 # Click "Generate"
 
 # 3. Review changes
-git diff bsps/TARGET_RAK_GAN_rev0/config/GeneratedSource/
+git diff bsps/TARGET_RAK_GAN_rev1/config/GeneratedSource/
 
 # 4. Rebuild
 make clean build
@@ -617,7 +696,7 @@ make program
 # Test motor starts, runs, measurements correct
 
 # 6. If tests fail, revert
-cp design.modus.backup bsps/TARGET_RAK_GAN_rev0/config/design.modus
+cp design.modus.backup bsps/TARGET_RAK_GAN_rev1/config/design.modus
 make device-configurator  # Regenerate from backup
 make clean build
 ```
@@ -744,13 +823,13 @@ make debug
 ### Expected Output
 
 ```
-Building: RAK_GAN_rev0/Release
+Building: RAK_GAN_rev1/Release
   Compiling: source/main.c
-  Compiling: bsps/TARGET_RAK_GAN_rev0/cybsp.c
-  Compiling: bsps/TARGET_RAK_GAN_rev0/config/GeneratedSource/cycfg*.c
+  Compiling: bsps/TARGET_RAK_GAN_rev1/cybsp.c
+  Compiling: bsps/TARGET_RAK_GAN_rev1/config/GeneratedSource/cycfg*.c
   Compiling: RAK_GAN/rak_gan.c
-  Linking:  build/RAK_GAN_rev0/Release/mtb-example-ce240614-motor-control-solutions.elf
-  Building binary: build/RAK_GAN_rev0/Release/mtb-example-ce240614-motor-control-solutions.bin
+  Linking:  build/RAK_GAN_rev1/Release/mtb-example-ce240614-motor-control-solutions.elf
+  Building binary: build/RAK_GAN_rev1/Release/mtb-example-ce240614-motor-control-solutions.bin
 ```
 
 ---
@@ -819,10 +898,10 @@ Use when modifying board or creating new board variant:
 
 ### Build Fails
 
-**Error: "Cannot find TARGET_RAK_GAN_rev0"**
+**Error: "Cannot find TARGET_RAK_GAN_rev1"**
 ```bash
 # Verify BSP exists
-ls bsps/TARGET_RAK_GAN_rev0/
+ls bsps/TARGET_RAK_GAN_rev1/
 
 # Check Makefile
 grep "^TARGET=" Makefile
@@ -893,7 +972,7 @@ lsusb | grep SEGGER
     │            │          │           │
     ↓            ↓          ↓           ↓
 ┌─────────────────────────────────────────┐
-│   bsps/TARGET_RAK_GAN_rev0/             │
+│   bsps/TARGET_RAK_GAN_rev1/             │
 │   ├─ cybsp.c/h (BSP init)              │
 │   ├─ config/GeneratedSource/cycfg_*    │
 │   ├─ system_psc3.c (MCU init)          │
@@ -942,5 +1021,5 @@ lsusb | grep SEGGER
 ---
 
 **Document Last Updated:** 2026-05-29
-**Integration Version:** 1.0
-**RAK_GaN BSP Version:** TARGET_RAK_GAN_rev0
+**Integration Version:** 1.1 (Updated for rev1)
+**RAK_GaN BSP Version:** TARGET_RAK_GAN_rev1
