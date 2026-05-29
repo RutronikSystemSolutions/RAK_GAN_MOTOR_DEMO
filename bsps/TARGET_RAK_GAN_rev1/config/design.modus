@@ -6,13 +6,11 @@
                 <Block location="ioss[0].port[0].pin[0]">
                     <Aliases>
                         <Alias value="CYBSP_WCO_OUT"/>
-                        <Alias value="CYBSP_MIKROBUS_INT"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[0].pin[1]">
                     <Aliases>
                         <Alias value="CYBSP_WCO_IN"/>
-                        <Alias value="CYBSP_MIKROBUS_PWM"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[2].pin[0]">
@@ -35,6 +33,16 @@
                         <Alias value="CYBSP_UART_TX"/>
                     </Aliases>
                 </Block>
+                <Block location="ioss[0].port[3].pin[0]">
+                    <Aliases>
+                        <Alias value="HALL_0"/>
+                    </Aliases>
+                </Block>
+                <Block location="ioss[0].port[4].pin[1]">
+                    <Aliases>
+                        <Alias value="WOC_EN"/>
+                    </Aliases>
+                </Block>
                 <Block location="ioss[0].port[4].pin[4]">
                     <Aliases>
                         <Alias value="PWMDCH"/>
@@ -47,12 +55,22 @@
                 </Block>
                 <Block location="ioss[0].port[5].pin[0]">
                     <Aliases>
-                        <Alias value="CYBSP_I2C_SDA"/>
+                        <Alias value="ISO_SDA"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[5].pin[1]">
                     <Aliases>
-                        <Alias value="CYBSP_I2C_SCL"/>
+                        <Alias value="ISO_SCL"/>
+                    </Aliases>
+                </Block>
+                <Block location="ioss[0].port[6].pin[0]">
+                    <Aliases>
+                        <Alias value="ARD_IO3"/>
+                    </Aliases>
+                </Block>
+                <Block location="ioss[0].port[6].pin[1]">
+                    <Aliases>
+                        <Alias value="ARD_IO4"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[6].pin[2]">
@@ -67,12 +85,12 @@
                 </Block>
                 <Block location="ioss[0].port[7].pin[0]">
                     <Aliases>
-                        <Alias value="ARD_IO3"/>
+                        <Alias value="CYBSP_I2C_SDA"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[7].pin[1]">
                     <Aliases>
-                        <Alias value="ARD_IO4"/>
+                        <Alias value="CYBSP_I2C_SCL"/>
                     </Aliases>
                 </Block>
                 <Block location="ioss[0].port[8].pin[1]">
@@ -90,9 +108,29 @@
                         <Alias value="CYBSP_SPI_CLK"/>
                     </Aliases>
                 </Block>
+                <Block location="ioss[0].port[8].pin[4]">
+                    <Aliases>
+                        <Alias value="HALL_1"/>
+                    </Aliases>
+                </Block>
+                <Block location="ioss[0].port[8].pin[5]">
+                    <Aliases>
+                        <Alias value="HALL_2"/>
+                    </Aliases>
+                </Block>
                 <Block location="ioss[0].port[9].pin[5]">
                     <Aliases>
                         <Alias value="ARD_IO7"/>
+                    </Aliases>
+                </Block>
+                <Block location="pass[0].sar[0].ch[0]">
+                    <Aliases>
+                        <Alias value="ADC_DC_VOUT"/>
+                    </Aliases>
+                </Block>
+                <Block location="pass[0].sar[0].ch[2]">
+                    <Aliases>
+                        <Alias value="ARD_A0"/>
                     </Aliases>
                 </Block>
                 <Block location="pass[0].sar[0].ch[3]">
@@ -100,12 +138,32 @@
                         <Alias value="ADC_DC_I_OUT"/>
                     </Aliases>
                 </Block>
+                <Block location="pass[0].sar[0].ch[4]">
+                    <Aliases>
+                        <Alias value="ARD_A1"/>
+                    </Aliases>
+                </Block>
                 <Block location="pass[0].sar[0].ch[6]">
+                    <Aliases>
+                        <Alias value="ADC_SAMP_TEMP_DC"/>
+                    </Aliases>
+                </Block>
+                <Block location="pass[0].sar[0].ch[7]">
+                    <Aliases>
+                        <Alias value="AN_A7_P22"/>
+                    </Aliases>
+                </Block>
+                <Block location="pass[0].sar[0].ch[12]">
+                    <Aliases>
+                        <Alias value="AN_B4_P23"/>
+                    </Aliases>
+                </Block>
+                <Block location="pass[0].sar[0].ch[20]">
                     <Aliases>
                         <Alias value="ADC_DC_TEMP_P"/>
                     </Aliases>
                 </Block>
-                <Block location="pass[0].sar[0].ch[7]">
+                <Block location="pass[0].sar[0].ch[24]">
                     <Aliases>
                         <Alias value="ADC_DC_TEMP_N"/>
                     </Aliases>
@@ -588,9 +646,7 @@
                 <Personality template="pin" version="3.0" instance="pZEb8vztH8Y">
                     <Block location="ioss[0].port[7].pin[5]" locked="true">
                         <Aliases>
-                            <Alias value="CYBSP_USER_LED1"/>
-                            <Alias value="CYBSP_USER_LED_RED"/>
-                            <Alias value="FAULT_LED_ALL"/>
+                            <Alias value="ENC_A"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -610,9 +666,7 @@
                 <Personality template="pin" version="3.0" instance="Z05K2sXsFWY">
                     <Block location="ioss[0].port[7].pin[6]" locked="true">
                         <Aliases>
-                            <Alias value="CYBSP_USER_LED"/>
-                            <Alias value="DIR_LED"/>
-                            <Alias value="CYBSP_USER_LED_GREEN"/>
+                            <Alias value="ENC_B"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -632,8 +686,7 @@
                 <Personality template="pin" version="3.0" instance="qr-KOsaUs9U">
                     <Block location="ioss[0].port[7].pin[7]" locked="true">
                         <Aliases>
-                            <Alias value="CYBSP_USER_LED2"/>
-                            <Alias value="CYBSP_USER_LED_BLUE"/>
+                            <Alias value="ENC_Z"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -714,8 +767,8 @@
                     <Block location="ioss[0].port[9].pin[2]" locked="true">
                         <Aliases>
                             <Alias value="ARD_IO5"/>
-                            <Alias value="HALL_0"/>
-                            <Alias value="ENC_A"/>
+                            <Alias value="CYBSP_USER_LED2"/>
+                            <Alias value="CYBSP_USER_LED_BLUE"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -736,8 +789,9 @@
                     <Block location="ioss[0].port[9].pin[3]" locked="true">
                         <Aliases>
                             <Alias value="ARD_IO6"/>
-                            <Alias value="HALL_1"/>
-                            <Alias value="ENC_B"/>
+                            <Alias value="CYBSP_USER_LED"/>
+                            <Alias value="DIR_LED"/>
+                            <Alias value="CYBSP_USER_LED_GREEN"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -758,8 +812,9 @@
                     <Block location="ioss[0].port[9].pin[4]" locked="true">
                         <Aliases>
                             <Alias value="ARD_IO2"/>
-                            <Alias value="HALL_2"/>
-                            <Alias value="ENC_Z"/>
+                            <Alias value="CYBSP_USER_LED1"/>
+                            <Alias value="CYBSP_USER_LED_RED"/>
+                            <Alias value="FAULT_LED_ALL"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -878,6 +933,19 @@
                         <Param id="sign" value="false"/>
                     </Parameters>
                 </Personality>
+                <Personality template="hppass_sar_chan" version="1.0" instance="JC8aerEKnLg">
+                    <Block location="pass[0].sar[0].ch[9]" locked="true">
+                        <Aliases>
+                            <Alias value="ADC_SAMP_IW"/>
+                        </Aliases>
+                    </Block>
+                    <Parameters>
+                        <Param id="avg" value="CY_HPPASS_SAR_AVG_DISABLED"/>
+                        <Param id="fifoLoc" value="CY_HPPASS_FIFO_DISABLED"/>
+                        <Param id="limitLoc" value="CY_HPPASS_SAR_LIMIT_DISABLED"/>
+                        <Param id="sign" value="false"/>
+                    </Parameters>
+                </Personality>
                 <Personality template="hppass_sar_chan" version="1.0" instance="o19tGEq8aag">
                     <Block location="pass[0].sar[0].ch[10]" locked="true">
                         <Aliases>
@@ -905,24 +973,11 @@
                         <Param id="sign" value="false"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hppass_sar_chan" version="1.0" instance="SpqeiCOLh2U">
-                    <Block location="pass[0].sar[0].ch[12]" locked="true">
-                        <Aliases>
-                            <Alias value="ADC_SAMP_IW"/>
-                        </Aliases>
-                    </Block>
-                    <Parameters>
-                        <Param id="avg" value="CY_HPPASS_SAR_AVG_DISABLED"/>
-                        <Param id="diff" value="false"/>
-                        <Param id="fifoLoc" value="CY_HPPASS_FIFO_DISABLED"/>
-                        <Param id="limitLoc" value="CY_HPPASS_SAR_LIMIT_DISABLED"/>
-                        <Param id="sign" value="false"/>
-                    </Parameters>
-                </Personality>
                 <Personality template="hppass_sar_chan" version="1.0" instance="K7J-BFIpLqQ">
                     <Block location="pass[0].sar[0].ch[16]" locked="true">
                         <Aliases>
                             <Alias value="ADC_SAMP_TEMP"/>
+                            <Alias value="ADC_SAMP_TEMP_MD"/>
                         </Aliases>
                     </Block>
                     <Parameters>
@@ -950,6 +1005,12 @@
                         <Param id="gain" value="CY_HPPASS_SAR_SAMP_GAIN_1"/>
                     </Parameters>
                 </Personality>
+                <Personality template="hppass_sar_dir_samp" version="1.0" instance="4uLqynIvUSg">
+                    <Block location="pass[0].sar[0].dir_sampler[9]" locked="true"/>
+                    <Parameters>
+                        <Param id="gain" value="CY_HPPASS_SAR_SAMP_GAIN_1"/>
+                    </Parameters>
+                </Personality>
                 <Personality template="hppass_sar_dir_samp" version="1.0" instance="AieOi39eXf0">
                     <Block location="pass[0].sar[0].dir_sampler[10]" locked="true"/>
                     <Parameters>
@@ -958,12 +1019,6 @@
                 </Personality>
                 <Personality template="hppass_sar_dir_samp" version="1.0" instance="I8aptyDj4Ac">
                     <Block location="pass[0].sar[0].dir_sampler[11]" locked="true"/>
-                    <Parameters>
-                        <Param id="gain" value="CY_HPPASS_SAR_SAMP_GAIN_1"/>
-                    </Parameters>
-                </Personality>
-                <Personality template="hppass_sar_mux_samp" version="1.0" instance="vJz6pSNj6GM">
-                    <Block location="pass[0].sar[0].muxed_sampler[0]" locked="true"/>
                     <Parameters>
                         <Param id="gain" value="CY_HPPASS_SAR_SAMP_GAIN_1"/>
                     </Parameters>
@@ -993,12 +1048,11 @@
                         <Param id="dirSampEn6r" value="false"/>
                         <Param id="dirSampEn7r" value="false"/>
                         <Param id="dirSampEn8r" value="true"/>
-                        <Param id="dirSampEn9r" value="false"/>
-                        <Param id="muxSampEn0" value="true"/>
+                        <Param id="dirSampEn9r" value="true"/>
+                        <Param id="muxSampEn0" value="false"/>
                         <Param id="muxSampEn1" value="false"/>
                         <Param id="muxSampEn2" value="false"/>
                         <Param id="muxSampEn3" value="false"/>
-                        <Param id="muxSampSel0" value="0"/>
                         <Param id="priority" value="true"/>
                         <Param id="sampTimer" value="CY_HPPASS_SAR_SAMP_TIME_0"/>
                         <Param id="trig" value="CY_HPPASS_SAR_TRIG_0"/>
@@ -1132,7 +1186,7 @@
                         <Param id="enableOutputDivider" value="false"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="dwadb1FW3Oo">
+                <Personality template="hfclk" version="4.0" instance="Te6_1yYbSoI">
                     <Block location="srss[0].clock[0].hfclk[0]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
@@ -1143,7 +1197,7 @@
                         <Param id="sourceClockNumber" value="1"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="S8yI_ncIQ7U">
+                <Personality template="hfclk" version="4.0" instance="Bjb6_HSDIJo">
                     <Block location="srss[0].clock[0].hfclk[1]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
@@ -1154,7 +1208,7 @@
                         <Param id="sourceClockNumber" value="1"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="OkfBafOLdBs">
+                <Personality template="hfclk" version="4.0" instance="MTrImKkjybc">
                     <Block location="srss[0].clock[0].hfclk[2]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
@@ -1165,7 +1219,7 @@
                         <Param id="sourceClockNumber" value="0"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="PlKT5bopuHU">
+                <Personality template="hfclk" version="4.0" instance="P8SgHv0Ks2k">
                     <Block location="srss[0].clock[0].hfclk[3]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
@@ -1176,7 +1230,7 @@
                         <Param id="sourceClockNumber" value="2"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="4GtX0uMbeqA">
+                <Personality template="hfclk" version="4.0" instance="2_x3ebmSYZU">
                     <Block location="srss[0].clock[0].hfclk[4]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
@@ -1187,7 +1241,7 @@
                         <Param id="sourceClockNumber" value="2"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="udg_GA22PQ0">
+                <Personality template="hfclk" version="4.0" instance="CoWHxN3fht4">
                     <Block location="srss[0].clock[0].hfclk[5]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
@@ -1198,7 +1252,7 @@
                         <Param id="sourceClockNumber" value="5"/>
                     </Parameters>
                 </Personality>
-                <Personality template="hfclk" version="3.0" instance="OTWgmzyFeNM">
+                <Personality template="hfclk" version="4.0" instance="ak-yniTc8Y8">
                     <Block location="srss[0].clock[0].hfclk[6]" locked="true"/>
                     <Parameters>
                         <Param id="ClkHfCsv" value="false"/>
