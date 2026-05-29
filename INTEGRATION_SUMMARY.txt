@@ -1,0 +1,167 @@
+================================================================================
+RAK_GaN BOARD INTEGRATION - COMPREHENSIVE DOCUMENTATION
+================================================================================
+
+Created: 2026-05-29
+Documentation File: RAK_GaN_integration.md (946 lines)
+
+================================================================================
+QUICK REFERENCE - HOW THE BOARD INTEGRATES
+================================================================================
+
+1. BOARD SELECTION
+   └─ Makefile: TARGET=RAK_GAN_rev0
+   └─ Selects: bsps/TARGET_RAK_GAN_rev0/ (Board Support Package)
+
+2. DEVICE
+   └─ PSC3M5FDS2AFQ1 (PSoC Control C3M5)
+   └─ 256KB Flash, 64KB SRAM, Cortex-M33 + DSP
+
+3. BUILD FILES MODIFIED FOR RAK_GAN
+   ├─ bsps/TARGET_RAK_GAN_rev0/bsp.mk
+   ├─ bsps/TARGET_RAK_GAN_rev0/props.json  
+   ├─ bsps/TARGET_RAK_GAN_rev0/config/design.modus (Device Configurator)
+   ├─ bsps/TARGET_RAK_GAN_rev0/config/GeneratedSource/cycfg_*.c/h
+   ├─ RAK_GAN/rak_gan.c/h (board abstraction layer)
+   └─ libs/mtb.mk (auto-generated dependency paths)
+
+4. HARDWARE CONFIGURATION
+   
+   Clocks:
+   ├─ FLL: 100 MHz (base clock)
+   ├─ CLK_HF0/1: 180 MHz (PWM/TCPWM)
+   ├─ CLK_HF3: 240 MHz (ADC/HPPASS)
+   └─ Generated in: cycfg_clocks.h/c
+
+   ADC Channels (3-Shunt, MUXA):
+   ├─ Ch 1:  Vbus (DC-link voltage)
+   ├─ Ch 5:  DC-link average current
+   ├─ Ch 8:  Potentiometer (speed reference)
+   ├─ Ch 10: Phase U current (IU)
+   ├─ Ch 11: Phase V current (IV)
+   ├─ Ch 12: Phase W current (IW)
+   └─ Ch 16: NTC Temperature sensor
+   
+   DMA Mapping:
+   ├─ SEQ0 (high priority): IU, IW, VPOT, dummy, dummy
+   └─ SEQ1 (low priority): IV, VBUS, IDCLINK, TEMP, dummy
+
+   PWM/MOTIF:
+   ├─ 6 phase outputs (3-phase inverter)
+   ├─ 3 RGB LED outputs (brightness control)
+   └─ 1 OCD threshold PWM (over-current detection)
+
+5. BOARD-SPECIFIC FUNCTIONS (RAK_GAN/rak_gan.h)
+   ├─ rak_gan_enable_power_input()        (power supply stabilization)
+   ├─ rak_gan_init_led_and_ocd_pwm()      (LED + OCD PWM init)
+   ├─ rak_gan_update_status_leds()        (green=fwd, blue=rev)
+   ├─ rak_gan_update_fault_led()          (red=fault)
+   ├─ rak_gan_is_ocd_fault_active()       (debounced OCD)
+   ├─ OCD_Current_to_PWM()                (current limit to voltage DAC)
+   └─ rak_gan_MCU_TempSensorCalc()        (NTC 39-point LUT interpolation)
+
+6. INFINEON LIBRARY DEPENDENCIES
+   ├─ motor-ctrl-lib v3.2.0              (FOC algorithms, MOTIF)
+   ├─ mtb-hal-psc3 v1.1.2                (PSC3 hardware abstraction)
+   ├─ mtb-pdl-cat1 v3.21.0               (peripheral drivers)
+   ├─ recipe-make-cat1b v2.8.2           (CAT1B build rules)
+   ├─ syspm-callbacks-psc3 v1.1.0        (power management)
+   ├─ core-make v3.8.0                   (build system)
+   ├─ core-lib v1.7.0                    (utilities)
+   ├─ cmsis v6.1.0                       (ARM CMSIS)
+   ├─ emeeprom v2.70.0                   (emulated EEPROM)
+   └─ block-storage v1.3.2               (flash storage)
+   
+   Downloaded to: ../mtb_shared/ (shared among projects)
+
+7. KEY FILE LOCATIONS
+   ├─ Makefile                           (TARGET=RAK_GAN_rev0)
+   ├─ bsps/TARGET_RAK_GAN_rev0/bsp.mk   (device MPN, linker, debugger)
+   ├─ bsps/TARGET_RAK_GAN_rev0/cybsp.c  (BSP initialization)
+   ├─ bsps/TARGET_RAK_GAN_rev0/config/design.modus      (Device Configurator)
+   ├─ bsps/TARGET_RAK_GAN_rev0/config/GeneratedSource/  (auto-generated)
+   ├─ RAK_GAN/rak_gan.c/h               (board abstraction)
+   ├─ libs/mtb.mk                       (SEARCH_* paths)
+   └─ build/RAK_GAN_rev0/Release/       (output binaries)
+
+8. CRITICAL RISKS WHEN REGENERATING
+   ⚠️  ADC/DMA channel reassignment    → Current measurements wrong
+   ⚠️  PWM pin changes                 → Motor phase sequence reversed
+   ⚠️  Clock frequency changes         → MOTIF synchronization breaks
+   ⚠️  Interrupt priority inversion    → Control loop jitter
+   
+   Mitigation: Follow safe regeneration procedure in Section 9 of integration doc
+
+9. BUILD COMMAND
+   $ make getlibs                   # Download dependencies
+   $ make build                     # Compile
+   $ make program                   # Flash via J-Link
+   $ make debug                     # Launch debugger
+   $ make config                    # Open Device Configurator
+
+10. REPRODUCE FROM CLEAN PROJECT
+    $ git clone https://github.com/RutronikSystemSolutions/RAK_GAN_MOTOR_DEMO.git
+    $ cd RAK_GAN_MOTOR_DEMO
+    $ make getlibs
+    $ make build
+    $ make program
+    $ make debug
+    See full guide in RAK_GaN_integration.md Section 11
+
+================================================================================
+DOCUMENTATION SECTIONS
+================================================================================
+
+1.  Project Structure              → Directory tree and file organization
+2.  Makefile Configuration         → TARGET variable, build settings
+3.  BSP Files                      → Device selection, build rules
+4.  Hardware Configuration         → Clocks, ADC, PWM, pins
+5.  Device Configurator            → design.modus workflow, generated files
+6.  Infineon Libraries             → Dependency tree, file locations
+7.  Board Abstraction Layer        → RAK_GAN functions, API
+8.  Build Process                  → Make targets, VS Code setup
+9.  Regeneration Risks             → Critical areas, safe procedures
+10. Migration Guide                → Adapt for different board
+11. Reproduction                   → Full setup from scratch
+12. Board Change Checklist         → 50+ items for modifications
+13. Troubleshooting                → Common issues with solutions
+14. Architecture Diagram           → Visual integration flow
+
+================================================================================
+FOR NEXT DEVELOPER
+================================================================================
+
+To understand this integration:
+1. Read Sections 1-4 (Project Structure through Hardware Config)
+2. Read Section 7 (Board Abstraction Layer) 
+3. Grep for "RAK_GAN_BOARD" in codebase
+4. Open Device Configurator: make config
+5. Examine generated files: config/GeneratedSource/cycfg_peripherals.h
+6. Study motor-ctrl-lib integration with 3-shunt measurements
+
+To modify this board:
+1. Use Board Change Checklist (Section 12)
+2. Follow Safe Regeneration Procedure (Section 9)
+3. Test thoroughly (motor runs, measurements correct)
+4. Update this documentation
+
+To adapt for different board:
+1. Use Step-by-Step Migration Guide (Section 10)
+2. Create new BSP in bsps/TARGET_NEW_BOARD/
+3. Update design.modus via Device Configurator
+4. Create board abstraction layer (RAK_GAN → NEW_BOARD)
+
+================================================================================
+git status
+================================================================================
+
+File Status: Ready to commit
+  new file:   RAK_GaN_integration.md (946 lines)
+  modified:   GUI_MOTOR_DEMO_3_2_DB42C02.imcsp
+
+Next Steps:
+  git add GUI_MOTOR_DEMO_3_2_DB42C02.imcsp
+  git commit -m "Document RAK_GaN board integration: BSP, hardware config, build system"
+  git tag -a v1.0-rak-gan-integration -m "Complete integration documentation"
+
+================================================================================

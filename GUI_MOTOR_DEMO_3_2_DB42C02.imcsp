@@ -51,11 +51,11 @@
 							},
 							{
 								"id": "params.sys.samp.fpwm_fs0_ratio",
-								"value": 1
+								"value": 2
 							},
 							{
 								"id": "params.sys.samp.fs0",
-								"value": 20000
+								"value": 50000
 							},
 							{
 								"id": "params.sys.samp.fs0_fs1_ratio",
@@ -63,7 +63,7 @@
 							},
 							{
 								"id": "params.sys.samp.deadtime",
-								"value": 4.999999987376214e-7
+								"value": 1.0000000116860974e-7
 							},
 							{
 								"id": "separator"
@@ -176,11 +176,11 @@
 							},
 							{
 								"id": "params.sys.faults.vdc_thresh.min",
-								"value": 16.799999237060547
+								"value": 21
 							},
 							{
 								"id": "params.sys.faults.vdc_thresh.max",
-								"value": 31.19999885559082
+								"value": 39
 							},
 							{
 								"id": "params.sys.faults.w_thresh.elec",
@@ -199,7 +199,7 @@
 							},
 							{
 								"id": "params.sys.cmd.source",
-								"value": "Potentiometer"
+								"value": "External"
 							},
 							{
 								"id": "params.sys.cmd.w_max.mech",
@@ -296,7 +296,8 @@
 							}
 						],
 						"configurator": 2,
-						"testbench": 0
+						"testbench": 0,
+						"isValid": true
 					},
 					{
 						"id": "mcu_control",
@@ -304,7 +305,7 @@
 						"parameters": [
 							{
 								"id": "params.ctrl.mode",
-								"value": "Speed_Mode_FOC_Sensorless_Volt_Startup"
+								"value": "Speed_Mode_FOC_Sensorless_Curr_Startup"
 							},
 							{
 								"id": "separator"
@@ -338,7 +339,7 @@
 							},
 							{
 								"id": "params.ctrl.curr.bw",
-								"value": 750.0000286115322
+								"value": 1000.0000381487096
 							},
 							{
 								"id": "params.ctrl.curr.ff_coef",
@@ -350,23 +351,23 @@
 							},
 							{
 								"id": "params.ctrl.curr.kp.q",
-								"value": 4.9480085372924805
+								"value": 6.597344398498535
 							},
 							{
 								"id": "params.ctrl.curr.kp.d",
-								"value": 4.9480085372924805
+								"value": 6.597344398498535
 							},
 							{
 								"id": "params.ctrl.curr.ki.q",
-								"value": 3534.2919921875
+								"value": 4712.38916015625
 							},
 							{
 								"id": "params.ctrl.curr.ki.d",
-								"value": 3534.2919921875
+								"value": 4712.38916015625
 							},
 							{
 								"id": "params.ctrl.curr.i_cmd_ol",
-								"value": 0.3580000102519989
+								"value": 2
 							},
 							{
 								"id": "separator"
@@ -377,15 +378,15 @@
 							},
 							{
 								"id": "params.ctrl.volt.v_min",
-								"value": 0.15000000596046448
+								"value": 0.053599998354911804
 							},
 							{
 								"id": "params.ctrl.volt.v_to_f_ratio",
-								"value": 0.007499999832361937
+								"value": 0.008190000429749489
 							},
 							{
 								"id": "params.ctrl.volt.mod_method",
-								"value": "Neutral_Point_Modulation"
+								"value": "Space_Vector_Modulation"
 							},
 							{
 								"id": "separator"
@@ -419,7 +420,7 @@
 							},
 							{
 								"id": "params.ctrl.flux_weaken.ki",
-								"value": 0.0016194639028981328
+								"value": 0.0005182284512557089
 							},
 							{
 								"id": "separator"
@@ -493,7 +494,7 @@
 				"parameters": [
 					{
 						"id": "params.sys.vdc_nom",
-						"value": 24
+						"value": 30
 					}
 				],
 				"configurator": 1,
@@ -543,19 +544,19 @@
 					},
 					{
 						"id": "params.motor.i_peak",
-						"value": 5.400000095367432
+						"value": 10.699999809265137
 					},
 					{
 						"id": "params.motor.i_cont",
-						"value": 1.7899999618530273
+						"value": 3.569999933242798
 					},
 					{
 						"id": "params.motor.id_max",
-						"value": 0.44749999046325684
+						"value": 0.8924999833106995
 					},
 					{
 						"id": "params.motor.v_nom",
-						"value": 23.99999956924244
+						"value": 30.00000152631851
 					},
 					{
 						"id": "params.motor.w_nom.elec",
@@ -577,7 +578,8 @@
 							}
 						],
 						"configurator": 1,
-						"testbench": 0
+						"testbench": 0,
+						"isValid": true
 					},
 					{
 						"id": "motor_mtpa",
@@ -635,7 +637,8 @@
 							}
 						],
 						"configurator": 9,
-						"testbench": 0
+						"testbench": 0,
+						"isValid": true
 					}
 				],
 				"configurator": 22,
@@ -666,5 +669,135 @@
 			}
 		]
 	},
-	"oscilloscopeSettings": []
+	"oscilloscopeSettings": [
+		{
+			"symbol": "ProbeScope_Mode",
+			"value": 2
+		},
+		{
+			"symbol": "ProbeScope_TrigSlope",
+			"value": 1
+		},
+		{
+			"symbol": "ProbeScope_SamplingClkDiv",
+			"value": 1
+		},
+		{
+			"symbol": "ProbeScope_TrigHoldOff",
+			"value": 0
+		},
+		{
+			"symbol": "ProbeScope_TrigChSel",
+			"value": 1
+		},
+		{
+			"symbol": "ProbeScope_TrigDispPos",
+			"value": 1
+		},
+		{
+			"symbol": "vars[0].i_uvw_fb.u",
+			"value": 1,
+			"type": "Channel"
+		},
+		{
+			"symbol": "vars[0].i_uvw_fb.v",
+			"value": 2,
+			"type": "Channel"
+		},
+		{
+			"symbol": "vars[0].i_uvw_fb.w",
+			"value": 3,
+			"type": "Channel"
+		},
+		{
+			"symbol": "vars[0].th_r_final.elec",
+			"value": 4,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 5,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 6,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 7,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 8,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 9,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 10,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 11,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 12,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 13,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 14,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 15,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 16,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 17,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 18,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 19,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"value": 20,
+			"type": "Channel"
+		},
+		{
+			"symbol": "",
+			"type": "OSC_CONFIG",
+			"value": "{\"schemaVersion\":2,\"oscilloscopeConfiguration\":{\"mode\":2,\"trigger\":{\"channel\":1,\"slope\":1,\"holdOff\":0,\"displayPosition\":1},\"sampling\":{\"divider\":1,\"clockHz\":50000}},\"channels\":[{\"channelId\":1,\"enabled\":true,\"signalSymbol\":\"vars[0].i_uvw_fb.u\",\"triggerLevel\":0,\"groupName\":\"M0\",\"style\":{\"color\":\"#ffff01\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":-1.895724713242961,\"yMax\":2.129301355578728}},{\"channelId\":2,\"enabled\":true,\"signalSymbol\":\"vars[0].i_uvw_fb.v\",\"triggerLevel\":0,\"groupName\":\"M0\",\"style\":{\"color\":\"#ff6abc\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":-1.895724713242961,\"yMax\":2.129301355578728}},{\"channelId\":3,\"enabled\":true,\"signalSymbol\":\"vars[0].i_uvw_fb.w\",\"triggerLevel\":0,\"groupName\":\"M0\",\"style\":{\"color\":\"#00ffff\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":-1.895724713242961,\"yMax\":2.129301355578728}},{\"channelId\":4,\"enabled\":true,\"signalSymbol\":\"vars[0].th_r_final.elec\",\"triggerLevel\":0,\"groupName\":\"M0\",\"style\":{\"color\":\"#00c100\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":-3.7679998404588106,\"yMax\":3.7680001178310736}},{\"channelId\":5,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M1\",\"style\":{\"color\":\"#A1A1A1\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":6,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M1\",\"style\":{\"color\":\"#0444BF\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":7,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M1\",\"style\":{\"color\":\"#bf1404\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":8,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M1\",\"style\":{\"color\":\"#FF8300\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":9,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M2\",\"style\":{\"color\":\"#B48C6B\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":10,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M2\",\"style\":{\"color\":\"#FF99CC\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":11,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M2\",\"style\":{\"color\":\"#FFFFFF\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":12,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M2\",\"style\":{\"color\":\"#855CBE\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":13,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M3\",\"style\":{\"color\":\"#ffff01\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":14,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M3\",\"style\":{\"color\":\"#ff6abc\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":15,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M3\",\"style\":{\"color\":\"#00ffff\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":16,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M3\",\"style\":{\"color\":\"#00c100\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":17,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M4\",\"style\":{\"color\":\"#A1A1A1\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":18,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M4\",\"style\":{\"color\":\"#0444BF\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":19,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M4\",\"style\":{\"color\":\"#bf1404\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}},{\"channelId\":20,\"enabled\":true,\"signalSymbol\":null,\"triggerLevel\":0,\"groupName\":\"M4\",\"style\":{\"color\":\"#FF8300\",\"displayMode\":\"lines\",\"interpolation\":\"linear\",\"markerSize\":6,\"lineWidth\":2},\"axis\":{\"yMin\":null,\"yMax\":null}}],\"ui\":{\"xRange\":{\"start\":0,\"end\":1000},\"cursors\":{\"linkedChannel\":0,\"lockedCursor\":-1,\"cursor1\":{\"visible\":false,\"position\":200},\"cursor2\":{\"visible\":false,\"position\":800}}}}"
+		}
+	]
 }
