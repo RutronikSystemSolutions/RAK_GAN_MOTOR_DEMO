@@ -13,7 +13,7 @@
     },
     {
         "asset-name": "core-make",
-        "locked-commit": "release-v3.8.0"
+        "locked-commit": "release-v3.9.0"
     },
     {
         "asset-name": "mtb-hal-psc3",
@@ -21,7 +21,7 @@
     },
     {
         "asset-name": "mtb-pdl-cat1",
-        "locked-commit": "release-v3.21.0"
+        "locked-commit": "release-v3.21.1"
     },
     {
         "asset-name": "recipe-make-cat1b",
