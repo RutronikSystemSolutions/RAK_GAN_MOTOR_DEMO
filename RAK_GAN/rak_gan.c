@@ -1,14 +1,10 @@
-/******
- * 
- * 
- * 
- * 
- * TODO: Add description here
- * 
- * 
- * 
- * 
- */
+/******************************************************************************
+ * @file rak_gan.c
+ * @brief Board-specific helper functions for the RAK-GaN motor-control design.
+ *
+ * This module provides power-input handling, OCD threshold/fault processing,
+ * temperature conversion, and status/fault LED updates.
+ *****************************************************************************/
 
  /*Changes in ParamConfig.h*/
 
@@ -23,6 +19,9 @@
 
 
 
+/**
+ * @brief Enable power input and wait until rail and gate path are stable.
+ */
 void rak_gan_enable_power_input(void)
 {
 	Cy_GPIO_Clr(POW_EN_PORT, POW_EN_NUM);
@@ -33,6 +32,12 @@ void rak_gan_enable_power_input(void)
 	CyDelay(100);
 }
 
+/**
+ * @brief Convert OCD current threshold in ampere to PWM compare value.
+ *
+ * @param i_limit Current threshold in ampere.
+ * @return Compare value for the THPWM channel.
+ */
 uint32_t OCD_Current_to_PWM(float i_limit)
 {
 	uint32_t pwr_thpwm = OCD_TH_RES;
@@ -131,7 +136,11 @@ const float ntc_temp_table[NTC_TABLE_SIZE] = {
     150.00f  // 150.00°C
 };
 
-// Temperature sensor calculations
+/**
+ * @brief Calculate MCU temperature from active sensor or passive NTC input.
+ *
+ * @return Temperature in degree Celsius.
+ */
 float rak_gan_MCU_TempSensorCalc(void)
 {
     // Local result holder
@@ -209,6 +218,9 @@ bool rak_gan_is_ocd_fault_active(void)
 	return false;
 }
 
+/**
+ * @brief Initialize and start RGB LED PWM channels and OCD threshold PWM.
+ */
 void rak_gan_init_led_and_ocd_pwm(void)
 {
 #if defined(PWM_LED_RED_HW) && defined(PWM_LED_RED_NUM) && \
@@ -267,6 +279,9 @@ void rak_gan_init_led_and_ocd_pwm(void)
 #endif
 }
 
+/**
+ * @brief Drive the fault LED output from current latched fault state.
+ */
 void rak_gan_update_fault_led(void)
 {
 #if defined(PWM_LED_RED_HW) && defined(PWM_LED_RED_NUM) && \
@@ -281,27 +296,16 @@ void rak_gan_update_fault_led(void)
 	else
 	{
 		Cy_TCPWM_PWM_SetCompare0Val(PWM_LED_RED_HW, PWM_LED_RED_NUM, CLR_LED);
+		Cy_TCPWM_PWM_SetCompare0Val(PWM_LED_GREEN_HW, PWM_LED_GREEN_NUM, CLR_LED);
+		Cy_TCPWM_PWM_SetCompare0Val(PWM_LED_BLUE_HW, PWM_LED_BLUE_NUM, CLR_LED);
 	}
 #endif
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+/**
+ * @brief Drive green/blue status LEDs from enable and direction state.
+ */
 void rak_gan_update_status_leds(void)
 {
 #if defined(PWM_LED_GREEN_HW) && defined(PWM_LED_GREEN_NUM) && \

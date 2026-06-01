@@ -100,7 +100,7 @@ void MCU_RoutingConfigMUXA()
     const cy_stc_hppass_sar_grp_t ADC_SEQ1_Config =
     {
         .dirSampMsk = ADC_CH_IV_BIT | ADC_CH_VBUS_BIT | ADC_CH_IDCLINKAVG_BIT,  /* Direct: Ch11 (IV), Ch1 (VBUS), Ch5 (IDCLINKAVG) */
-        .muxSampMsk = ADC_CH_TEMP_MUX_BIT,                                        /* MUX: Ch16 (TEMP) */
+        .muxSampMsk = ADC_CH_TEMP_MUX_BIT,                                      /* MUX: Ch16 (TEMP) */
         .muxChanIdx = {0U,0U,0U,0U},
         .trig = CY_HPPASS_SAR_TRIG_1,
         .sampTime = CY_HPPASS_SAR_SAMP_TIME_0,

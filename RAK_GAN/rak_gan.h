@@ -17,13 +17,52 @@
 #define OCD_TH_CAL 	    (1.77f)
 #define OCD_I_AMP 	    (10.0f) /*Power Input Current Limit*/
 
-/* Schaltet den Leistungseingang ein und wartet auf stabile Versorgung. */
+/**
+ * @brief Enable the RAK-GaN power input and wait for supply stabilization.
+ */
 void rak_gan_enable_power_input(void);
+
+/**
+ * @brief Convert an over-current threshold in ampere to THPWM compare value.
+ *
+ * @param i_limit Current limit in ampere.
+ * @return PWM threshold compare value for OCD threshold generation.
+ */
 uint32_t OCD_Current_to_PWM(float i_limit);
+
+/**
+ * @brief Check whether the OCD input indicates an active over-current fault.
+ *
+ * The input is active-low. The implementation uses a second sample to reject
+ * short glitches.
+ *
+ * @return true if fault is active, false otherwise.
+ */
 bool rak_gan_is_ocd_fault_active(void);
+
+/**
+ * @brief Initialize and start LED PWM channels and OCD threshold PWM channel.
+ */
 void rak_gan_init_led_and_ocd_pwm(void);
+
+/**
+ * @brief Update the fault LED state based on latched motor fault flags.
+ */
 void rak_gan_update_fault_led(void);
+
+/**
+ * @brief Update status LEDs according to motor enable and direction state.
+ */
 void rak_gan_update_status_leds(void);
+
+/**
+ * @brief Compute MCU temperature in degree Celsius from configured sensor input.
+ *
+ * Uses either an active temperature sensor transfer function or passive NTC
+ * LUT interpolation depending on build-time configuration.
+ *
+ * @return Measured temperature in degree Celsius.
+ */
 float rak_gan_MCU_TempSensorCalc(void);
 
 
