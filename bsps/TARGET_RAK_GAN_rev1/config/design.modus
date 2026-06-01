@@ -794,7 +794,7 @@
                         </Aliases>
                     </Block>
                     <Parameters>
-                        <Param id="DriveModes" value="CY_GPIO_DM_HIGHZ"/>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
                         <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
                         <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
                         <Param id="inFlash" value="true"/>
@@ -817,7 +817,7 @@
                         </Aliases>
                     </Block>
                     <Parameters>
-                        <Param id="DriveModes" value="CY_GPIO_DM_HIGHZ"/>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
                         <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
                         <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
                         <Param id="inFlash" value="true"/>
@@ -840,11 +840,11 @@
                         </Aliases>
                     </Block>
                     <Parameters>
-                        <Param id="DriveModes" value="CY_GPIO_DM_HIGHZ"/>
+                        <Param id="DriveModes" value="CY_GPIO_DM_STRONG_IN_OFF"/>
                         <Param id="driveStrength" value="CY_GPIO_DRIVE_1_2"/>
                         <Param id="driveStrengthTrim" value="CY_GPIO_DRIVE_STRENGTH_DEFAULT"/>
                         <Param id="inFlash" value="true"/>
-                        <Param id="initialState" value="0"/>
+                        <Param id="initialState" value="1"/>
                         <Param id="isrTrigger" value="CY_GPIO_INTR_DISABLE"/>
                         <Param id="nonSec" value="0"/>
                         <Param id="pullUpRes" value="CY_GPIO_PULLUP_RES_DISABLE"/>
@@ -2341,24 +2341,24 @@
                     <Port name="tcpwm[0].group[1].cnt[2].tr_line[0]"/>
                 </Net>
                 <Net>
-                    <Port name="ioss[0].port[7].pin[5].digital_out[0]"/>
-                    <Port name="tcpwm[0].group[2].cnt[0].tr_line_compl[0]"/>
-                </Net>
-                <Net>
-                    <Port name="ioss[0].port[7].pin[6].digital_out[0]"/>
-                    <Port name="tcpwm[0].group[2].cnt[1].tr_line_compl[0]"/>
-                </Net>
-                <Net>
-                    <Port name="ioss[0].port[7].pin[7].digital_out[0]"/>
-                    <Port name="tcpwm[0].group[2].cnt[2].tr_line_compl[0]"/>
-                </Net>
-                <Net>
                     <Port name="ioss[0].port[9].pin[0].digital_out[0]"/>
                     <Port name="tcpwm[0].group[1].cnt[1].tr_line_compl[0]"/>
                 </Net>
                 <Net>
                     <Port name="ioss[0].port[9].pin[1].digital_out[0]"/>
                     <Port name="tcpwm[0].group[1].cnt[1].tr_line[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[9].pin[2].digital_out[0]"/>
+                    <Port name="tcpwm[0].group[2].cnt[2].tr_line_compl[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[9].pin[3].digital_out[0]"/>
+                    <Port name="tcpwm[0].group[2].cnt[1].tr_line_compl[0]"/>
+                </Net>
+                <Net>
+                    <Port name="ioss[0].port[9].pin[4].digital_out[0]"/>
+                    <Port name="tcpwm[0].group[2].cnt[0].tr_line_compl[0]"/>
                 </Net>
                 <Net>
                     <Port name="pass[0].input_trigger[0].tr_a_in[0]"/>
