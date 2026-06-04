@@ -1,48 +1,6 @@
 {
-	"version": "2.8.1",
+	"version": "2.9.0",
 	"components": [
-		{
-			"tabName": "Workspace1",
-			"componentLabel": "M1_Hall_En_Pin",
-			"variable": [
-				{
-					"symbol": "M1_Hall_En_Pin",
-					"address": 872416159,
-					"size": 1,
-					"type": "_Bool",
-					"baseType": "_Bool",
-					"parent": "<root>"
-				}
-			],
-			"maxVariables": 1,
-			"rotateSwitcher": false,
-			"positiveValue": 1,
-			"negativeValue": 0,
-			"topLabel": "Off",
-			"bottomLabel": "On",
-			"componentType": "buttonSwitch",
-			"position": [
-				3,
-				4
-			],
-			"componentIndex": 1,
-			"lockedTo": -1,
-			"size": [
-				7,
-				10
-			],
-			"value": [
-				0
-			],
-			"minSize": [
-				6,
-				2
-			],
-			"maxSize": [
-				15,
-				10
-			]
-		},
 		{
 			"tabName": "Workspace1",
 			"componentLabel": "Hall1_Pin_state",
@@ -83,19 +41,17 @@
 			"yMax": 2,
 			"componentType": "scatterChart",
 			"position": [
-				14,
-				18
+				12,
+				5
 			],
 			"componentIndex": 3,
 			"lockedTo": -1,
 			"size": [
-				35,
+				34,
 				50
 			],
 			"value": [
-				1,
-				0,
-				1
+				0
 			],
 			"minSize": [
 				6,
@@ -135,7 +91,7 @@
 				8
 			],
 			"value": [
-				1
+				0
 			],
 			"minSize": [
 				5,
@@ -175,7 +131,7 @@
 				6
 			],
 			"value": [
-				1
+				0
 			],
 			"minSize": [
 				5,
@@ -206,13 +162,13 @@
 			"componentType": "ledIndicator",
 			"position": [
 				27,
-				69
+				70
 			],
 			"componentIndex": 6,
 			"lockedTo": -1,
 			"size": [
 				5,
-				8
+				6
 			],
 			"value": [
 				0
@@ -251,8 +207,8 @@
 			"componentIndex": 7,
 			"lockedTo": -1,
 			"size": [
-				4,
-				6
+				6,
+				4
 			],
 			"value": [
 				0
@@ -299,8 +255,8 @@
 			"componentIndex": 8,
 			"lockedTo": -1,
 			"size": [
-				5,
-				6
+				6,
+				5
 			],
 			"value": [
 				0
@@ -320,6 +276,5 @@
 		"Workspace1"
 	],
 	"deviceName": "PSC3xxF",
-	"elfPath": "..\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf",
-	"oscilloscopeState": []
+	"elfPath": "..\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf"
 }

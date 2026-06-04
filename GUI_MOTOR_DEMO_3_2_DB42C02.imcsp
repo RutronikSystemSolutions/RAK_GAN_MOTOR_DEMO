@@ -199,7 +199,7 @@
 							},
 							{
 								"id": "params.sys.cmd.source",
-								"value": "External"
+								"value": "Potentiometer"
 							},
 							{
 								"id": "params.sys.cmd.w_max.mech",
@@ -296,7 +296,8 @@
 							}
 						],
 						"configurator": 2,
-						"testbench": 0
+						"testbench": 0,
+						"isValid": true
 					},
 					{
 						"id": "mcu_control",
@@ -304,7 +305,7 @@
 						"parameters": [
 							{
 								"id": "params.ctrl.mode",
-								"value": "Speed_Mode_FOC_Sensorless_Volt_Startup"
+								"value": "Speed_Mode_FOC_Hall"
 							},
 							{
 								"id": "separator"
@@ -577,7 +578,8 @@
 							}
 						],
 						"configurator": 1,
-						"testbench": 0
+						"testbench": 0,
+						"isValid": true
 					},
 					{
 						"id": "motor_mtpa",
@@ -635,7 +637,8 @@
 							}
 						],
 						"configurator": 9,
-						"testbench": 0
+						"testbench": 0,
+						"isValid": true
 					}
 				],
 				"configurator": 22,
