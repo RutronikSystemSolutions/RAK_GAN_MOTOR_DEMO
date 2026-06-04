@@ -59,7 +59,7 @@
 #define ADC_CS_SS_MIN_SEGMENT_TIME               (5.0E-7f)                     /*[sec], Current measurement single shunt minimum measurable window */
 
 #define ADC_SCALE_VUVW                           (1.0f)         				/*[V/V] = [Ohm/Ohm]*/
-#define ADC_SCALE_VDC                            ((6.2f)/(180.0f+6.2f))         /*[V/V] = [Ohm/Ohm]*/
+#define ADC_SCALE_VDC                            ((6.2f)/(180.0f+6.2f))         /*[V/V] = [Ohm/Ohm] --> real measured: 0.033905 (tolerance included) */
 /*******************************************************************************/
 /*******************************************************************************/
 /*Parameter Controls*/
@@ -244,20 +244,20 @@
 
 /*******************************************************************************/
 /*******DC Supply*******/
-#define MOTOR_CTRL_VDC_NOM_VOLT                    (24.0f)                     /*[V], Nominal DC bus voltage*/
+#define MOTOR_CTRL_VDC_NOM_VOLT                    (48.0f)                     /*[V], Nominal DC bus voltage*/
 
 /*******************************************************************************/
-/*******Motor-DB42S03****************/
+/*******Motor-DB42C02****************/
 #define MOTOR_POLE                                 (8.0f)                       /*[],  motor poles*/
 #define MOTOR_LQ                                   (0.00105f)                  /*[H], Stator q-axis inductance*/
 #define MOTOR_LD                                   (0.00105f)                  /*[H], Stator d-axis inductance*/
 #define MOTOR_I_AM                                 (5.0E-3f)                    /*[Wb],  Rotor flux linkage*/
-#define MOTOR_R                                    (0.75f)                       /*{Ohm],  stator resistance*/
+#define MOTOR_R                                    (0.447f)                       /*{Ohm],  stator resistance*/
 #define MOTOR_TORQUE_MAX                           (0.190f)                     /*[Nm],  maximum torque*/
-#define MOTOR_CURRENT_PEAK                         (5.4f)                     /*[A],  peak current rating*/
-#define MOTOR_CURRENT_CONT                         (1.79f)                      /*[A],  continuous current rating*/
-#define MOTOR_ID_MAX                               (0.4475f)                      /*[A], maximum d-axis current*/
-#define MOTOR_VOLTAGE                              (24.0f)                      /*[V], motor voltage*/
+#define MOTOR_CURRENT_PEAK                         (10.7f)                     /*[A],  peak current rating*/
+#define MOTOR_CURRENT_CONT                         (3.57f)                      /*[A],  continuous current rating*/
+#define MOTOR_ID_MAX                               (0.9f)                      /*[A], maximum d-axis current*/
+#define MOTOR_VOLTAGE                              (48.0f)                      /*[V], motor voltage*/
 #define MOTOR_NORM_SPEED                           (4000.0f)                    /*[RPM], nominal speed*/
 #define MOTOR_MAX_SPEED                            (6000.0f)                    /*[RPM],  maximum no load speed*/
 #if defined(CTRL_METHOD_SFO)

@@ -7,10 +7,10 @@
 			"variable": [
 				{
 					"symbol": "mcu[0].dma_results[2]",
-					"address": 872417456,
+					"address": 872417472,
 					"type": "int32_t",
-					"baseType": "<array>",
-					"offset": 140,
+					"baseType": "long int",
+					"offset": 152,
 					"size": 4,
 					"isArray": false,
 					"isBitfield": false,
@@ -42,7 +42,7 @@
 				6
 			],
 			"value": [
-				838
+				2020
 			],
 			"minSize": [
 				4,
@@ -59,7 +59,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.i_cmd_ol",
-					"address": 872422072,
+					"address": 872422228,
 					"offset": 40,
 					"size": 4,
 					"type": "float",
@@ -88,7 +88,7 @@
 				40
 			],
 			"value": [
-				1
+				2
 			],
 			"minSize": [
 				6,
@@ -164,7 +164,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.i_cmd_ol",
-					"address": 872422072,
+					"address": 872422228,
 					"offset": 40,
 					"size": 4,
 					"type": "float",
@@ -198,7 +198,7 @@
 				6
 			],
 			"value": [
-				1
+				2
 			],
 			"minSize": [
 				4,
@@ -215,7 +215,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.volt.v_to_f_ratio",
-					"address": 872422220,
+					"address": 872422376,
 					"offset": 12,
 					"size": 4,
 					"type": "float",
@@ -244,7 +244,7 @@
 				40
 			],
 			"value": [
-				0.001720090047456324
+				0.008190000429749489
 			],
 			"minSize": [
 				6,
@@ -261,7 +261,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.volt.v_min",
-					"address": 872422216,
+					"address": 872422372,
 					"offset": 8,
 					"size": 4,
 					"type": "float",
@@ -290,7 +290,7 @@
 				40
 			],
 			"value": [
-				0.17800000309944153
+				0.053599998354911804
 			],
 			"minSize": [
 				6,
@@ -307,7 +307,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.kp.q",
-					"address": 872422036,
+					"address": 872422192,
 					"offset": 0,
 					"size": 4,
 					"type": "float",
@@ -336,7 +336,7 @@
 				40
 			],
 			"value": [
-				1
+				6.597344398498535
 			],
 			"minSize": [
 				6,
@@ -361,8 +361,8 @@
 			"componentIndex": 9,
 			"lockedTo": -1,
 			"size": [
-				16,
-				41
+				15,
+				53
 			],
 			"value": [
 				0
@@ -412,7 +412,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.kp.d",
-					"address": 872422040,
+					"address": 872422196,
 					"offset": 4,
 					"size": 4,
 					"type": "float",
@@ -441,7 +441,7 @@
 				40
 			],
 			"value": [
-				1
+				6.597344398498535
 			],
 			"minSize": [
 				6,
@@ -458,7 +458,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.ki.q",
-					"address": 872422044,
+					"address": 872422200,
 					"offset": 0,
 					"size": 4,
 					"type": "float",
@@ -487,7 +487,7 @@
 				40
 			],
 			"value": [
-				21
+				4712.38916015625
 			],
 			"minSize": [
 				6,
@@ -504,7 +504,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.ki.d",
-					"address": 872422048,
+					"address": 872422204,
 					"offset": 4,
 					"size": 4,
 					"type": "float",
@@ -533,7 +533,7 @@
 				40
 			],
 			"value": [
-				21
+				4712.38916015625
 			],
 			"minSize": [
 				6,
@@ -542,6 +542,250 @@
 			"maxSize": [
 				6,
 				40
+			]
+		},
+		{
+			"tabName": "Workspace2",
+			"componentLabel": "DMA[2] --> VBUS",
+			"variable": [
+				{
+					"symbol": "mcu[0].dma_results[2]",
+					"address": 872417472,
+					"type": "int32_t",
+					"baseType": "long int",
+					"offset": 152,
+					"size": 4,
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "mcu[0].dma_results",
+					"note": "array element"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				11,
+				3
+			],
+			"componentIndex": 14,
+			"lockedTo": -1,
+			"size": [
+				5,
+				8
+			],
+			"value": [
+				2021
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		},
+		{
+			"tabName": "Workspace2",
+			"componentLabel": "motor[0]--> VDC raw",
+			"variable": [],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				11,
+				26
+			],
+			"componentIndex": 15,
+			"lockedTo": -1,
+			"size": [
+				5,
+				6
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		},
+		{
+			"tabName": "Workspace2",
+			"componentLabel": "mcu[0].adc_scale.V_dc",
+			"variable": [
+				{
+					"symbol": "mcu[0].adc_scale.v_dc",
+					"address": 872417340,
+					"offset": 8,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "mcu[0].adc_scale"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				11,
+				14
+			],
+			"componentIndex": 16,
+			"lockedTo": -1,
+			"size": [
+				5,
+				6
+			],
+			"value": [
+				0.02376590296626091
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "params[0].ctrl.volt.v_min",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.volt.v_min",
+					"address": 872422372,
+					"offset": 8,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.volt"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				7,
+				42
+			],
+			"componentIndex": 17,
+			"lockedTo": 9,
+			"size": [
+				4,
+				9
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
+			]
+		},
+		{
+			"tabName": "Open Loop",
+			"componentLabel": "params[0].ctrl.volt.v_to_f_ratio",
+			"variable": [
+				{
+					"symbol": "params[0].ctrl.volt.v_to_f_ratio",
+					"address": 872422376,
+					"offset": 12,
+					"size": 4,
+					"type": "float",
+					"baseType": "float",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "params[0].ctrl.volt"
+				}
+			],
+			"maxVariables": 1,
+			"isReadonly": true,
+			"isUIParameter": false,
+			"uiParameterId": "",
+			"min": 0,
+			"max": 100,
+			"textAlign": "Left",
+			"readFormula": "",
+			"writeFormula": "",
+			"disableFormula": "",
+			"displayFormula": "",
+			"unit": "",
+			"componentType": "numericIndicator",
+			"position": [
+				12,
+				42
+			],
+			"componentIndex": 18,
+			"lockedTo": 9,
+			"size": [
+				4,
+				9
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				4,
+				4
+			],
+			"maxSize": [
+				7,
+				15
 			]
 		}
 	],

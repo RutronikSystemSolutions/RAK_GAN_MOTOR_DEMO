@@ -310,6 +310,8 @@ Here's a quick guide on how to get started with your own motor or setup.
 
 - [RAK-GaN_User_Manual](https://github.com/RutronikSystemSolutions/RAK-GaN_Documents/blob/main/RAK-GaN_User_Manual.pdf)
 
+- [KIT_PSC3M5_CC1_User_Guide](https://www.infineon.com/document-promo/infineon-kit-psc3m5-cc1-ug-usermanual-en_d7371317-1d40-4dfa-946e-2bc9ad28248f)
+
 - [Firmware_Reference_Manual](https://github.com/Infineon/motor-ctrl-lib/blob/main/docs/Firmware_Reference_Manual.pdf)
 
 - [Tuning_Guide_Infineon]
