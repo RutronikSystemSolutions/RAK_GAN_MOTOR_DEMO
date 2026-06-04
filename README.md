@@ -1,6 +1,6 @@
-# Motor control demo - RAK-GaN_rev0
+# Motor control demo - RAK-GaN_rev1
 
-<img src="images\RAK_GAN_rev0.jpg" style="zoom:50%;" />
+<img src="images\RAK_GAN_rev1.jpg" style="zoom:50%;" />
 
 This code example demonstrates the sensorless and sensored solutions using the Infineon's PSOC Control C3 MCU and Rutronik´s RAK-GaN Board.
 - Sensorless PMSM FOC with 3-shunt
@@ -18,7 +18,7 @@ This code example demonstrates the sensorless and sensored solutions using the I
    - Motor_ctrl_lib : 3.2 or later
    - Motor Suite GUI : 2.9.0 or later
    - ModusToolbox&trade; Tools Package v3.8 or later
-- [RAK-GaN_rev0](https://www.rutronik24.de/produkt/rutronik/rak/32343794.html)
+- [RAK-GaN_rev1](https://www.rutronik24.de/produkt/rutronik/rak/32343794.html)
 - [JLINK-SEGGER](https://www.segger.com/downloads/jlink/)
 - Programming language: C
 
@@ -28,12 +28,12 @@ This code example demonstrates the sensorless and sensored solutions using the I
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
 - GNU Arm&reg; Embedded Compiler v14.2.1 (`GCC_ARM`) – Default value of `TOOLCHAIN`
-- IAR C/C++ Compiler v9.50.2 (`IAR`)
+
 
 ## Hardware setup
 
 RAK-GaN
-   -[RAK-GaN - Hardware Documents](https://github.com/RutronikSystemSolutions/RAK_GAN_Hardware_Files)
+   -[Hardware Documents](https://github.com/RutronikSystemSolutions/RAK_GAN_Hardware_Files)
 
 DB42S03
    -[DB42S03-Datasheet](https://www.nanotec.com/eu/de/produkte/636-db42s03)
@@ -151,9 +151,10 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 
 ### Library Manager update
 SW Libs: 
-   - motor_ctrl_lib 3.1 or later
+   - motor_ctrl_lib 3.2 or later
    - emeeprom 2.7.0 or later
-click update
+
+click "update"
 
 ## Operation
 
@@ -190,29 +191,22 @@ click update
 
 7. After programming, the application starts automatically.
 
-8. Rotate the potentiometer (R6) to control the motor speed.
-
-   - Set the motor speed to zero and press the user button. It will change the motor direction.
-
-   - The user LED1 (yellow) shows the motor direction.
-
-
-## ModusToolbox&trade; Motor Suite 2.8.1 or later
+## ModusToolbox&trade; Motor Suite 2.9.0 or later
 
 **Launch the GUI**
 
-To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **Quick Panel** of ModusToolbox&trade; IDE. 
+To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **Quick Panel**.
    
-**Figure 2. Launch ModusToolbox&trade; Motor Suite**
+**TODO: Figure 2. Launch ModusToolbox&trade; Motor Suite**
 
 ![](images/launch-motor-suite.png)
 
 **GUI - Getting started**
 
-1. Project --> Open --> navigate to your project --> "GUI_MOTOR_DEMO_3_1_DB42S03"
-2. or create a new One based on the Templates
+1. Project --> Open --> navigate to your project --> "GUI_MOTOR_DEMO_3_2_DB42C02" (only makes sense if you are using this Motor)
+2. or create a new One based by clicking on the RAK-GAN Board --> New Project
 
-**Figure 3. Getting started**
+**TODO: Figure 3. Getting started** 
 
 ![](images/open-new-project.png)
    
@@ -251,7 +245,7 @@ Test Bench provides the option to control and monitor the motor parameters. Ensu
 
    - Switch off for speed control of the motor by using the "Target Set" slider in the GUI (software).
 
-**Figure 5. GUI - Test Bench**
+**TODO: Figure 5. GUI - Test Bench**
 
 ![](images/gui-test-bench-view.png)
    
@@ -292,7 +286,7 @@ All Motor and Board relatet Configuration are located in [ParamConfig.h]
 <img src="images\Folder_Structure.png" style="zoom:50%;" />
 
 *****TODO: 
-## Known Issuis
+## Known Issues
 
 <img src="images\MaxFcnCtn.jpg" style="zoom:50%;" />
 
@@ -308,6 +302,21 @@ There are 23 different permutations of control type, control entity, feedback ty
 Additionally, both three-shunt and single-shunt configurations are supported, which result in more flexibility in supporting various applications.
 Note that you can either include or bypass the current loop when using *TBC in TC* mode. Bypassing the current loop can address low-cost BLDC applications with no shunts or ADCs.
 
+## How to Start with your own Motor-Setup
+
+Here's a quick guide on how to get started with your own motor or setup.
+
+**Important Documents**
+
+- [RAK-GaN_User_Manual](https://github.com/RutronikSystemSolutions/RAK-GaN_Documents/blob/main/RAK-GaN_User_Manual.pdf)
+
+- [Firmware_Reference_Manual](https://github.com/Infineon/motor-ctrl-lib/blob/main/docs/Firmware_Reference_Manual.pdf)
+
+- [Tuning_Guide_Infineon]
+
+<img src="images\Tuning_Guide_Infineon.jpg" style="zoom:40%;" />
+
+
 ## Other resources
 
 Infineon provides a wealth of data at [www.infineon.com](https://www.infineon.com) to help you select the right device, and quickly and effectively integrate it into your design.
@@ -315,11 +324,13 @@ Infineon provides a wealth of data at [www.infineon.com](https://www.infineon.co
 
 ## Document history
 
-Document title: *"***tbd***"* – *Motor control demo - RAK-GaN_rev0*
+Document title:  – *Motor control demo - RAK-GaN_rev1*
 
- Version | Description of change
- ------- | ---------------------
- 1.0.0   | Code Example based on Motor_ctrl_lib 3.1 and MotorSuite 2.8.1
+ Version       | Description of change
+ -------       | ---------------------
+ 1.0.0         | Code Example based on Motor_ctrl_lib 3.1 and MotorSuite 2.8.1
+ 1.1.0 Andreas Heder | RAK-GAN Code Example based on Motor_ctrl_lib 3.2 and MotorSuite 2.9.0
+
  
 <br>
 
