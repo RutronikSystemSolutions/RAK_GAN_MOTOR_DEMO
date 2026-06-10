@@ -67,7 +67,7 @@ extern  TEMP_SENS_LUT_t     Temp_Sens_LUT;
 #define PWM_TRIG_ADVANCE    (0U)        // [ticks]
 
 /* Miscellaneous BSP definitions */
-#define KIT_ID                (0x0009UL)    // For GUI's recognition of HW
+#define KIT_ID                (0x0019UL)    // For GUI's recognition of HW --> 19 corresponds to RAK_GAN
 /* CPU load calculation configuration */
 #define CPU_LOAD_CALC_ENABLED           (1U)      // Set to (0U) to disable CPU load measurement
 #define CPU_LOAD_CALC_TIMEOUT           (10.0f)   // [s] Overflow threshold: cpu_load set to 100% if exceeded

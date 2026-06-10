@@ -30,7 +30,7 @@
 				"parameters": [
 					{
 						"id": "params.autocal_disable",
-						"value": 0
+						"value": 12
 					}
 				],
 				"blocks": [
@@ -199,7 +199,7 @@
 							},
 							{
 								"id": "params.sys.cmd.source",
-								"value": "Potentiometer"
+								"value": "External"
 							},
 							{
 								"id": "params.sys.cmd.w_max.mech",
@@ -296,8 +296,7 @@
 							}
 						],
 						"configurator": 2,
-						"testbench": 0,
-						"isValid": true
+						"testbench": 0
 					},
 					{
 						"id": "mcu_control",
@@ -524,11 +523,11 @@
 					},
 					{
 						"id": "params.motor.lq",
-						"value": 0.0004459999909158796
+						"value": 0.000446
 					},
 					{
 						"id": "params.motor.ld",
-						"value": 0.0004459999909158796
+						"value": 0.000446
 					},
 					{
 						"id": "params.motor.lam",
@@ -536,7 +535,7 @@
 					},
 					{
 						"id": "params.motor.r",
-						"value": 0.44699999690055847
+						"value": 0.447
 					},
 					{
 						"id": "params.motor.t_max",
@@ -578,8 +577,7 @@
 							}
 						],
 						"configurator": 1,
-						"testbench": 0,
-						"isValid": true
+						"testbench": 0
 					},
 					{
 						"id": "motor_mtpa",
@@ -637,8 +635,7 @@
 							}
 						],
 						"configurator": 9,
-						"testbench": 0,
-						"isValid": true
+						"testbench": 0
 					}
 				],
 				"configurator": 22,
