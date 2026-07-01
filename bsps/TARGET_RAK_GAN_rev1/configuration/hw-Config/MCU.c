@@ -35,6 +35,7 @@
 #include "MCU.h"
 #include "ParamConfig.h"
 
+
 #include "RAK_GAN/rak_gan.h"
 
 #if (MOTOR_CTRL_NO_OF_SCOPE_CHANNELS > 0) /* if scope is enabled */
@@ -437,10 +438,15 @@ void MCU_RunISR0(void)
         motor[0].hall_ptr->signal.v = !Cy_GPIO_Read(HALL_1_PORT, HALL_1_NUM);
         motor[0].hall_ptr->signal.w = !Cy_GPIO_Read(HALL_2_PORT, HALL_2_NUM);
 
+        mcu[0].hall_u_debug = motor[0].hall_ptr->signal.u;
+        mcu[0].hall_v_debug = motor[0].hall_ptr->signal.v;
+        mcu[0].hall_w_debug = motor[0].hall_ptr->signal.w;
+
     // SW capture (w/o POSIF)
     static bool hall_cap_sig, hall_cap_sig_prev = false;
     static uint32_t hall_cap_val, hall_cap_val_prev = 0U;
     hall_cap_sig = motor[0].hall_ptr->signal.u ^ motor[0].hall_ptr->signal.v ^ motor[0].hall_ptr->signal.w; // 6 steps per revolution
+
     if(TRANS_EDGE(hall_cap_sig_prev, hall_cap_sig))
     {
 

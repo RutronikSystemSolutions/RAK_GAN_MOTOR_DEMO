@@ -126,6 +126,9 @@ typedef struct
     MCU_TIME_CAP_t isr1_exe;
     MCU_ADC_MUX_t adc_mux;
     MCU_CPU_CALC_t cpu_calc;
+    uint8_t hall_u_debug;
+    uint8_t hall_v_debug;
+    uint8_t hall_w_debug;
 } MCU_t;
 
 /** @brief Global MCU context for all motor instances. */

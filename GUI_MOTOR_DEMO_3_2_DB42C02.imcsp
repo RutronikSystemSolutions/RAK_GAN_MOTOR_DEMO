@@ -377,7 +377,7 @@
 							},
 							{
 								"id": "params.ctrl.volt.v_min",
-								"value": 0.1599999964237213
+								"value": 0.20000000298023224
 							},
 							{
 								"id": "params.ctrl.volt.v_to_f_ratio",
@@ -523,11 +523,11 @@
 					},
 					{
 						"id": "params.motor.lq",
-						"value": 0.000446
+						"value": 0.0004459999909158796
 					},
 					{
 						"id": "params.motor.ld",
-						"value": 0.000446
+						"value": 0.0004459999909158796
 					},
 					{
 						"id": "params.motor.lam",
@@ -535,7 +535,7 @@
 					},
 					{
 						"id": "params.motor.r",
-						"value": 0.447
+						"value": 0.44699999690055847
 					},
 					{
 						"id": "params.motor.t_max",
