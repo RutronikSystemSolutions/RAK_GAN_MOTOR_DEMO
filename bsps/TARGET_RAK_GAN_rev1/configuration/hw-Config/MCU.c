@@ -438,9 +438,9 @@ void MCU_RunISR0(void)
         motor[0].hall_ptr->signal.v = !Cy_GPIO_Read(HALL_1_PORT, HALL_1_NUM);
         motor[0].hall_ptr->signal.w = !Cy_GPIO_Read(HALL_2_PORT, HALL_2_NUM);
 
-        mcu[0].hall_u_debug = motor[0].hall_ptr->signal.u;
-        mcu[0].hall_v_debug = motor[0].hall_ptr->signal.v;
-        mcu[0].hall_w_debug = motor[0].hall_ptr->signal.w;
+        //mcu[0].hall_u_debug = motor[0].hall_ptr->signal.u;
+        //mcu[0].hall_v_debug = motor[0].hall_ptr->signal.v;
+        //mcu[0].hall_w_debug = motor[0].hall_ptr->signal.w;
 
     // SW capture (w/o POSIF)
     static bool hall_cap_sig, hall_cap_sig_prev = false;

@@ -41,6 +41,15 @@ uint32_t OCD_Current_to_PWM(float i_limit);
 bool rak_gan_is_ocd_fault_active(void);
 
 /**
+ * @brief Retry power-input enable after a cleared undervoltage fault.
+ *
+ * Tracks whether an undervoltage fault was latched. Once the GUI-side fault
+ * clear removes the latched `uv_vdc` flag, the function toggles `POW_EN` to
+ * re-enable the protected input stage.
+ */
+void rak_gan_undervoltage_fault_check(void);
+
+/**
  * @brief Initialize and start LED PWM channels and OCD threshold PWM channel.
  */
 void rak_gan_init_led_and_ocd_pwm(void);

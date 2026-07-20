@@ -219,6 +219,34 @@ bool rak_gan_is_ocd_fault_active(void)
 }
 
 /**
+ * @brief Retry power-input enable after a cleared undervoltage fault.
+ *
+ * The function memorizes that an undervoltage fault occurred. After the GUI
+ * clears the latched `uv_vdc` flag, it briefly toggles `POW_EN` to reset the
+ * input protection path and allow the supply to come back up.
+ */
+void rak_gan_undervoltage_fault_check(void)
+{
+	/*Variable for undervoltage fault clearing */
+	static _Bool uv_fault = false;
+	
+	/*Detect the undervoltage event first, presume that this came from 7th switch off*/
+	if((bool)(motor[0].faults_ptr->flags_latched.sw.uv_vdc) && !uv_fault)
+	{
+		uv_fault = true;
+	}
+	/*Try to clear the undervoltage fault if requested from GUI*/
+	if(!(bool)(motor[0].faults_ptr->flags_latched.sw.uv_vdc) && uv_fault)
+	{
+		/* Reset the power input protection*/
+		Cy_GPIO_Clr(POW_EN_PORT, POW_EN_NUM);
+		CyDelay(1);
+    	Cy_GPIO_Set(POW_EN_PORT, POW_EN_NUM);
+		uv_fault = false;
+	}
+}
+
+/**
  * @brief Initialize and start RGB LED PWM channels and OCD threshold PWM.
  */
 void rak_gan_init_led_and_ocd_pwm(void)

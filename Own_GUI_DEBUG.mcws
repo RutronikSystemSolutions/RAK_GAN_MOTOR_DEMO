@@ -7,7 +7,7 @@
 			"variable": [
 				{
 					"symbol": "mcu[0].dma_results[2]",
-					"address": 872417472,
+					"address": 872417480,
 					"type": "int32_t",
 					"baseType": "long int",
 					"offset": 152,
@@ -42,7 +42,7 @@
 				6
 			],
 			"value": [
-				2020
+				0
 			],
 			"minSize": [
 				4,
@@ -59,7 +59,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.i_cmd_ol",
-					"address": 872422228,
+					"address": 872422244,
 					"offset": 40,
 					"size": 4,
 					"type": "float",
@@ -84,11 +84,11 @@
 			"componentIndex": 2,
 			"lockedTo": 3,
 			"size": [
-				6,
-				40
+				40,
+				6
 			],
 			"value": [
-				2
+				0
 			],
 			"minSize": [
 				6,
@@ -164,7 +164,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.i_cmd_ol",
-					"address": 872422228,
+					"address": 872422244,
 					"offset": 40,
 					"size": 4,
 					"type": "float",
@@ -198,7 +198,7 @@
 				6
 			],
 			"value": [
-				2
+				0
 			],
 			"minSize": [
 				4,
@@ -215,7 +215,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.volt.v_to_f_ratio",
-					"address": 872422376,
+					"address": 872422392,
 					"offset": 12,
 					"size": 4,
 					"type": "float",
@@ -244,7 +244,7 @@
 				40
 			],
 			"value": [
-				0.008190000429749489
+				0
 			],
 			"minSize": [
 				6,
@@ -261,7 +261,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.volt.v_min",
-					"address": 872422372,
+					"address": 872422388,
 					"offset": 8,
 					"size": 4,
 					"type": "float",
@@ -290,7 +290,7 @@
 				40
 			],
 			"value": [
-				0.053599998354911804
+				0
 			],
 			"minSize": [
 				6,
@@ -307,7 +307,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.kp.q",
-					"address": 872422192,
+					"address": 872422208,
 					"offset": 0,
 					"size": 4,
 					"type": "float",
@@ -336,7 +336,7 @@
 				40
 			],
 			"value": [
-				6.597344398498535
+				0
 			],
 			"minSize": [
 				6,
@@ -412,7 +412,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.kp.d",
-					"address": 872422196,
+					"address": 872422212,
 					"offset": 4,
 					"size": 4,
 					"type": "float",
@@ -437,11 +437,11 @@
 			"componentIndex": 11,
 			"lockedTo": 3,
 			"size": [
-				6,
-				40
+				40,
+				6
 			],
 			"value": [
-				6.597344398498535
+				0
 			],
 			"minSize": [
 				6,
@@ -458,7 +458,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.ki.q",
-					"address": 872422200,
+					"address": 872422216,
 					"offset": 0,
 					"size": 4,
 					"type": "float",
@@ -483,11 +483,11 @@
 			"componentIndex": 12,
 			"lockedTo": 3,
 			"size": [
-				6,
-				40
+				40,
+				6
 			],
 			"value": [
-				4712.38916015625
+				0
 			],
 			"minSize": [
 				6,
@@ -504,7 +504,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.curr.ki.d",
-					"address": 872422204,
+					"address": 872422220,
 					"offset": 4,
 					"size": 4,
 					"type": "float",
@@ -529,11 +529,11 @@
 			"componentIndex": 13,
 			"lockedTo": 3,
 			"size": [
-				6,
-				40
+				40,
+				6
 			],
 			"value": [
-				4712.38916015625
+				0
 			],
 			"minSize": [
 				6,
@@ -550,7 +550,7 @@
 			"variable": [
 				{
 					"symbol": "mcu[0].dma_results[2]",
-					"address": 872417472,
+					"address": 872417480,
 					"type": "int32_t",
 					"baseType": "long int",
 					"offset": 152,
@@ -585,7 +585,7 @@
 				8
 			],
 			"value": [
-				2021
+				0
 			],
 			"minSize": [
 				4,
@@ -641,7 +641,7 @@
 			"variable": [
 				{
 					"symbol": "mcu[0].adc_scale.v_dc",
-					"address": 872417340,
+					"address": 872417348,
 					"offset": 8,
 					"size": 4,
 					"type": "float",
@@ -675,7 +675,7 @@
 				6
 			],
 			"value": [
-				0.02376590296626091
+				0
 			],
 			"minSize": [
 				4,
@@ -692,7 +692,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.volt.v_min",
-					"address": 872422372,
+					"address": 872422388,
 					"offset": 8,
 					"size": 4,
 					"type": "float",
@@ -743,7 +743,7 @@
 			"variable": [
 				{
 					"symbol": "params[0].ctrl.volt.v_to_f_ratio",
-					"address": 872422376,
+					"address": 872422392,
 					"offset": 12,
 					"size": 4,
 					"type": "float",
@@ -787,12 +787,142 @@
 				7,
 				15
 			]
+		},
+		{
+			"tabName": "HALL",
+			"componentLabel": "mcu[0].hall_u_debug",
+			"variable": [
+				{
+					"symbol": "mcu[0].hall_u_debug",
+					"address": 872417596,
+					"offset": 268,
+					"size": 1,
+					"type": "uint8_t",
+					"baseType": "unsigned char",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "mcu[0]"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				2,
+				7
+			],
+			"componentIndex": 19,
+			"lockedTo": -1,
+			"size": [
+				4,
+				6
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
+		},
+		{
+			"tabName": "HALL",
+			"componentLabel": "mcu[0].hall_v_debug",
+			"variable": [
+				{
+					"symbol": "mcu[0].hall_v_debug",
+					"address": 872417597,
+					"offset": 269,
+					"size": 1,
+					"type": "uint8_t",
+					"baseType": "unsigned char",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "mcu[0]"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				5,
+				7
+			],
+			"componentIndex": 20,
+			"lockedTo": -1,
+			"size": [
+				4,
+				6
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
+		},
+		{
+			"tabName": "HALL",
+			"componentLabel": "mcu[0].hall_w_debug",
+			"variable": [
+				{
+					"symbol": "mcu[0].hall_w_debug",
+					"address": 872417598,
+					"offset": 270,
+					"size": 1,
+					"type": "uint8_t",
+					"baseType": "unsigned char",
+					"isArray": false,
+					"isBitfield": false,
+					"parent": "mcu[0]"
+				}
+			],
+			"maxVariables": 1,
+			"formula": "value > 0",
+			"activeColor": "#33FF00",
+			"inactiveColor": "#FF003A",
+			"componentType": "ledIndicator",
+			"position": [
+				10,
+				7
+			],
+			"componentIndex": 21,
+			"lockedTo": -1,
+			"size": [
+				4,
+				6
+			],
+			"value": [
+				0
+			],
+			"minSize": [
+				5,
+				5
+			],
+			"maxSize": [
+				10,
+				10
+			]
 		}
 	],
 	"definitions": [],
 	"tabs": [
 		"Open Loop",
-		"Workspace2"
+		"Workspace2",
+		"HALL"
 	],
 	"deviceName": "PSC3xxF",
 	"elfPath": "..\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf"
