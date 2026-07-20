@@ -42,7 +42,7 @@
 				6
 			],
 			"value": [
-				0
+				1007
 			],
 			"minSize": [
 				4,
@@ -78,17 +78,17 @@
 			"triggerEvent": "Mouse release",
 			"componentType": "sliderComponent",
 			"position": [
-				23,
+				27,
 				2
 			],
 			"componentIndex": 2,
 			"lockedTo": 3,
 			"size": [
-				40,
-				6
+				6,
+				40
 			],
 			"value": [
-				0
+				2
 			],
 			"minSize": [
 				6,
@@ -114,7 +114,7 @@
 			"lockedTo": -1,
 			"size": [
 				46,
-				43
+				54
 			],
 			"value": [
 				0
@@ -198,7 +198,7 @@
 				6
 			],
 			"value": [
-				0
+				2
 			],
 			"minSize": [
 				4,
@@ -244,7 +244,7 @@
 				40
 			],
 			"value": [
-				0
+				0.007499999832361937
 			],
 			"minSize": [
 				6,
@@ -290,7 +290,7 @@
 				40
 			],
 			"value": [
-				0
+				0.15000000596046448
 			],
 			"minSize": [
 				6,
@@ -326,7 +326,7 @@
 			"triggerEvent": "Change",
 			"componentType": "sliderComponent",
 			"position": [
-				31,
+				35,
 				2
 			],
 			"componentIndex": 8,
@@ -336,7 +336,7 @@
 				40
 			],
 			"value": [
-				0
+				2.8023006916046143
 			],
 			"minSize": [
 				6,
@@ -431,17 +431,17 @@
 			"triggerEvent": "Change",
 			"componentType": "sliderComponent",
 			"position": [
-				37,
+				49,
 				2
 			],
 			"componentIndex": 11,
 			"lockedTo": 3,
 			"size": [
-				40,
-				6
+				6,
+				40
 			],
 			"value": [
-				0
+				2.8023006916046143
 			],
 			"minSize": [
 				6,
@@ -477,17 +477,17 @@
 			"triggerEvent": "Change",
 			"componentType": "sliderComponent",
 			"position": [
-				44,
+				42,
 				2
 			],
 			"componentIndex": 12,
 			"lockedTo": 3,
 			"size": [
-				40,
-				6
+				6,
+				40
 			],
 			"value": [
-				0
+				2808.583984375
 			],
 			"minSize": [
 				6,
@@ -523,17 +523,17 @@
 			"triggerEvent": "Mouse release",
 			"componentType": "sliderComponent",
 			"position": [
-				51,
+				54,
 				2
 			],
 			"componentIndex": 13,
 			"lockedTo": 3,
 			"size": [
-				40,
-				6
+				6,
+				40
 			],
 			"value": [
-				0
+				2808.583984375
 			],
 			"minSize": [
 				6,
@@ -726,7 +726,7 @@
 				9
 			],
 			"value": [
-				0
+				0.15000000596046448
 			],
 			"minSize": [
 				4,
@@ -777,7 +777,7 @@
 				9
 			],
 			"value": [
-				0
+				0.007499999832361937
 			],
 			"minSize": [
 				4,
