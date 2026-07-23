@@ -2,6 +2,8 @@
 
 <img src="images\RAK_GAN_rev1.jpg" style="zoom:50%;" />
 
+
+
 This code example demonstrates the sensorless and sensored solutions using the Infineon's PSOC Control C3 MCU and Rutronik´s RAK-GaN Board.
 - Sensorless PMSM FOC with 3-shunt
 - Hall sensor-based PMSM FOC
@@ -13,6 +15,10 @@ This code example demonstrates the sensorless and sensored solutions using the I
 
 ## Requirements
 
+<table>
+  <tr>
+    <td valign="top">
+
 - ModusToolbox&trade;[Download](https://www.infineon.com/modustoolbox)  (ModusToolbox&trade; Setup)
 - open ModusToolbox&trade; Setup and install
    - Motor_ctrl_lib : 3.2 or later
@@ -22,8 +28,14 @@ This code example demonstrates the sensorless and sensored solutions using the I
 - [JLINK-SEGGER](https://www.segger.com/downloads/jlink/)
 - Programming language: C
 
-[All PSOC&trade; Control C3 MCUs](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-control-arm-cortex-m33-mcu/) 
+    </td>
+    <td valign="top">
+      <img src="images\MTB_Motor_Suite_Ready_pic.png" alt="Bild" width="200">
+    </td>
+  </tr>
+</table>
 
+[All PSOC&trade; Control C3 MCUs](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-control-arm-cortex-m33-mcu/) 
 
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
