@@ -1,6 +1,6 @@
 # Motor control demo - RAK-GaN_rev1
 
-<img src="images\RAK_GAN_rev1.jpg" style="zoom:50%;" />
+<img src="images/RAK-GaN_Motor_Suite.jpg" style="zoom:50%;" />
 
 
 
@@ -21,9 +21,11 @@ This code example demonstrates the sensorless and sensored solutions using the I
 
 - ModusToolbox&trade;[Download](https://www.infineon.com/modustoolbox)  (ModusToolbox&trade; Setup)
 - open ModusToolbox&trade; Setup and install
-   - Motor_ctrl_lib : 3.2 or later
+   
    - Motor Suite GUI : 2.9.0 or later
    - ModusToolbox&trade; Tools Package v3.8 or later
+      - Motor_ctrl_lib : 3.2 or later (comes with the Tools Package)
+
 - [RAK-GaN_rev1](https://www.rutronik24.de/produkt/rutronik/rak/32343794.html)
 - [JLINK-SEGGER](https://www.segger.com/downloads/jlink/)
 - Programming language: C
@@ -35,7 +37,7 @@ This code example demonstrates the sensorless and sensored solutions using the I
   </tr>
 </table>
 
-[All PSOC&trade; Control C3 MCUs](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-control-arm-cortex-m33-mcu/) 
+[PSOC&trade; Control C3 MCUs Overview](https://www.infineon.com/cms/en/product/microcontroller/32-bit-psoc-arm-cortex-microcontroller/32-bit-psoc-control-arm-cortex-m33-mcu/) 
 
 ## Supported toolchains (make variable 'TOOLCHAIN')
 
@@ -52,9 +54,10 @@ DB42S03
 
 ## Software setup
 
-### Create the project
+<details>
+  <summary><strong>1. Create The Project in an IDE (to work later in source Code)</strong></summary>
 
-The ModusToolbox&trade; tools package provides the Project Creator as both a GUI tool and a command line tool.
+  The ModusToolbox&trade; tools package provides the Project Creator as both a GUI tool and a command line tool.
 
 <details><summary><b>Use Project Creator GUI</b></summary>
 
@@ -167,6 +170,31 @@ SW Libs:
    - emeeprom 2.7.0 or later
 
 click "update"
+
+</details>
+
+<details>
+  <summary><strong>2. Using MotorSuite as Stand Alone (only for Motor parameter tuning)</strong></summary>
+
+  
+
+  1. start MotorSuite 
+   -Projekt --> open
+   -navigate to the folder from : [RAK-GaN_MotorDemoGUI](#https://github.com/RutronikSystemSolutions/RAK_GAN_MOTOR_DEMO/blob/main/Documents/RAK-GaN_MotorDemoGUI_bin.zip) 
+   - open the project file xxx.imcsp
+      (here are all relevant parameters for the specific Board and Motor)
+  2. Flash the .hex file
+
+      <img src="images/FW_Flash.jpg" style="zoom:50%;" />
+
+  3. Select ELF File
+
+      <img src="images/Elf_file.jpg" style="zoom:50%;" />
+
+  4. Start with tuning
+
+</details>
+
 
 ## Operation
 

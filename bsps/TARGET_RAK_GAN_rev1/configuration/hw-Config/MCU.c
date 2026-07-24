@@ -569,9 +569,12 @@ void MCU_RunISR1(void)
     || (!(Cy_TCPWM_PWM_GetStatus(PWM_U_HW, PWM_U_NUM) & CY_TCPWM_PWM_STATUS_COUNTER_RUNNING)) // Detect kill via TCPWM: counter not running indicates kill event
     #if defined(RAK_GAN_BOARD)
     || rak_gan_is_ocd_fault_active() // Check for OCD fault using dedicated function for RAK GAN board, which may have specific logic to determine OCD fault status
+
     #endif
     ; // need to be here 
-
+#if defined(RAK_GAN_BOARD)
+    rak_gan_undervoltage_fault_check(); // Check for undervoltage fault using dedicated function for RAK GAN board, which may have specific logic to determine undervoltage fault status
+#endif
     motor[0].faults_ptr->flags.hw.cs_ocp = motor[0].sensor_iface_ptr->digital.fault ? 0b111 : 0b000; // hw faults only cover over-current without SGD
 #endif
 

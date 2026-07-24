@@ -12,9 +12,9 @@ SESSION_INFO = _json.loads(r'''{
   "board_target": "TARGET_RAK_GAN_rev1",
   "cy_tools_path": "C:/Users/Andi/ModusToolbox/tools_3.8",
   "modus_shell_path": "C:/Users/Andi/ModusToolbox/tools_3.8/modus-shell",
-  "tcp_port": 62973,
-  "ext_port": 62970,
-  "pid": 22004,
+  "tcp_port": 60909,
+  "ext_port": 60908,
+  "pid": 14472,
   "log_level": "info",
   "log_file": "C:/Users/Andi/AppData/Local/Temp/mtbai-logs/mtbai.log"
 }''')
