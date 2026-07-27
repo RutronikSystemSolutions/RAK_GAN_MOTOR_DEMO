@@ -40,13 +40,13 @@ MTB_TYPE=COMBINED
 # To change the target, it is recommended to use the Library manager
 # ('make library-manager' from command line), which will also update Eclipse IDE launch
 # configurations.
-TARGET=RAK_GAN_rev1
+TARGET=RAK_GAN
 
 # Name of application (used to derive name of final linked file).
 #
 # If APPNAME is edited, ensure to update or regenerate launch
 # configurations for your IDE.
-APPNAME=mtb-example-ce240614-motor-control-solutions
+APPNAME=rak-gan-motor-demo
 
 # Name of toolchain to use. Options include:
 #

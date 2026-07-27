@@ -4,7 +4,7 @@
 
 
 
-This code example demonstrates the sensorless and sensored solutions using the Infineon's PSOC Control C3 MCU and Rutronik´s RAK-GaN Board.
+This code example demonstrates the sensorless and sensored solutions using Infineon's PSOC Control C3 MCU and Rutronik´s RAK-GaN Board.
 - Sensorless PMSM FOC with 3-shunt
 - Hall sensor-based PMSM FOC
 - Encoder-based PMSM FOC *needs to be testet
@@ -20,9 +20,9 @@ This code example demonstrates the sensorless and sensored solutions using the I
     <td valign="top">
 
 - ModusToolbox&trade;[Download](https://www.infineon.com/modustoolbox)  (ModusToolbox&trade; Setup)
-- open ModusToolbox&trade; Setup and install
-   
-   - Motor Suite GUI : 2.9.0 or later
+- Open ModusToolbox&trade; Setup and install
+  
+   - Motor Suite GUI: 2.9.0 or later
    - ModusToolbox&trade; Tools Package v3.8 or later
       - Motor_ctrl_lib : 3.2 or later (comes with the Tools Package)
 
@@ -170,19 +170,19 @@ used SW Libs:
    - motor_ctrl_lib 3.2 
    - emeeprom 2.7.0 
 
-click "update"
+Click "update"
 
 </details>
 
 <details>
   <summary><strong>2. Using MotorSuite as Stand Alone (only for Motor parameter tuning)</strong></summary>
 
-  
+
 
   1. start MotorSuite 
-   -Projekt --> open
-   -navigate to the folder from : [RAK-GaN_MotorDemoGUI](#https://github.com/RutronikSystemSolutions/RAK_GAN_MOTOR_DEMO/blob/main/Documents/RAK-GaN_MotorDemoGUI_bin.zip) 
-   - open the project file xxx.imcsp
+      -Projekt --> open
+      -Navigate to the folder: [RAK-GaN_MotorDemoGUI](#https://github.com/RutronikSystemSolutions/RAK_GAN_MOTOR_DEMO/blob/main/Documents/RAK-GaN_MotorDemoGUI_bin.zip) 
+   - Open the project file xxx.imcsp
       (here are all relevant parameters for the specific Board and Motor)
   2. Flash the .hex file
 
@@ -207,7 +207,7 @@ click "update"
 **Launch the GUI**
 
 To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **Quick Panel**.
-   
+
 **TODO: Figure 2. Launch ModusToolbox&trade; Motor Suite**
 
 ![](images/launch-motor-suite.png)
@@ -215,12 +215,12 @@ To launch the GUI, double-click on **ModusToolbox&trade; Motor Suite** in the **
 **GUI - Getting started**
 
 1. Project --> Open --> navigate to your project --> "GUI_MOTOR_DEMO_3_2_DB42C02" (only makes sense if you are using this Motor)
-2. or create a new One based by clicking on the RAK-GAN Board --> New Project
+2. or create a new one based by clicking on the RAK-GAN Board --> New Project
 
 **TODO: Figure 3. Getting started** 
 
 ![](images/open-new-project.png)
-   
+
 **GUI - Configurator**
 
 1. In the GUI configurator, verify the establishment of J-Link connection in the right bottom corner indicated by the green LED.
@@ -240,7 +240,7 @@ By selecting each of the parameters in the parameter controls section, the corre
 
 To change the firmware parameters, stop the motor first from the test bench view.
 
-There is a toggle switch on the right upper corner of the configurator view window to choose between seeing only basic parameters or advanced parameters.
+There is a toggle switch on the upper right corner of the configurator view window to choose between seeing only basic parameters or advanced parameters.
 
 The GUI can also invoke the firmware to auto-calculate the advanced parameters. See GUI's **Help** for more information.
 
@@ -259,8 +259,8 @@ Test Bench provides the option to control and monitor the motor parameters. Ensu
 **TODO: Figure 5. GUI - Test Bench**
 
 ![](images/gui-test-bench-view.png)
-   
-   
+
+
 **GUI - Oscilloscope**
 
 ModusToolbox&trade; Motor Suite supports a high-speed oscilloscope to monitor any firmware variable. There are four channels available to monitor four variables at a time. <br>
@@ -269,8 +269,8 @@ In the oscilloscope window, configure the **Divider** value and select **AutoSca
 **Figure 6. GUI - Oscilloscope**
 
 ![](images/oscilloscope.png)
-   
-   
+
+
 ## Debugging
 
 You can debug the example to step through the code.
@@ -292,7 +292,7 @@ Follow the instructions in your preferred IDE.
 
 ## Using the code example
 
-All Motor and Board relatet Configuration are located in [ParamConfig.h]
+All Motor and Board related configurations are located in [ParamConfig.h]
 
 <img src="images\Folder_Structure.png" style="zoom:50%;" />
 
@@ -309,7 +309,7 @@ Workaround: edit in General.h line 156
 
 ![](images/control-methods.png)
 
-There are 23 different permutations of control type, control entity, feedback type, and startup methods that are supported as shown in **Figure 8**.
+There are 23 different permutations of control type, control entity, feedback type, and startup methods that are supported, as shown in **Figure 8**.
 Additionally, both three-shunt and single-shunt configurations are supported, which result in more flexibility in supporting various applications.
 Note that you can either include or bypass the current loop when using *TBC in TC* mode. Bypassing the current loop can address low-cost BLDC applications with no shunts or ADCs.
 
@@ -344,7 +344,7 @@ Document title:  – *Motor control demo - RAK-GaN_rev1*
  1.0.0         | Code Example based on Motor_ctrl_lib 3.1 and MotorSuite 2.8.1
  1.1.0 Andreas Heder | RAK-GAN Code Example based on Motor_ctrl_lib 3.2 and MotorSuite 2.9.0
 
- 
+
 <br>
 
 
