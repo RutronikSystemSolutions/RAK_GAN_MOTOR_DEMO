@@ -51,8 +51,9 @@ RAK-GaN
 
 DB42S03
    -[DB42S03-Datasheet](https://www.nanotec.com/eu/de/produkte/636-db42s03)
+(not included in the Kit)
 
-## Software setup
+## How to Start
 
 <details>
   <summary><strong>1. Create The Project in an IDE (to work later in source Code)</strong></summary>
@@ -165,9 +166,9 @@ For more details, see the [ModusToolbox&trade; tools package user guide](https:/
 </details>
 
 ### Library Manager update
-SW Libs: 
-   - motor_ctrl_lib 3.2 or later
-   - emeeprom 2.7.0 or later
+used SW Libs: 
+   - motor_ctrl_lib 3.2 
+   - emeeprom 2.7.0 
 
 click "update"
 
@@ -193,43 +194,13 @@ click "update"
 
   4. Start with tuning
 
+  - [Tuning_Guide_Infineon]
+
+<img src="images\Tuning_Guide_Infineon.jpg" style="zoom:40%;" />
+
+
+
 </details>
-
-
-## Operation
-
-1. Connect the kit as per [Hardware setup](#hardware-setup) section.
-
-2. Program the board using one of the following:
-
-   <details><summary><b>Using Eclipse IDE</b></summary>
-
-      1. Select the application project in the Project Explorer.
-	
-      2. In the **Quick Panel**, scroll down, and click **\<Application Name> Program (JLink)**.
-		
-   </details>
-   
-   <details><summary><b>In other IDEs</b></summary>
-   
-   Follow the instructions in your preferred IDE.
-	
-   </details>
-   
-   <details><summary><b>Using CLI</b></summary>
-
-     From the terminal, execute the `make program` command to build and program the application using the default toolchain to the default target. The default toolchain is specified in the application's Makefile but you can override this value manually:
-      ```
-      make program TOOLCHAIN=<toolchain>
-      ```
-
-      Example:
-      ```
-      make program TOOLCHAIN=GCC_ARM
-      ```
-   </details>
-
-7. After programming, the application starts automatically.
 
 ## ModusToolbox&trade; Motor Suite 2.9.0 or later
 
@@ -325,7 +296,7 @@ All Motor and Board relatet Configuration are located in [ParamConfig.h]
 
 <img src="images\Folder_Structure.png" style="zoom:50%;" />
 
-*****TODO: 
+All RAK-GaN Board specific integrations are located and documented in /RAK_GAN Folder
 ## Known Issues
 
 <img src="images\MaxFcnCtn.jpg" style="zoom:50%;" />

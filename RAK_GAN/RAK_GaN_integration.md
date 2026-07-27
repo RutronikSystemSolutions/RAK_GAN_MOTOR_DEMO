@@ -161,10 +161,19 @@ DEVICE_PSC3M5FDS2AFQ1_SRAM_KB:=64
 ```
 
 **Device breakdown:**
-- **PSC3M5** - PSoC Control C3, M5 variant
-- **FDS2** - Package variant (BGA)
-- **AFQ1** - Die and speed grade
-- **256KB Flash, 64KB SRAM** - Memory configuration
+| Code | Description                                                            |
+| ---- | ---------------------------------------------------------------------- |
+| `PS` | PSoC™ family                                                           |
+| `C3` | Control C3 architecture                                                |
+| `M`  | Motor-control series                                                   |
+| `5`  | Main-line subseries                                                    |
+| `F`  | 256 KB Flash configuration                                             |
+| `D`  | Dual-core device                                                       |
+| `S2` | PSA Level 2 security                                                   |
+| `AF` | E-LQFP-80 package with 0.5 mm pin pitch                                |
+| `Q`  | Extended temperature range from −40 °C to +105 °C                      |
+| `1`  | Frequency class from 100 MHz to 199 MHz; up to 180 MHz for this device |
+
 
 ### Debugger Configuration
 
