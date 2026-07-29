@@ -19,8 +19,8 @@
 		"mosfetId": "",
 		"isHidden": true,
 		"isUsingCustomFirmware": true,
-		"elfPath": "C:\\Projects\\RAK_GAN_RSS_GITHUB\\RAK_GAN_MOTOR_DEMO\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf",
-		"hexPath": "c:\\Projects\\VS_PSC3_RAK_GAN\\RAK_GAN_MOTOR_DEMO\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.hex"
+		"elfPath": "C:\\Projects\\VS_PSC3_Test\\RAK-GAN_Motor_Control_Demo\\build\\last_config\\rak-gan-motor-demo.elf",
+		"hexPath": "C:\\Projects\\VS_PSC3_Test\\RAK-GAN_Motor_Control_Demo\\build\\last_config\\rak-gan-motor-demo.hex"
 	},
 	"config": {
 		"components": [
@@ -323,7 +323,7 @@
 							},
 							{
 								"id": "params.ctrl.speed.ki",
-								"value": 0.03400000184774399
+								"value": 0.034
 							},
 							{
 								"id": "params.ctrl.speed.ki_multiple",
@@ -338,7 +338,7 @@
 							},
 							{
 								"id": "params.ctrl.curr.bw",
-								"value": 6000.000228892258
+								"value": 750.0000286115322
 							},
 							{
 								"id": "params.ctrl.curr.ff_coef",
@@ -358,11 +358,11 @@
 							},
 							{
 								"id": "params.ctrl.curr.ki.q",
-								"value": 2828.080078125
+								"value": 2828.08013
 							},
 							{
 								"id": "params.ctrl.curr.ki.d",
-								"value": 2828.080078125
+								"value": 2828.08013
 							},
 							{
 								"id": "params.ctrl.curr.i_cmd_ol",

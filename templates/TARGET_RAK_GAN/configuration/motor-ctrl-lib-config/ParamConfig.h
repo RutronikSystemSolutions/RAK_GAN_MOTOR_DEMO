@@ -45,7 +45,7 @@
 #define ADC_VREF_GAIN                            ((3.3f)/(3.3f))               /*[V/V], voltage-reference buffer gain (e.g. scaling 5.0V down to 3.3V) (default: (5.0f)/(3.3f))*/
 
 #define ADC_CS_CURRENT_MEASUREMENT_TYPE          (Active_Sensor)                   /*Shunt_resistance "Shunt_res" =0 or active sensor "Active_Sensor" =1 (default: Shunt_Res)*/
-#define ADC_CS_CURRENT_SENSE_POLARITY            (LS_Current_Sense)            /*Low side current sense "LS_Current_Sense" =0 or High side current Sense "HS_Current_sense"=1 (default: LS_Current_Sense)*/
+#define ADC_CS_CURRENT_SENSE_POLARITY            (HS_Current_Sense)            /*Low side current sense "LS_Current_Sense" =0 or High side current Sense "HS_Current_sense"=1 (default: LS_Current_Sense)*/
 
 #define ADC_CS_SHUNT_TYPE                        (Three_Shunt)                 /*Three_Shunt =0, Single_Shunt =1, Two_Shunt =2 (default: Three_Shunt)*/
 
@@ -85,7 +85,7 @@
 #define MOTOR_CTRL_SS_MEAS_TYPE                   (Phase_Shift)                /*   Hyb_Mod =  0U, Hybrid modulation; Phase_Shift = 1U Phase Shift modulation (default: Phase_Shift)*/  
 
 /*********Rate Limiters*********/
-#define MOTOR_CTRL_SPEED_CMD_RATE                  (4000)                    /*[RPM/sec], Speed command rate (default: 1000.0f)*/
+#define MOTOR_CTRL_SPEED_CMD_RATE                  (1000)                    /*[RPM/sec], Speed command rate (default: 1000.0f)*/
 #define MOTOR_CTRL_SPEED_CMD_RATE_OPEN_LOOP        (1000)                    /*[RPM/sec], Speed command rate during open loop state (Voltage OL and current OL) (default: 1000.0f)*/
 #if defined(CTRL_METHOD_RFO) || defined(CTRL_METHOD_TBC)
 #define MOTOR_CTRL_CURRENT_CMD_RATE                (54)   /*[A/sec], Current command rate (default: 10.0f*MOTOR_CURRENT_PEAK)*/
@@ -161,7 +161,7 @@
 
 #if defined(CTRL_METHOD_RFO) || defined(CTRL_METHOD_TBC)
 /*********Current Controller*********/
-#define MOTOR_CTRL_CURRENT_BW                      (6000)                      /*[Hz], Current loop bandwidth (default: 750.0f)*/
+#define MOTOR_CTRL_CURRENT_BW                      (750)                      /*[Hz], Current loop bandwidth (default: 750.0f)*/
 #define MOTOR_CTRL_CURRENT_FF_COEFF                (50)                      /*[%], Current loop feed-forward coefficient (default: 100.0f)*/
 #define MOTOR_CTRL_CURRENT_STARTUP_THRESH          (0.179)    /*[A], Current control startup threshold (default: MOTOR_CURRENT_CONT*0.15f)*/
 #define MOTOR_CTRL_CURRENT_OPEN_LOOP_CMD           (2)      /*[A], Current control open loop command value (default: MOTOR_CURRENT_CONT*0.4f)*/
