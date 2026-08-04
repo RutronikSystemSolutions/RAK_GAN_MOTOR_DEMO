@@ -1,10 +1,11 @@
 {
 	"boardType": {
-		"projectId": 1060100,
-		"algorithmType": "Floating-point",
-		"boardType": "psoc-control-c3-rfo",
-		"version": "v2",
-		"numVersions": 2,
+		"projectName": "GUI_MOTOR_DEMO_3_2_DB42S03",
+		"projectId": 1140100,
+		"algorithmType": "RAK-GaN",
+		"boardType": "psoc3m5-motor-demo-rfo",
+		"version": "v1",
+		"numVersions": 1,
 		"isLatestVersion": true,
 		"deviceName": "PSC3xxF",
 		"bsps": [
@@ -17,10 +18,9 @@
 		"firmwareName": "motor-ctrl-lib",
 		"mosfetId": "",
 		"isHidden": true,
-		"projectName": "GUI_MOTOR_DEMO_3_1_DB42S03",
 		"isUsingCustomFirmware": true,
-		"elfPath": "C:\\Projects\\RAK_GAN_RSS_GITHUB\\RAK_GAN_MOTOR_DEMO\\build\\last_config\\mtb-example-ce240614-motor-control-solutions.elf",
-		"hexPath": "c:\\Projects\\VS_PSC3_RAK_GAN\\RAK_GAN_MOTOR_DEMO\\build\\APP_KIT_PSC3M5_CC2\\Debug\\mtb-example-ce240614-motor-control-solutions.hex"
+		"elfPath": "C:\\Projects\\VS_PSC3_Test\\RAK-GAN_Motor_Control_Demo\\build\\last_config\\rak-gan-motor-demo.elf",
+		"hexPath": "C:\\Projects\\VS_PSC3_Test\\RAK-GAN_Motor_Control_Demo\\build\\last_config\\rak-gan-motor-demo.hex"
 	},
 	"config": {
 		"components": [
@@ -30,7 +30,7 @@
 				"parameters": [
 					{
 						"id": "params.autocal_disable",
-						"value": 0
+						"value": 12
 					}
 				],
 				"blocks": [
@@ -41,6 +41,10 @@
 							{
 								"id": "params.sys.boot_time",
 								"value": 0.25
+							},
+							{
+								"id": "params.sys.boot_mode",
+								"value": "Boot_and_Brake"
 							},
 							{
 								"id": "separator"
@@ -56,6 +60,10 @@
 							{
 								"id": "params.sys.samp.fs0_fs1_ratio",
 								"value": 5
+							},
+							{
+								"id": "params.sys.samp.deadtime",
+								"value": 1e-7
 							},
 							{
 								"id": "separator"
@@ -76,34 +84,56 @@
 								"value": "Three_Shunt"
 							},
 							{
+								"id": "params.sys.analog.shunt.single_shunt.type",
+								"value": "Phase_Shift"
+							},
+							{
 								"id": "params.sys.analog.shunt.res",
-								"value": 0.009999999776482582
+								"value": 0.01
 							},
 							{
 								"id": "params.sys.analog.shunt.current_sensitivity",
-								"value": 0.02199999988079071
+								"value": 0.022
 							},
 							{
 								"id": "params.sys.analog.shunt.opamp_gain",
 								"value": 1
 							},
 							{
+								"id": "params.sys.analog.shunt.single_shunt.adc_t_min",
+								"value": 0.000003
+							},
+							{
 								"id": "separator"
 							},
 							{
-								"id": "params.sys.analog.shunt.hyb_mod.adc_t_min",
-								"value": 4.999999987376214e-7
-							},
-							{
-								"id": "params.sys.analog.shunt.hyb_mod.ki",
+								"id": "params.sys.analog.shunt.single_shunt.ki",
 								"value": 0.5
 							},
 							{
 								"id": "separator"
 							},
 							{
+								"id": "params.sys.analog.shunt.single_shunt.adc_t_sh_delay",
+								"value": 0
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.analog.volt.vdc_adc_scale",
+								"value": 0.0339
+							},
+							{
+								"id": "params.sys.analog.volt.vuvw_adc_scale",
+								"value": 1
+							},
+							{
+								"id": "separator"
+							},
+							{
 								"id": "params.sys.rate_lim.w_cmd.elec",
-								"value": 1000.0000915759671
+								"value": 1000
 							},
 							{
 								"id": "params.sys.rate_lim.i_cmd",
@@ -111,22 +141,22 @@
 							},
 							{
 								"id": "params.sys.rate_lim.w_ol_cmd.elec",
-								"value": 1000.0000915759671
+								"value": 1000
 							},
 							{
 								"id": "params.sys.rate_lim.p_cmd",
-								"value": 180.00000500895632
+								"value": 180
 							},
 							{
 								"id": "separator"
 							},
 							{
 								"id": "params.sys.faults.oc_thresh",
-								"value": 150
+								"value": 120
 							},
 							{
 								"id": "params.sys.faults.vdc_time",
-								"value": 0.30000001192092896
+								"value": 0.3
 							},
 							{
 								"id": "params.sys.faults.temp_ps_thresh",
@@ -141,16 +171,28 @@
 								"value": 10
 							},
 							{
+								"id": "params.sys.faults.clr_try_period",
+								"value": 10
+							},
+							{
 								"id": "params.sys.faults.vdc_thresh.min",
-								"value": 16.799999237060547
+								"value": 16.8
 							},
 							{
 								"id": "params.sys.faults.vdc_thresh.max",
-								"value": 31.19999885559082
+								"value": 31.2
 							},
 							{
 								"id": "params.sys.faults.w_thresh.elec",
-								"value": 12000.001390333011
+								"value": 12000
+							},
+							{
+								"id": "params.sys.faults.phase_loss.tau",
+								"value": 1
+							},
+							{
+								"id": "params.sys.faults.phase_loss.zero_current_thres",
+								"value": 0.001
 							},
 							{
 								"id": "separator"
@@ -161,11 +203,11 @@
 							},
 							{
 								"id": "params.sys.cmd.w_max.mech",
-								"value": 4000.0003663038683
+								"value": 4000
 							},
 							{
 								"id": "params.sys.cmd.i_max",
-								"value": 0.8949999809265137
+								"value": 0.895
 							},
 							{
 								"id": "separator"
@@ -194,11 +236,26 @@
 							},
 							{
 								"id": "params.sys.fb.encoder.w_zsd_thresh.elec",
-								"value": 32.00000316721084
+								"value": 32
+							},
+							{
+								"id": "separator"
+							},
+							{
+								"id": "params.sys.catch_spin.mode",
+								"value": 0
+							},
+							{
+								"id": "params.sys.catch_spin.time",
+								"value": 0
+							},
+							{
+								"id": "params.sys.catch_spin.w_thresh.elec",
+								"value": 800
 							}
 						],
-						"configurator": 32,
-						"testbench": 8,
+						"configurator": 44,
+						"testbench": 11,
 						"isValid": true
 					},
 					{
@@ -207,15 +264,19 @@
 						"parameters": [
 							{
 								"id": "params.obs.w_thresh.elec",
-								"value": 399.99999291717614
+								"value": 480
 							},
 							{
 								"id": "params.obs.lock_time",
 								"value": 0.5
+							},
+							{
+								"id": "params.obs.pll.w_max.elec",
+								"value": 9000
 							}
 						],
-						"configurator": 2,
-						"testbench": 2,
+						"configurator": 3,
+						"testbench": 3,
 						"isValid": true
 					},
 					{
@@ -224,7 +285,7 @@
 						"parameters": [
 							{
 								"id": "params.filt.trq_w0",
-								"value": 1.000000027827535
+								"value": 1
 							},
 							{
 								"id": "separator"
@@ -243,14 +304,14 @@
 						"parameters": [
 							{
 								"id": "params.ctrl.mode",
-								"value": "Speed_Mode_FOC_Sensorless_Volt_Startup"
+								"value": "Speed_Mode_FOC_Sensorless_Curr_Startup"
 							},
 							{
 								"id": "separator"
 							},
 							{
 								"id": "params.ctrl.speed.bw",
-								"value": 10.00000043005733
+								"value": 50
 							},
 							{
 								"id": "params.ctrl.speed.ol_cl_tr_coeff",
@@ -258,11 +319,11 @@
 							},
 							{
 								"id": "params.ctrl.speed.kp",
-								"value": 0.002400000113993883
+								"value": 0.002426000079140067
 							},
 							{
 								"id": "params.ctrl.speed.ki",
-								"value": 0.03400000184774399
+								"value": 0.0462
 							},
 							{
 								"id": "params.ctrl.speed.ki_multiple",
@@ -270,14 +331,14 @@
 							},
 							{
 								"id": "params.ctrl.speed.ff_coef",
-								"value": 59.99999642372131
+								"value": 60
 							},
 							{
 								"id": "separator"
 							},
 							{
 								"id": "params.ctrl.curr.bw",
-								"value": 1000.0000381487096
+								"value": 750
 							},
 							{
 								"id": "params.ctrl.curr.ff_coef",
@@ -285,7 +346,7 @@
 							},
 							{
 								"id": "params.ctrl.curr.i_cmd_thresh",
-								"value": 0.2680000066757202
+								"value": 0.179
 							},
 							{
 								"id": "params.ctrl.curr.kp.q",
@@ -297,30 +358,30 @@
 							},
 							{
 								"id": "params.ctrl.curr.ki.q",
-								"value": 2828.080078125
+								"value": 3759.999966
 							},
 							{
 								"id": "params.ctrl.curr.ki.d",
-								"value": 2828.080078125
+								"value": 3759.999966
 							},
 							{
 								"id": "params.ctrl.curr.i_cmd_ol",
-								"value": 0.75
+								"value": 2
 							},
 							{
 								"id": "separator"
 							},
 							{
 								"id": "params.ctrl.volt.w_thresh.elec",
-								"value": 99.99999822929404
+								"value": 200
 							},
 							{
 								"id": "params.ctrl.volt.v_min",
-								"value": 0.15000000596046448
+								"value": 0.15
 							},
 							{
 								"id": "params.ctrl.volt.v_to_f_ratio",
-								"value": 0.007499999832361937
+								"value": 0.0075
 							},
 							{
 								"id": "params.ctrl.volt.mod_method",
@@ -335,11 +396,11 @@
 							},
 							{
 								"id": "params.ctrl.volt.five_seg.active_mi",
-								"value": 9.999999403953552
+								"value": 10
 							},
 							{
 								"id": "params.ctrl.volt.five_seg.inactive_mi",
-								"value": 4.999999701976776
+								"value": 5
 							},
 							{
 								"id": "separator"
@@ -350,15 +411,15 @@
 							},
 							{
 								"id": "params.ctrl.flux_weaken.vdc_coeff",
-								"value": 0.7999999856414146
+								"value": 0.8
 							},
 							{
 								"id": "params.ctrl.flux_weaken.bw",
-								"value": 3.000000007591614
+								"value": 3
 							},
 							{
 								"id": "params.ctrl.flux_weaken.ki",
-								"value": 0.001094757579267025
+								"value": 0.00109476
 							},
 							{
 								"id": "separator"
@@ -369,7 +430,7 @@
 							},
 							{
 								"id": "params.ctrl.align.voltage",
-								"value": 0.6712499856948853
+								"value": 0.67125
 							},
 							{
 								"id": "separator"
@@ -387,7 +448,7 @@
 							},
 							{
 								"id": "params.ctrl.high_freq_inj.w_h",
-								"value": 1500.0000572230645
+								"value": 1500
 							},
 							{
 								"id": "params.ctrl.high_freq_inj.sine.w_sep",
@@ -402,11 +463,11 @@
 							},
 							{
 								"id": "params.ctrl.position.bw",
-								"value": 5.000000215028665
+								"value": 5
 							},
 							{
 								"id": "params.ctrl.position.pole_sep",
-								"value": 1.0010000467300415
+								"value": 1.001
 							},
 							{
 								"id": "params.ctrl.position.ff_coef",
@@ -414,24 +475,16 @@
 							},
 							{
 								"id": "params.ctrl.position.pi_output_limit",
-								"value": 1000.0000915759671
-							},
-							{
-								"id": "params.ctrl.high_freq_inj.w_sep",
-								"value": 150.00000766511582
-							},
-							{
-								"id": "params.ctrl.high_freq_inj.i_qd_r_peak.d",
-								"value": 1.75
+								"value": 1000
 							}
 						],
-						"configurator": 38,
-						"testbench": 32,
+						"configurator": 36,
+						"testbench": 30,
 						"isValid": true
 					}
 				],
-				"configurator": 74,
-				"testbench": 42,
+				"configurator": 85,
+				"testbench": 44,
 				"isValid": true
 			},
 			{
@@ -461,52 +514,56 @@
 				"name": "Motor",
 				"parameters": [
 					{
+						"id": "selected.speed_slider_unit",
+						"value": false
+					},
+					{
 						"id": "params.motor.p",
 						"value": 8
 					},
 					{
 						"id": "params.motor.lq",
-						"value": 0.0010499999625608325
+						"value": 0.00105
 					},
 					{
 						"id": "params.motor.ld",
-						"value": 0.0010499999625608325
+						"value": 0.00105
 					},
 					{
 						"id": "params.motor.lam",
-						"value": 0.003379999892786145
+						"value": 0.00338
 					},
 					{
 						"id": "params.motor.r",
-						"value": 1.100000023841858
+						"value": 1.1
 					},
 					{
 						"id": "params.motor.t_max",
-						"value": 0.1899999976158142
+						"value": 0.19
 					},
 					{
 						"id": "params.motor.i_peak",
-						"value": 5.400000095367432
+						"value": 5.4
 					},
 					{
 						"id": "params.motor.i_cont",
-						"value": 1.7899999618530273
+						"value": 1.79
 					},
 					{
 						"id": "params.motor.id_max",
-						"value": 0.44749999046325684
+						"value": 0.447
 					},
 					{
 						"id": "params.motor.v_nom",
-						"value": 23.99999956924244
+						"value": 24
 					},
 					{
 						"id": "params.motor.w_nom.elec",
-						"value": 4000.0003663038683
+						"value": 4000
 					},
 					{
 						"id": "params.motor.w_max.elec",
-						"value": 6000.0006951665055
+						"value": 6000
 					}
 				],
 				"blocks": [
@@ -546,27 +603,27 @@
 							},
 							{
 								"id": "params.profiler.cmd_thresh",
-								"value": 4.999999701976776
+								"value": 5
 							},
 							{
 								"id": "params.profiler.cmd_hyst",
-								"value": 2.499999850988388
+								"value": 2.5
 							},
 							{
 								"id": "params.profiler.i_cmd_dc",
-								"value": 0.8949999809265137
+								"value": 0.895
 							},
 							{
 								"id": "params.profiler.i_cmd_ac",
-								"value": 0.44749999046325684
+								"value": 0.4475
 							},
 							{
 								"id": "params.profiler.w_cmd_elec.min",
-								"value": 1600.000117379407
+								"value": 1600
 							},
 							{
 								"id": "params.profiler.w_cmd_elec.max",
-								"value": 3000.0003475832527
+								"value": 3000
 							},
 							{
 								"id": "params.profiler.time_rot_lock",
@@ -591,15 +648,15 @@
 				"parameters": [
 					{
 						"id": "params.mech.inertia",
-						"value": 0.000011000000085914508
+						"value": 0.000011
 					},
 					{
 						"id": "params.mech.viscous",
-						"value": 0.000012000000424450263
+						"value": 0.000012
 					},
 					{
 						"id": "params.mech.friction",
-						"value": 0.006000000052154064
+						"value": 0.006
 					}
 				],
 				"configurator": 3,
@@ -609,130 +666,5 @@
 			}
 		]
 	},
-	"oscilloscopeSettings": [
-		{
-			"symbol": "ProbeScope_Mode",
-			"value": 3
-		},
-		{
-			"symbol": "ProbeScope_TrigSlope",
-			"value": 1
-		},
-		{
-			"symbol": "ProbeScope_SamplingClkDiv",
-			"value": 1
-		},
-		{
-			"symbol": "ProbeScope_TrigHoldOff",
-			"value": 0
-		},
-		{
-			"symbol": "ProbeScope_TrigChSel",
-			"value": 4
-		},
-		{
-			"symbol": "ProbeScope_TrigDispPos",
-			"value": 113
-		},
-		{
-			"symbol": "vars[0].i_uvw_fb.u",
-			"value": 1,
-			"type": "Channel"
-		},
-		{
-			"symbol": "vars[0].i_uvw_fb.v",
-			"value": 2,
-			"type": "Channel"
-		},
-		{
-			"symbol": "vars[0].i_uvw_fb.w",
-			"value": 3,
-			"type": "Channel"
-		},
-		{
-			"symbol": "vars[0].th_r_final.elec",
-			"value": 4,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 5,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 6,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 7,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 8,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 9,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 10,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 11,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 12,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 13,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 14,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 15,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 16,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 17,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 18,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 19,
-			"type": "Channel"
-		},
-		{
-			"symbol": "",
-			"value": 20,
-			"type": "Channel"
-		}
-	]
+	"oscilloscopeSettings": []
 }
